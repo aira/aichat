@@ -1,4 +1,9 @@
-# IMPORTANT: Add to setup.cfg (without pinning to a version).
+# IMPORTANT: Add these dependencie to your setup.cfg but unpinned to a verstion.
+pyaudio>=0.2.11,<0.3.0
+pocketsphinx>=0.1.3,<0.2.0
+deepspeech>=0.1.1,<0.2.0
+SpeechRecognition>=3.8.1,<3.9.0
+-e git+https://github.com/hobson/pyttsx3.git@master#egg=pyttsx3
 regex
 exrex
 

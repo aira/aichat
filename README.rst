@@ -1,8 +1,8 @@
-.. image:: https://travis-ci.com/aira/ai-chat.svg?token=bqTJyxXyR4BPUEzP78rW&branch=master
-    :target: https://travis-ci.com/aira/ai-chat
-====
-Chat
-====
+.. image:: https://travis-ci.com/aira/chat.svg?token=bqTJyxXyR4BPUEzP78rW&branch=master
+    :target: https://travis-ci.com/aira/chat
+======
+aichat
+======
 
 
 This is a simple chatbot for testing natural language processing approaches. The chatbot architecture combines 3 approaches:

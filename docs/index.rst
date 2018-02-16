@@ -1,8 +1,8 @@
-====
-chat
-====
+======
+aichat
+======
 
-This is the documentation of **chat**.
+This is the documentation of **aichat**.
 
 .. note::
 

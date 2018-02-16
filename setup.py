@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-    Setup file for chat.
+    Setup file for aichat.
 
     This file was generated with PyScaffold 3.0.
     PyScaffold helps you to put up the scaffold of your new Python project.
@@ -14,7 +14,7 @@ from setuptools import setup
 # Add here console scripts and other entry points in ini-style format
 entry_points = """
 [console_scripts]
-hey = aira.chat.chat:run
+hey = aichat.chat:run
 """
 
 

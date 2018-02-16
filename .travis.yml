@@ -8,7 +8,10 @@ virtualenv:
   system_site_packages: true
 env:
   matrix:
-    - DISTRIB="conda" PYTHON_VERSION="3.5" COVERAGE="true"
+    - DISTRIB="ubuntu" PYTHON_VERSION="2.7" COVERAGE="true"
+    - DISTRIB="conda" PYTHON_VERSION="2.7" COVERAGE="false"
+    - DISTRIB="conda" PYTHON_VERSION="3.3" COVERAGE="false"
+    - DISTRIB="conda" PYTHON_VERSION="3.4" COVERAGE="false"
 addons:
   apt:
     packages:
@@ -18,8 +21,8 @@ install:
   - source tests/travis_install.sh
   - pip install -r requirements.txt
 before_script:
-  - git config --global user.email "ashwin@aira.io"
-  - git config --global user.name "Ashwin"
+  - git config --global user.email "github@aira.io"
+  - git config --global user.name "Aira"
 script:
   - python setup.py test
   - py.test --doctest-modules

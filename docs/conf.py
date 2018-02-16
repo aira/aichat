@@ -32,7 +32,7 @@ sys.path.insert(0, os.path.join(__location__, '../src'))
 from sphinx import apidoc
 
 output_dir = os.path.join(__location__, "api")
-module_dir = os.path.join(__location__, "../src/aira")
+module_dir = os.path.join(__location__, "../src/aichat")
 try:
     shutil.rmtree(output_dir)
 except FileNotFoundError:
@@ -66,8 +66,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'chat'
-copyright = u'2018, Ashwin Kannan'
+project = u'aichat'
+copyright = u'2018, Hobson Lane'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -133,7 +133,7 @@ html_theme = 'alabaster'
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
 try:
-    from aira.chat import __version__ as version
+    from aichat import __version__ as version
 except ImportError:
     pass
 else:
@@ -198,7 +198,7 @@ html_static_path = ['_static']
 # html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'chat-doc'
+htmlhelp_basename = 'aichat-doc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -217,8 +217,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'user_guide.tex', u'chat Documentation',
-   u'Ashwin Kannan', 'manual'),
+  ('index', 'user_guide.tex', u'aichat Documentation',
+   u'Hobson Lane', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

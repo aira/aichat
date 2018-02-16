@@ -10,7 +10,7 @@
 __pycache__/*
 .cache/*
 .*.swp
-.ipynb_checkpoints
+*/.ipynb_checkpoints/*
 
 # Project files
 .ropeproject
@@ -43,4 +43,4 @@ cover/*
 MANIFEST
 
 # Data files should be explicitly force-added
-src/aira/data/
+src/aichat/data/

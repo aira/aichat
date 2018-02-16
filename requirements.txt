@@ -1,6 +1,4 @@
-# IMPORTANT: Add setup.cfg (without pinning to a version).
-sphinx
+# IMPORTANT: Add to setup.cfg (without pinning to a version).
 regex
-annoy
 exrex
 

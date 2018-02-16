@@ -20,10 +20,5 @@ Usage
 
 ``` shell
 $ hey Bot, "What's up?"
+I heard you, but I'm not sure what you mean.
 ```
-
-Installation Instructions
-=========================
-
-Clone the reposity and `cd` into the directory. Once in the directory, run `pip install -e .`. Once installed, run `chloe Hi Chloe` and it will respond with either of the responses. 
-

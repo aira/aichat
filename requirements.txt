@@ -1,0 +1,6 @@
+# IMPORTANT: Add setup.cfg (without pinning to a version).
+sphinx
+regex
+annoy
+exrex
+

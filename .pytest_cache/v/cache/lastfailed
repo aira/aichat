@@ -1,0 +1,21 @@
+{
+  ".eggs/PyScaffold-3.0-py3.6.egg/pyscaffold/utils.py::pyscaffold.utils.dasherize": true,
+  ".eggs/PyScaffold-3.0.1-py3.6.egg/pyscaffold/contrib/setuptools_scm/__main__.py": true,
+  "src/aira/chat/brain.py": true,
+  "src/aira/chat/brain.py::aira.chat.brain.Responder.find_response": true,
+  "src/aira/chat/brain.py::aira.chat.brain.Responder.find_response_templates": true,
+  "src/aira/chat/brain.py::aira.chat.brain.respond": true,
+  "src/aira/chat/chat.py": true,
+  "src/aira/chat/pattern.py": true,
+  "src/aira/chat/pattern.py::aira.chat.pattern.PatternMap": true,
+  "src/aira/chat/pattern.py::aira.chat.pattern.Responder.find_responses": true,
+  "src/aira/chat/pattern.py::aira.chat.pattern.compile_pattern": true,
+  "src/aira/chat/pattern.py::aira.chat.pattern.expand_pattern": true,
+  "src/aira/chat/pattern.py::aira.chat.pattern.exrex_pattern": true,
+  "src/aira/chat/pattern.py::aira.chat.pattern.regex_len": true,
+  "src/aira/chat/pattern.py::aira.chat.pattern.truncate_pattern": true,
+  "src/aira/chat/test_chat.py": true,
+  "tests/test_chat.py": true,
+  "tests/test_chat.py::test_Bot": true,
+  "tests/test_chat.py::test_respond": true
+}

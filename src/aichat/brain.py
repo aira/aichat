@@ -7,9 +7,9 @@ from collections import Mapping
 
 # import jinja2
 
-from ..chat import constants
+from aichat import constants
+from aichat import pattern
 from .context import Context
-from ..chat import pattern
 
 
 def read_response_mapping(path=constants.DEFAULT_RESPONSE_MAPPING_PATH):

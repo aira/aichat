@@ -5,10 +5,9 @@ import os
 BOT_NAME = os.getenv('BOT_NAME', 'Bot')
 
 PACKAGE_DIR = os.path.abspath(os.path.dirname(__file__))
-NAMESPACE_DIR = os.path.dirname(PACKAGE_DIR)
-SRC_DIR = os.path.dirname(NAMESPACE_DIR)
+SRC_DIR = os.path.dirname(PACKAGE_DIR)
 BASE_DIR = os.path.dirname(SRC_DIR)
-DATA_DIR = os.path.abspath(os.path.join(NAMESPACE_DIR, 'data'))
+DATA_DIR = os.path.abspath(os.path.join(PACKAGE_DIR, 'data'))
 
 DEFAULT_CONTEXT_PATH = os.path.join(DATA_DIR, BOT_NAME.lower().strip().replace(' ', '-') + '.json')
 DEFAULT_RESPONSE_MAPPING_PATH = os.path.join(DATA_DIR, BOT_NAME.lower().strip().replace(' ', '-') + '.csv')

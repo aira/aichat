@@ -28,7 +28,9 @@ def main(args):
 
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument('inputs', type=str, nargs='+', help='user input, try: Bot hi Bot')
+    parser.add_argument(
+        'inputs', type=str, nargs='+',
+        help='User input statement, text message, or utterance. Words separated by spaces.')
 
     args = parser.parse_args()
     responder = Responder()
@@ -37,7 +39,6 @@ def main(args):
 
 def run():
     """Entry point for console_scripts """
-    print(sys.argv[1:])
     main(sys.argv[1:])
 
 

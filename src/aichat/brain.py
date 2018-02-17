@@ -12,10 +12,10 @@ from aichat import pattern
 from .context import Context
 
 
-def read_response_mapping(path=constants.DEFAULT_RESPONSE_MAPPING_PATH):
+def read_response_mapping(path=constants.DEFAULT_RESPONSE_MAPPING_PATH, header=1):
     with open(path, 'r') as fin:
         reader = csv.reader(fin)
-        response_mapping = list(reader)
+        response_mapping = list(reader)[header:]
     return response_mapping
 
 

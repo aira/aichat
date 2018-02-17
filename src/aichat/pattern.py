@@ -2,7 +2,13 @@
 import regex
 import logging
 
-import exrex
+try:
+    import exrex
+except ImportError:
+    class exrex:
+        def getone(s):
+            return s
+
 
 logger = logging.getLogger(__name__)
 
@@ -89,22 +95,27 @@ def compile_pattern(pattern, fuzziness=1, **kwargs):
       str for fixed string patterns (only letters, spaces and natural English punctuation
 
     >>> compile_pattern("Hello|Hi *").match("Hi world")
-    <re.match ...>
+    <regex.Match object; span=(0, 4), match='Hi w', fuzzy_counts=(1, 0, 0)>
+    >>> compile_pattern("Hello World!")
+    'Hello World'
     """
     fuzziness = 3 if fuzziness is True else int(fuzziness) if fuzziness is not None else fuzziness
     if isinstance(fuzziness, float) and 0 < fuzziness < 1:
         fuzziness = int(round(fuzziness * regex_len(pattern), 0))
-    if fuzziness:
-        pattern = '(' + pattern + '){e<=' + str(fuzziness) + '}'
-    if r'{' in pattern or r'[' in pattern or '\\' in pattern:
-        return regex.compile(pattern, **kwargs)
-    if r'*' in pattern or r'#' in pattern:
-        pattern.replace(r'*', r'[-a-zA-Z]+')
-        pattern.replace(r'#', r'([-a-zA-Z]+[ ]{0,1})+')
-        pattern.replace(r' ', r'[ ]')
-        pattern.replace(r'[[ ]]', r'[ ]')
-        return regex.compile(pattern, **kwargs)
-    return pattern
+    if next(regex.finditer(r'[[*#{\\]', pattern), None):
+        # r'{' in pattern or r'[' in pattern or '\\' or r'*' in pattern or r'#' in pattern:
+        if fuzziness:
+            pattern = '(' + pattern + '){e<=' + str(fuzziness) + '}'
+        if r'{' in pattern or r'[' in pattern or '\\' in pattern:
+            return regex.compile(pattern, **kwargs)
+        if r'*' in pattern or r'#' in pattern:
+            pattern.replace(r'*', r'[-a-zA-Z]+')
+            pattern.replace(r'#', r'([-a-zA-Z]+[ ]{0,1})+')
+            pattern.replace(r' ', r'[ ]')
+            pattern.replace(r'[[ ]]', r'[ ]')
+            return regex.compile(pattern, **kwargs)
+    else:
+        return pattern
 
 
 class PatternMap:
@@ -125,11 +136,19 @@ class PatternMap:
         ...
         }
 
-    >>> patterns = PatternMap([('Hey', 'Hi!'), ('Hello *', 'Hey!')])
-    >>> patterns['Hey']
-    'Hi!'
-    >>> patterns['Hello World!']
-    'Hey!'
+    >>> responses = PatternMap([('Hey', 'Hi!'), ('Hello *', 'Bye!'), ('Hey|Hello #', 'WAT?')])
+    >>> responses['Hey']
+    ['Hi!']
+    >>> responses['Hello World!']
+    ['Bye!']
+    >>> responses['Hello World What are you up to?']
+    ['Bye!']
+    >>> responses['Hey World What are you up to?']
+    ['WAT?']
+    >>> responses['Hey Joe,']
+    ['WAT?']
+    >>> len(responses.patterns)
+    2
     """
 
     def __init__(self, mapping=None, case_sensitive=False, fuzziness=1):

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from aira.chat.chat import respond
+from aichat.chat import respond
 
 
 __author__ = "Aira"

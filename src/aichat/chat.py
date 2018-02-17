@@ -5,9 +5,12 @@ from __future__ import division, print_function, absolute_import
 
 import argparse
 import sys
-# from random import random, randint
-from .brain import respond, Responder
+import logging
 
+from aichat.brain import respond, Responder
+
+
+logger = logging.getLogger('aichat')
 
 __author__ = "Aira"
 __copyright__ = "Aira"

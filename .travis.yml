@@ -43,6 +43,8 @@ before_script:
   - git config --global user.email "github@aira.io"
   - git config --global user.name "Aira"
 script:
+  - echo $PWD
+  - ls tests
   - bash tests/run_tests.sh
 after_success:
   - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi

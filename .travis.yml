@@ -3,7 +3,17 @@
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
 
 sudo: false
+
 language: python
+
+cache:
+    apt: true
+    directories:
+      - $HOME/.cache/pip
+      - $HOME/.ccache
+
+dist: trusty
+
 virtualenv:
   system_site_packages: true
 env:
@@ -11,7 +21,7 @@ env:
     - DISTRIB="conda" PYTHON_VERSION="3.6.2" COVERAGE="true" INSTALL_MKL="true"
            NUMPY_VERSION="1.13.1" SCIPY_VERSION="0.19.1" PANDAS_VERSION="0.20.3"
            CYTHON_VERSION="0.26.1" PYAMG_VERSION="3.3.2" PILLOW_VERSION="4.3.0"
-           COVERAGE=true CHECK_PYTEST_SOFT_DEPENDENCY="true" TEST_DOCSTRINGS="true"
+           COVERAGE=true CHECK_PYTEST_SOFT_DEPENDENCY="true" TEST_DOCSTRINGS="true" RUN_FLAKE8="false"
     # - DISTRIB="ubuntu" PYTHON_VERSION="3.6" COVERAGE="true"
     # - DISTRIB="conda" PYTHON_VERSION="3.6" COVERAGE="false"
 addons:
@@ -19,8 +29,6 @@ addons:
     packages:
       - git
       - python-pip
-      - python-dev
-      - build-essential
 # before_install:
 #   - sudo apt-get -qq update
 # # matplotlib requires a backend (see matplotlibrc), tkagg is one option:
@@ -35,8 +43,7 @@ before_script:
   - git config --global user.email "github@aira.io"
   - git config --global user.name "Aira"
 script:
-  - python setup.py test
-  - py.test --doctest-modules
+  - bash tests/run_tests.sh
 after_success:
   - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
 cache:

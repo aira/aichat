@@ -15,13 +15,6 @@ addons:
     packages:
       - git
       - python-pip
-      - build-essential
-      - python-dev
-      - portaudio*
-      - swig
-      - libpulse-dev
-      - libportaudio-dev
-      # - pocketsphinx
 install:
   - source tests/travis_install.sh
   - pip install -r requirements.txt

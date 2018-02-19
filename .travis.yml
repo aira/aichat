@@ -19,7 +19,7 @@ before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y build-essential python-dev swig
   - sudo apt-get install -y libpulse-dev libportaudio-dev
-  - sudo apt-get install -y pocketsphinx
+  # - sudo apt-get install -y pocketsphinx
 install:
   - source tests/travis_install.sh
   - pip install -r requirements.txt

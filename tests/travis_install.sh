@@ -29,8 +29,11 @@ if [[ "$DISTRIB" == "conda" ]]; then
 
     # Configure the conda environment and put it in the path using the
     # provided versions
+    conda install --yes pip 
     conda create -n testenv --yes python=$PYTHON_VERSION pip
     source activate testenv
+    conda install --yes swig portaudio
+    conda install --yes -c conda-forge speechrecognition
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version
     echo $DISTRIB

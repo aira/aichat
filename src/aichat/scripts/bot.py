@@ -33,7 +33,7 @@ def main(args):
         help="Persist a chat session in the terminal (a bot console).")
     parser.add_argument(
         '-t', '--telnet', action='store_true',
-        help="WARNING: NOT YET IMPLEMENTED!!! Persist a chat forum telnet server based on the `mud-pi` Multiplayer RPG game server.")
+        help="WARNING: NOT YET IMPLEMENTED!!! Start a `mud-pi`-like telnet server based.")
     parser.add_argument(
         'inputs', type=str, nargs='+',
         help="User input statement, text message, or utterance. Words separated by spaces.")
@@ -45,6 +45,13 @@ def main(args):
 
 def run():
     """Entry point for console_scripts """
+    main(sys.argv[1:])
+
+
+def run_console():
+    """Entry point for console_scripts """
+    if '-c' not in sys.argv[1:] and '--console' not in sys.argv[1:]:
+        sys.argv.append('--console')
     main(sys.argv[1:])
 
 

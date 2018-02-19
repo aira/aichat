@@ -29,8 +29,14 @@ def main(args):
     """
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        '-c', '--console', action='store_true',
+        help="Persist a chat session in the terminal (a bot console).")
+    parser.add_argument(
+        '-t', '--telnet', action='store_true',
+        help="WARNING: NOT YET IMPLEMENTED!!! Persist a chat forum telnet server based on the `mud-pi` Multiplayer RPG game server.")
+    parser.add_argument(
         'inputs', type=str, nargs='+',
-        help='User input statement, text message, or utterance. Words separated by spaces.')
+        help="User input statement, text message, or utterance. Words separated by spaces.")
 
     args = parser.parse_args()
     responder = Responder()

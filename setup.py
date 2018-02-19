@@ -14,7 +14,8 @@ from setuptools import setup
 # Add here console scripts and other entry points in ini-style format
 entry_points = """
 [console_scripts]
-hey = aichat.chat:run
+hey = aichat.scripts.chat:run
+bot = aichat.scripts.console:run
 """
 
 

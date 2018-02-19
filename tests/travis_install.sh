@@ -37,6 +37,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version
     echo $DISTRIB
+    sudo apt install --yes build-essential python-dev portaudio* swig libpulse-dev libportaudio-dev
 fi
 
 if [[ "$COVERAGE" == "true" ]]; then

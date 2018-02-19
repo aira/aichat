@@ -1,5 +1,5 @@
-.. image:: https://travis-ci.com/aira/chat.svg?token=bqTJyxXyR4BPUEzP78rW&branch=master
-    :target: https://travis-ci.com/aira/chat
+.. image:: https://travis-ci.org/aira/aichat.svg?branch=master
+    :target: https://travis-ci.org/aira/aichat
 ======
 aichat
 ======

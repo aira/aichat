@@ -9,8 +9,7 @@ regex>=2018.2.8,<2018.3.0
 exrex>=0.10.5,<0.11.0
 
 # aichat[audio]
-# sudo apt-get install build-essential python-dev libportaudio* portaudio*
-  510  sudo apt-get install libportaudio* libportaudiocpp* portaudio*
+# sudo apt-get install build-essential python-dev libportaudio* portaudio* libportaudiocpp* portaudio*
 PyAudio>=0.2.11,<0.3.0
 scipy>=1.0.0,<1.1.0
 numpy>=1.14.0,<1.15.0

@@ -20,7 +20,7 @@ addons:
       - portaudio*
       - swig3*
       - libpulse*
-      # - libportaudio*
+      - libportaudio*
       # - pocketsphinx
 install:
   - source tests/travis_install.sh

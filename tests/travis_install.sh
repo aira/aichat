@@ -37,9 +37,9 @@ if [[ "$DISTRIB" == "conda" ]]; then
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version
     echo $DISTRIB
-    sudo apt install --yes build-essential python-dev swig
-    sudo apt install --yes libpulse-dev libportaudio-dev
-    sudo apt install --yes pocketsphinx
+    apt install --yes build-essential python-dev swig
+    apt install --yes libpulse-dev libportaudio-dev
+    apt install --yes pocketsphinx
 fi
 
 if [[ "$COVERAGE" == "true" ]]; then

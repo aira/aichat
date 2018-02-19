@@ -19,8 +19,8 @@ addons:
       - python-dev
       - portaudio*
       - swig3*
+      - libpulse*
       # - libportaudio*
-      # - libpulse*
       # - pocketsphinx
 install:
   - source tests/travis_install.sh

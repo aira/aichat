@@ -18,8 +18,8 @@ addons:
       - build-essential
       - python-dev
       - portaudio*
+      - swig3*
       # - libportaudio*
-      # - swig3*
       # - libpulse*
       # - pocketsphinx
 install:

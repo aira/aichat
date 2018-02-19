@@ -8,6 +8,7 @@ import sys
 import logging
 
 from aichat.brain import respond, Responder
+from aichat import console
 
 
 logger = logging.getLogger('aichat')
@@ -35,12 +36,16 @@ def main(args):
         '-t', '--telnet', action='store_true',
         help="WARNING: NOT YET IMPLEMENTED!!! Start a `mud-pi`-like telnet server based.")
     parser.add_argument(
-        'inputs', type=str, nargs='+',
+        'inputs', type=str, nargs='*',
         help="User input statement, text message, or utterance. Words separated by spaces.")
 
     args = parser.parse_args()
-    responder = Responder()
-    responder.respond(' '.join(args.inputs))
+
+    if getattr(args, 'console', None):  # start a console app that requires you to type "quit" or "ctrl-c" to exit
+        console.Console()
+    else:  # just do a one-off reply to the user statement
+        responder = Responder()
+        responder.respond(' '.join(args.inputs))
 
 
 def run():

@@ -94,13 +94,15 @@ class Responder:
 
         >>> responder = Responder()
         >>> responder.find_response_templates('hi')[0]
-        "Hi! I'm {bot_name}. How can I help you?"
+        "Hi! I'm Bot. How can I help you?"
         >>> responder.ignore_prefix = "Bot"
         >>> responder.find_response_templates('Bot hi')[0]
-        "Hi! I'm {bot_name}. How can I help you?"
+        "Hi! I'm Bot. How can I help you?"
         """
-        if statement.lower().lstrip().lstrip(self.prefix_punc).startswith(self.ignore_prefix):
-            statement = statement.lstrip().lstrip(self.prefix_punc)[len(self.ignore_prefix):].lstrip(self.prefix_punc)
+        normalized_prefix = statement.lower().lstrip().lstrip(self.prefix_punc)
+        stripped_chars = len(statement) - len(normalized_prefix)
+        if normalized_prefix.startswith(self.ignore_prefix):
+            statement = statement[(len(self.ignore_prefix) + stripped_chars):].lstrip(self.prefix_punc)
         return self.patternmap[statement]
 
     def find_response(self, statement, context_update=None):
@@ -112,12 +114,12 @@ class Responder:
             str: populated template to be uttered by the chat bot
 
         >>> responder = Responder()
-        >>> responder.find_response('hi Bot') in ['Hi! How can I help you.', 'Hi user, How can I help you?']
+        >>> responder.find_response('Hi Bot') in ['Hi! How can I help you.', 'Hi user, how can I help you?']
         True
         """
         templates = self.find_response_templates(statement)
         if templates is None or len(templates) < 1:
-            templates = self.error_messages['unknown_command']
+            templates = [self.error_messages['unknown_command']]
         return self.interpolate_template(
             template=templates[random.randint(0, len(templates) - 1)],
             context_update=context_update)

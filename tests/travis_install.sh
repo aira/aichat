@@ -54,7 +54,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    conda install -c mutirri pyaudio 
+    # conda install -c mutirri pyaudio  # unsatisfiable because pyaudio 2.7 only works on python 2.7
     conda install --yes -c conda-forge speechrecognition
 
     conda list

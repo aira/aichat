@@ -23,6 +23,8 @@ dependencies:
   - pip:
     - regex
     - exrex
+    - pyttsx3
+    - pocketsphinx
     - tensorflow==1.2.0
     - paho-mqtt
     - scipy==1.0.0

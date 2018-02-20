@@ -31,10 +31,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
                 swig portaudio \
                 numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
-                cython=$CYTHON_VERSION \
-                -c akode pyaudio \
-                -c conda-forge speechrecognition \
-                "
+                cython=$CYTHON_VERSION "
 
     # if [[ "$INSTALL_MKL" == "true" ]]; then
     #     TO_INSTALL="$TO_INSTALL -c anaconda mkl"
@@ -57,8 +54,8 @@ if [[ "$DISTRIB" == "conda" ]]; then
     conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    # conda install --yes -c akode pyaudio
-    # conda install --yes -c conda-forge speechrecognition
+    conda install --yes -c akode pyaudio
+    conda install --yes -c conda-forge speechrecognition
 
     conda list
     pip freeze

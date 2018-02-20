@@ -1,30 +1,28 @@
-import readline
+import readline  # noqa
 
 from brain import Responder
 
 
 class Console:
-    def __init__(self):
+    def __init__(self, say=print, listen=input):
         self.responder = Responder()
-        self.states = {}
-        self.commands = Verbs.verbs
-        self.running = True
-        self.context = {}
-        self.say = print
-        self.listen = input
+        self.say = say
+        self.listen = listen
+        self.commands = {'exit': self.quit, 'quit': self.quit}
 
-        self.tests = {}
+    def quit(self):
+        self.running = False
 
-    def execute(self, line):
-        line = line.split()
-        verb = line[0]
-        if verb in self._verbs:
-            self._verbs[verb](self, *line[1:])
+    def execute(self, utterance=''):
+        words = utterance.split()
+        command = words[0].lower().strip() if words and len(words) else ''
+        if command in self.commands:
+            self.commands[command](self, ' '.join(words[1:]))
         else:
-            self.print("I don't understand. To hear the kinds of things I can do, just ask 'What can you do?'.")
+            self.say(self.responder[utterance])
 
     def run(self):
-        self._verbs['look'](self)
         while self.running:
-            self.execute(self.input('> '))
+            self.utterance = self.listen('> ')
+            self.execute(self.utterance)
         self.print('Goodbye!')

@@ -5,21 +5,20 @@ channels: !!python/tuple
   - conda-forge
   - akode
 dependencies:
-  - opencv=3.3.0
-  - jasper=1.900.1
-  - matplotlib=2.1.0
-  - numpy=1.13.3
-  - pandas=0.21.0
-  - pillow=4.3.0
-  - pyqt=5.6.0
-  - pytest=3.3.2
-  - pytest-cov=2.5.1
+  - python=3.6
+  - opencv
+  - jasper
+  - matplotlib
+  - numpy
+  - pandas
+  - pillow
+  - pyqt
+  - pytest
+  - pytest-cov
   - portaudio
-  - python=3.6.2
-  - readline=7.0      
-  - scipy=0.19.1
-  - swig=3.0.12   
-  - tk=8.6.7
+  - readline     
+  - scipy
+  - swig
   - speechrecognition
   - pip:
     - regex

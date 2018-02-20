@@ -1,0 +1,33 @@
+name: testenv
+channels: !!python/tuple
+  - menpo
+  - defaults
+  - conda-forge
+  - akode
+dependencies:
+  - opencv=3.3.0
+  - jasper=1.900.1
+  - matplotlib=2.1.0
+  - numpy=1.13.3
+  - pandas=0.21.0
+  - pillow=4.3.0
+  - pyqt=5.6.0
+  - pytest=3.3.2
+  - pytest-cov=2.5.1
+  - portaudio
+  - python=3.6.2
+  - readline=7.0      
+  - scipy=0.19.1
+  - swig=3.0.12   
+  - tk=8.6.7
+  - speechrecognition
+- pip:
+  - regex
+  - exrex
+  - tensorflow==1.2.0
+  - paho-mqtt
+  - scipy==1.0.0
+  - sklearn
+  - scikit-image
+  - google-cloud-vision
+  - vocabulary

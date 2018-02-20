@@ -27,31 +27,32 @@ if [[ "$DISTRIB" == "conda" ]]; then
     export PATH=$HOME/miniconda/bin:$PATH
     conda update --yes conda
 
-    # Configure the conda environment and put it in the path using the provided versions
-    TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
-                swig \
-                numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
-                cython=$CYTHON_VERSION"
+    conda env create -f environment.yml
+    # # Configure the conda environment and put it in the path using the provided versions
+    # TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
+    #             swig \
+    #             numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
+    #             cython=$CYTHON_VERSION"
 
-    # if [[ "$INSTALL_MKL" == "true" ]]; then
-    #     TO_INSTALL="$TO_INSTALL -c anaconda mkl"
-    # else
-    #     TO_INSTALL="$TO_INSTALL -c anaconda nomkl"
-    # fi
+    # # if [[ "$INSTALL_MKL" == "true" ]]; then
+    # #     TO_INSTALL="$TO_INSTALL -c anaconda mkl"
+    # # else
+    # #     TO_INSTALL="$TO_INSTALL -c anaconda nomkl"
+    # # fi
 
-    # if [[ -n "$PANDAS_VERSION" ]]; then
-    #     TO_INSTALL="$TO_INSTALL -c anaconda pandas=$PANDAS_VERSION"
-    # fi
+    # # if [[ -n "$PANDAS_VERSION" ]]; then
+    # #     TO_INSTALL="$TO_INSTALL -c anaconda pandas=$PANDAS_VERSION"
+    # # fi
 
-    # if [[ -n "$PYAMG_VERSION" ]]; then
-    #     TO_INSTALL="$TO_INSTALL -c anaconda pyamg=$PYAMG_VERSION"
-    # fi
+    # # if [[ -n "$PYAMG_VERSION" ]]; then
+    # #     TO_INSTALL="$TO_INSTALL -c anaconda pyamg=$PYAMG_VERSION"
+    # # fi
 
-    # if [[ -n "$PILLOW_VERSION" ]]; then
-    #     TO_INSTALL="$TO_INSTALL -c anaconda pillow=$PILLOW_VERSION"
-    # fi
+    # # if [[ -n "$PILLOW_VERSION" ]]; then
+    # #     TO_INSTALL="$TO_INSTALL -c anaconda pillow=$PILLOW_VERSION"
+    # # fi
 
-    conda create -n testenv --yes $TO_INSTALL
+    # conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
     # conda install -c mutirri pyaudio  # unsatisfiable because pyaudio 2.7 only works on python 2.7

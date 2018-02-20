@@ -30,28 +30,29 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # Configure the conda environment and put it in the path using the provided versions
     TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
                 swig portaudio \
+                numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
+                cython=$CYTHON_VERSION \
                 -c akode pyaudio \
                 -c conda-forge speechrecognition \
-                numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
-                cython=$CYTHON_VERSION"
+                "
 
-    if [[ "$INSTALL_MKL" == "true" ]]; then
-        TO_INSTALL="$TO_INSTALL mkl"
-    else
-        TO_INSTALL="$TO_INSTALL nomkl"
-    fi
+    # if [[ "$INSTALL_MKL" == "true" ]]; then
+    #     TO_INSTALL="$TO_INSTALL -c anaconda mkl"
+    # else
+    #     TO_INSTALL="$TO_INSTALL -c anaconda nomkl"
+    # fi
 
-    if [[ -n "$PANDAS_VERSION" ]]; then
-        TO_INSTALL="$TO_INSTALL pandas=$PANDAS_VERSION"
-    fi
+    # if [[ -n "$PANDAS_VERSION" ]]; then
+    #     TO_INSTALL="$TO_INSTALL -c anaconda pandas=$PANDAS_VERSION"
+    # fi
 
-    if [[ -n "$PYAMG_VERSION" ]]; then
-        TO_INSTALL="$TO_INSTALL pyamg=$PYAMG_VERSION"
-    fi
+    # if [[ -n "$PYAMG_VERSION" ]]; then
+    #     TO_INSTALL="$TO_INSTALL -c anaconda pyamg=$PYAMG_VERSION"
+    # fi
 
-    if [[ -n "$PILLOW_VERSION" ]]; then
-        TO_INSTALL="$TO_INSTALL pillow=$PILLOW_VERSION"
-    fi
+    # if [[ -n "$PILLOW_VERSION" ]]; then
+    #     TO_INSTALL="$TO_INSTALL -c anaconda pillow=$PILLOW_VERSION"
+    # fi
 
     conda create -n testenv --yes $TO_INSTALL
     source activate testenv

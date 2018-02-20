@@ -109,7 +109,7 @@ def try_tts(audio):
     return text
 
 
-def main_full_circle():
+def main():
     args = parse_args()
     i = 0
     while True:
@@ -132,4 +132,4 @@ def main_full_circle():
 
 
 if __name__ == '__main__':
-    main_full_circle()
+    main()

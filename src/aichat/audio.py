@@ -9,24 +9,27 @@ from io import BytesIO
 
 
 def record_audio(source='Microphone', energy_threshold=300, pause_threshold=.9,
-        dynamic_energy_ratio=1.5, dynamic_energy_adjustment_damping=.15, **kwargs):
+                 dynamic_energy_ratio=1.5, dynamic_energy_adjustment_damping=.15, **kwargs):
     """ Listten for a single utterance (concluded with a 2 sec pause) and return a recording in an Audio object
 
     Arguments:
         energy_threshold (int): minimum audio energy to trigger start of recording (default=300)
-        dynamic_energy_adjustment_damping (float): delay dynamic energy threshold change: 1=static energy_threshold (.15)
+        dynamic_energy_adjustment_damping (float): dyn thresh adjustment slowness: 1=static energy_threshold (.15)
         dynamic_energy_ratio (float): sound energy change that triggers recording: 1=static energy_threshold (1.5)
         pause_threshold (float): non-speaking audio seconds before a phrase is considered complete (.9)
-        operation_timeout (float): seconds after an internal operation starts before it times out: None=neverdynamic_energy_adjustment_damping
-        self.phrase_threshold (float): minimum seconds of speaking audio required before stopping recording of a phrase (.3)
-        self.non_speaking_duration (float): seconds of non-speaking audio to retain on both sides of the recording (pause_threshold)
+        operation_timeout (float): internal operation timeout in seconds: None=never
+        self.phrase_threshold (float): minimum speaking duration in seconds to record (.3)
+        self.non_speaking_duration (float): nonspeaking audio seconds to retain before+after recording (pause_threshold)
  """
-    r = sr.Recognizer(
-        energy_threshold=300, pause_threshold=pause_threshold,
-        dynamic_energy_threshold=(dynamic_energy_ratio > 1 and dynamic_energy_adjustment_damping < 1),
-        dynamic_energy_ratio=dynamic_energy_ratio, dynamic_energy_adjustment_damping=dynamic_energy_adjustment_damping,
-        **kwargs)
-    audio = r.listen(sr.Microphone)
+    r = sr.Recognizer()
+    r.energy_threshold = energy_threshold
+    r.pause_threshold = pause_threshold
+    r.dynamic_energy_threshold = dynamic_energy_ratio > 1 and dynamic_energy_adjustment_damping < 1
+    r.dynamic_energy_ratio = dynamic_energy_ratio
+    r.dynamic_energy_adjustment_damping = dynamic_energy_adjustment_damping
+    r.__dict__.update(kwargs)
+    with getattr(sr, 'Microphone', sr.Microphone)() as audio_source:
+        audio = r.listen(source=audio_source)
     return audio
 
 

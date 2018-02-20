@@ -16,6 +16,8 @@ entry_points = """
 [console_scripts]
 bot = aichat.scripts.bot:run
 bot-console = aichat.scripts.bot:run_console
+audio = aichat.scripts.audio:main
+voice = aichat.scripts.circlevoice:main
 """
 
 

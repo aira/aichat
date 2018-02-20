@@ -12,39 +12,7 @@ import pyttsx3
 
 import argparse
 
-
-def record_audio(source='Microphone'):
-    r = sr.Recognizer()
-    audio = r.listen(sr.Microphone)
-    return audio
-
-
-def play_audio(audio, start=0, stop=None, save=None, batch_size=1024):
-    player = pyaudio.PyAudio()
-    if isinstance(audio, str):
-        input_stream = wave.openfp(open(audio, 'rb'))
-    else:
-        input_stream = wave.openfp(BytesIO(audio.get_wav_data()))
-
-    output_stream = player.open(
-        format=player.get_format_from_width(input_stream.getsampwidth()),
-        channels=input_stream.getnchannels(),
-        rate=input_stream.getframerate(),
-        output=True)
-    # play stream
-    batch = input_stream.readframes(batch_size)
-    save = open(save, 'wb') if save is not None else save
-    i = 0
-    while batch and (i + 1) * batch_size >= start and (stop is None or (i - 1) * batch_size < stop):
-        if stop is not None and i * batch_size >= stop:
-            batch = batch[:(stop % batch_size)]
-        if start and i * batch_size < start:
-            batch = batch[(start % batch_size):]
-        output_stream.write(batch)
-        if save is not None:
-            save.write(batch)
-        batch = input_stream.readframes(batch_size)
-    return audio
+from aichat.audio import record_audio, play_audio
 
 
 def stt(audio, api='google'):
@@ -83,7 +51,7 @@ def save_audio(audio, path='audio.wav'):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Record an audio clip.')
-    parser.add_argument('-n', '--num', '--num_recordings', type=int, default=0, dest='num_recordings',
+    parser.add_argument('-n', '--num', '--num_recordings', type=int, default=1, dest='num_recordings',
                         help='Record N audio clips.')
     parser.add_argument('-r', '--record', '--recordpath', type=str, default='', dest='recordpath',
                         help='Record N audio clips (delimitted by silence).')

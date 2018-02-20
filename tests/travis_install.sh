@@ -34,6 +34,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     source activate testenv
     conda install --yes swig
     conda install --yes portaudio
+    pip install pyaudio
     conda install --yes -c conda-forge speechrecognition
     conda list
     conda env list

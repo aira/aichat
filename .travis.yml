@@ -29,6 +29,8 @@ addons:
     packages:
       - git
       - python-pip
+      - python-pyaudio
+      - python3-pyaudio
 # before_install:
 #   - sudo apt-get -qq update
 # # matplotlib requires a backend (see matplotlibrc), tkagg is one option:

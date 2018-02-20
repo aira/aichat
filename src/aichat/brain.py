@@ -101,8 +101,10 @@ class Responder:
         """
         normalized_prefix = statement.lower().lstrip().lstrip(self.prefix_punc)
         stripped_chars = len(statement) - len(normalized_prefix)
-        if normalized_prefix.startswith(self.ignore_prefix):
-            statement = statement[(len(self.ignore_prefix) + stripped_chars):].lstrip(self.prefix_punc)
+        # print(stripped_chars)
+        # print(normalized_prefix)
+        if self.ignore_prefix and normalized_prefix.startswith(self.ignore_prefix.lower().strip()):
+            statement = statement[(len(self.ignore_prefix) + stripped_chars):].lstrip()
         return self.patternmap[statement]
 
     def find_response(self, statement, context_update=None):
@@ -126,10 +128,11 @@ class Responder:
 
     def respond(self, statement, context_update=None):
         response = self.find_response(statement, context_update=context_update)
-        if response is None:
-            self.say("I don't understand.")
-        else:
-            self.say(response)
+        if self.say:
+            if response is None:
+                self.say("I don't understand.")
+            else:
+                self.say(response)
         return response
 
 
@@ -140,24 +143,13 @@ def normalize_statement(statement):
 def respond(statement):
     """ Generating the response from the bot
     Args:
-        args([int], [int]) : the probabilites of choosing choice A as the response or choice B as the response
+        statement (str)
     Returns:
-        returns([str]) : The bot response
+        str: The bot response
 
-    >>> respond(['Hi Bot']) in ['Hi! How can I help you.', 'Hi user, How can I help you?']
+    >>> respond.responder.say = None
+    >>> respond('Hi Bot') in ['Hi user, how can I help you?', 'Hi! How can I help you.']
     True
     """
-    possible_responses = []
-    patterns = list(RESPONSE_MAPPING.exact_strs.keys())
-    templates = list(RESPONSE_MAPPING.exact_strs.values())
-    for (patt, tmpl) in zip(patterns, templates):
-        if (normalize_statement(statement) == normalize_statement(patt)):
-            possible_responses = tmpl
-            break
-    if len(possible_responses):
-        random_response_index = random.randint(0, len(possible_responses) - 1)
-        Bot_response = possible_responses[random_response_index]
-    else:
-        Bot_response = None
-    say(Bot_response or "I don't understand")
-    return Bot_response
+    return respond.responder.respond(statement)
+respond.responder = Responder()  # noqa

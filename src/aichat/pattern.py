@@ -41,8 +41,8 @@ def expand_charclass(patt, alias=r'\w', expansion=None):
 def expand_pattern(patt):
     r""" Expand regular expression character class aliases like \w and \s for FSM generators like exrex
 
-    >>> expand_pattern(r'Hello[ ][\w\s]*')
-    'Hello[ ][a-zA-Z_\\t\\r\\n\\ ]*'
+    >>> expand_pattern(r'Hello\ [\w\s]*') == 'Hello\\ [a-zA-Z_[\\t\\r\\n\\ ]]*'
+    True
 
     FIXME:
       Correctly expand all character classes, not just \s and \w
@@ -56,12 +56,12 @@ def expand_pattern(patt):
 def truncate_pattern(patt, star_len=10, plus_len=None):
     r""" Replace Kleine '*' and '+' regex quantifiers with {star_len} so that FSM generators like exrex terminate
 
-    >>> exrex_pattern(r'(Hello)+ [\w\s]*')
-    '(Hello){10} [\w\s]{10}'
-    >>> exrex_pattern(r'(Hello)+ [\w\s]*', 8)
-    '(Hello){8} [\w\s]{8}'
-    >>> exrex_pattern(r'(Hello)+ [\w\s]*', 2, 3)
-    '(Hello){3} [\w\s]{2}'
+    >>> truncate_pattern(r'(Hello)+ [\w\s]*') == '(Hello){10} [\\w\\s]{10}'
+    True
+    >>> truncate_pattern(r'(Hello)+ [\w\s]*', 8) == '(Hello){8} [\\w\\s]{8}'
+    True
+    >>> truncate_pattern(r'(Hello)+ [\w\s]*', 2, 3) == '(Hello){3} [\\w\\s]{2}'
+    True
     """
     star_len = int(star_len)
     if star_len > 1000000:
@@ -75,29 +75,33 @@ def truncate_pattern(patt, star_len=10, plus_len=None):
             logger.warn("That's a REALY BIG Kleine plus (+)." +
                         "Do you really want {}-char strings in your language?".format(plus_len))
     star_len, plus_len = str(star_len), str(plus_len)
-    patt = regex.sub(r'([^\])\*', patt, '\1{' + star_len + '}')
-    patt = regex.sub(r'([^\])\+', patt, '\1{' + plus_len + '}')
+    patt = regex.sub(r'([^\\])\*', r'\1{' + star_len + r'}', patt)
+    patt = regex.sub(r'([^\\])\+', r'\1{' + plus_len + r'}', patt)
     return patt
 
 
-def exrex_pattern(patt, star_len=10):
+def exrex_pattern(patt, star_len=10, plus_len=None):
     r""" truncate_pattern(expand_pattern(patt)) to help exrex patt generator
 
-    >>> exrex_pattern(r'Hello\ [\w\s]*', 23)
-    'Hello\\ [a-zA-Z_\\t\\r\\n\ ]{23}'
-    """
-    return truncate_pattern(expand_pattern(patt), star_len=star_len)
-
-
-def regex_len(patt):
-    r""" Calculate the approximate minimum length of a str that will match the given regex (# states of FSM)
-
-    >>> 30 <= regex_len(r'([\w\s]{7}[\s]{1}\w?[0-9]{2})*', 3) <= 33)
+    >>> exrex_pattern(r'Hello\ [\w]*', 23) == 'Hello\\ [a-zA-Z_]{23}'
     True
     """
+    if plus_len is None:
+        plus_len = star_len
+    return truncate_pattern(expand_pattern(patt), star_len=star_len, plus_len=plus_len)
+
+
+def regex_len(patt, star_len=10, plus_len=None):
+    r""" Calculate the approximate minimum length of a str that will match the given regex (# states of FSM)
+
+    >>> 30 <= regex_len(r'([\w]{7}\s{1}\w?[0-9]{2})*', 3) <= 33
+    True
+    """
+    if plus_len is None:
+        plus_len = star_len
     patt = getattr(patt, 'pattern', patt)
     # return len(patt)
-    return len(exrex.getone(exrex_pattern(patt)))
+    return len(exrex.getone(exrex_pattern(patt, star_len=star_len, plus_len=plus_len)))
 
 
 RESPONSE_MAPPING = [('Hi', 'Hi!'), ("Hi", "Hi, I'm Bot")]
@@ -142,10 +146,11 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
 def remove_punc(s: str):
     r""" Replace all nondigit-nonword characters with spaces and delete meaningless spaces
 
-    >>> remove_punc('<"hyphenated-word {variable}!!?">')
-    'hypenated word variable'
+    >>> remove_punc('<"hyphenated-word {variable}!!?">')  # doctest.NORMALIZE_WHITESPACE
+    'hyphenated word variable'
     """
-    regex.sub(r'[^a-zA-Z0-9]', s, ' ').strip()
+    s = regex.sub(r'[^a-zA-Z0-9]', ' ', s).strip()
+    s = ' '.join([tok.strip() for tok in s.split() if tok])
     return s
 
 
@@ -200,8 +205,14 @@ class PatternMap:
             patt = compile_pattern(patt)
             if isinstance(patt, str):
                 self.exact_strs[patt] = self.exact_strs.get(patt, []) + [template]
-                self.exact_strs[patt.lower()] = self.exact_strs.get(patt, []) + [template]
-                self.exact_strs[remove_punc(patt.lower())] = self.exact_strs.get(patt, []) + [template]
+                lowered_patt = patt.lower()
+                # print(lowered_patt, template)
+                if lowered_patt != patt:
+                    self.exact_strs[patt.lower()] = self.exact_strs.get(lowered_patt, []) + [template]
+                normalized_patt = remove_punc(lowered_patt)
+                # print(normalized_patt, template)
+                if normalized_patt not in (patt, lowered_patt):
+                    self.exact_strs[normalized_patt] = self.exact_strs.get(normalized_patt, []) + [template]
             else:
                 self.patterns[patt.pattern] = (
                     patt, self.patterns.get(patt.pattern, (patt, []))[1] + [template])
@@ -213,7 +224,7 @@ class PatternMap:
         for (pattern_str, (patt, templates)) in zip(self.patterns.keys(), self.patterns.values()):
             if patt.match(statement):
                 return templates
-        return None
+        return []
 
     def __str__(self):
         return str({'patterns': self.patterns, 'exact_strs': self.exact_strs})

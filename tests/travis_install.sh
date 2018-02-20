@@ -34,6 +34,8 @@ if [[ "$DISTRIB" == "conda" ]]; then
     source activate testenv
     conda install --yes swig portaudio pyaudio
     conda install --yes -c conda-forge speechrecognition
+    conda list
+    conda env list
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version
     echo $DISTRIB

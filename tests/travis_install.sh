@@ -62,7 +62,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     pip install exrex regex
 
     conda list
-    pip freeze
+
 
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version

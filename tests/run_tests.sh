@@ -13,6 +13,8 @@ python -c "import scipy; print('scipy %s' % scipy.__version__)"
 conda list
 conda env list
 
+export OLDPWD="$PWD"
+export TEST_DIR=test_dir
 
 run_tests() {
     TEST_CMD="pytest --showlocals --durations=20 --pyargs"
@@ -32,7 +34,7 @@ run_tests() {
     if [[ "$COVERAGE" == "true" ]]; then
         TEST_CMD="$TEST_CMD --cov aichat"
     fi
-    $TEST_CMD sklearn
+    $TEST_CMD aichat
 
     # Going back to git checkout folder needed to test documentation
     cd $OLDPWD
@@ -59,6 +61,6 @@ if [[ "$CHECK_PYTEST_SOFT_DEPENDENCY" == "true" ]]; then
     fi
     # .coverage from running the tests is in TEST_DIR
     cd $TEST_DIR
-    $CMD -m sklearn.utils.tests.test_estimator_checks
+    
     cd $OLDPWD
 fi

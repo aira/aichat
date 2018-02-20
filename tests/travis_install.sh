@@ -54,7 +54,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    conda install --yes -c akode pyaudio
+    conda install -c mutirri pyaudio 
     conda install --yes -c conda-forge speechrecognition
 
     conda list

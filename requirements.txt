@@ -10,7 +10,7 @@ exrex>=0.10.5,<0.11.0
 
 # aichat[audio]
 # sudo apt-get install python-pyaudio python-pyaudio3
-PyAudio>=0.2.11,<0.3.0
+PyAudio>=0.2.7,<0.3.0
 scipy>=1.0.0,<1.1.0
 numpy>=1.14.0,<1.15.0
 

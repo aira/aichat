@@ -29,7 +29,9 @@ if [[ "$DISTRIB" == "conda" ]]; then
 
     # Configure the conda environment and put it in the path using the provided versions
     TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
-                swig portaudio
+                swig portaudio \
+                -c akode pyaudio \
+                -c conda-forge speechrecognition \
                 numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
                 cython=$CYTHON_VERSION"
 
@@ -54,8 +56,8 @@ if [[ "$DISTRIB" == "conda" ]]; then
     conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    conda install -c akode pyaudio
-    conda install --yes -c conda-forge speechrecognition
+    # conda install --yes -c akode pyaudio
+    # conda install --yes -c conda-forge speechrecognition
 
     conda list
     pip freeze

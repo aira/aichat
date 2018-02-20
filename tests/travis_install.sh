@@ -27,17 +27,41 @@ if [[ "$DISTRIB" == "conda" ]]; then
     export PATH=$HOME/miniconda/bin:$PATH
     conda update --yes conda
 
-    # Configure the conda environment and put it in the path using the
-    # provided versions
-    conda install --yes pip 
-    conda create -n testenv --yes python=$PYTHON_VERSION pip
+    # Configure the conda environment and put it in the path using the provided versions
+    TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
+                swig portaudio
+                numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
+                cython=$CYTHON_VERSION"
+
+    if [[ "$INSTALL_MKL" == "true" ]]; then
+        TO_INSTALL="$TO_INSTALL mkl"
+    else
+        TO_INSTALL="$TO_INSTALL nomkl"
+    fi
+
+    if [[ -n "$PANDAS_VERSION" ]]; then
+        TO_INSTALL="$TO_INSTALL pandas=$PANDAS_VERSION"
+    fi
+
+    if [[ -n "$PYAMG_VERSION" ]]; then
+        TO_INSTALL="$TO_INSTALL pyamg=$PYAMG_VERSION"
+    fi
+
+    if [[ -n "$PILLOW_VERSION" ]]; then
+        TO_INSTALL="$TO_INSTALL pillow=$PILLOW_VERSION"
+    fi
+
+    conda create -n testenv --yes $TO_INSTALL
     source activate testenv
-    conda install --yes swig
-    conda install --yes portaudio
-    pip install pyaudio
-    conda install --yes -c conda-forge speechrecognition
+
     conda list
     conda env list
+
+    pip install pyaudio
+    conda install --yes -c conda-forge speechrecognition
+
+    pip freeze
+
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version
     echo $DISTRIB

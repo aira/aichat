@@ -29,9 +29,9 @@ if [[ "$DISTRIB" == "conda" ]]; then
 
     # Configure the conda environment and put it in the path using the provided versions
     TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
-                swig portaudio \
+                swig \
                 numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
-                cython=$CYTHON_VERSION "
+                cython=$CYTHON_VERSION"
 
     # if [[ "$INSTALL_MKL" == "true" ]]; then
     #     TO_INSTALL="$TO_INSTALL -c anaconda mkl"

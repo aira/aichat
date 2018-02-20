@@ -54,12 +54,10 @@ if [[ "$DISTRIB" == "conda" ]]; then
     conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    conda list
-    conda env list
-
-    pip install pyaudio
+    conda install -c akode pyaudio
     conda install --yes -c conda-forge speechrecognition
 
+    conda list
     pip freeze
 
 elif [[ "$DISTRIB" == "ubuntu" ]]; then

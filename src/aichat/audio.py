@@ -35,7 +35,7 @@ def record_audio(source='Microphone', energy_threshold=300, pause_threshold=.9,
 
 def play_audio(audio, start=0, stop=None, save=None, batch_size=1024):
     player = pyaudio.PyAudio()
-    if isinstance(audio, str):
+    if isinstance(audio, str):  # and audio.lower().endswith('.wav')
         input_stream = wave.openfp(open(audio, 'rb'))
     else:
         input_stream = wave.openfp(BytesIO(audio.get_wav_data()))

@@ -1,4 +1,4 @@
-name: testenv
+name: aichat
 channels: !!python/tuple
   - menpo
   - defaults
@@ -7,6 +7,7 @@ channels: !!python/tuple
 dependencies:
   - python=3.6
   - opencv
+  - cffi
   - jasper
   - matplotlib
   - numpy
@@ -21,6 +22,7 @@ dependencies:
   - swig
   - speechrecognition
   - pip:
+    - soundfile
     - regex
     - exrex
     - pyttsx3
@@ -32,3 +34,4 @@ dependencies:
     - scikit-image
     - google-cloud-vision
     - vocabulary
+    - pyaudio

@@ -5,9 +5,6 @@ import os
 from traceback import format_exc
 
 import speech_recognition as sr
-import pyaudio
-import wave
-from io import BytesIO
 import pyttsx3
 
 import argparse
@@ -15,6 +12,7 @@ import argparse
 from aichat.audio import record_audio, play_audio
 
 
+# TODO move stt/tts to speech.py
 def stt(audio, api='google'):
     r = sr.Recognizer()
     text = getattr(r, 'recognize_{}'.format(api), 'recognize_google')(audio)
@@ -51,7 +49,7 @@ def save_audio(audio, path='audio.wav'):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Record an audio clip.')
-    parser.add_argument('-n', '--num', '--num_recordings', type=int, default=1, dest='num_recordings',
+    parser.add_argument('-n', '--num', '--num_recordings', type=int, default=0, dest='num_recordings',
                         help='Record N audio clips.')
     parser.add_argument('-r', '--record', '--recordpath', type=str, default='', dest='recordpath',
                         help='Record N audio clips (delimitted by silence).')
@@ -81,12 +79,14 @@ def try_tts(audio):
 def main():
     args = parse_args()
     i, j = 0, 0
+    if args.recordpath:
+        args.num_recordings = 1
     for i in range(args.num_recordings):
         print("Say something! I'm listening...")
         audio = record_audio()
         base_dir = '.'
         ext = '.wav'
-        filepath = os.path.join(base_dir, 'audio-{}{}'.format(i, ext))
+        filepath = args.recordpath or os.path.join(base_dir, 'audio-{}{}'.format(i, ext))
         while os.path.exists(filepath):
             j += 1
             filepath = os.path.join(base_dir, 'audio-{}{}'.format(j + i, ext))
@@ -98,7 +98,7 @@ def main():
         print("Done.")
 
     if args.playpath:
-        print("Playing {}[{}:{}]".format(args.playpath, args.begin, args.end))
+        print("Playing '{}'[{}:{}]".format(args.playpath, args.begin, args.end))
         play_audio(args.playpath)
 
 

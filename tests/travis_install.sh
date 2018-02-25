@@ -56,13 +56,15 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    # conda install -c mutirri pyaudio  # unsatisfiable because pyaudio 2.7 only works on python 2.7
+    sudo apt-get build-dep python-pyaudio python3-pyaudio
+
+    # conda install -c mutirri pyaudio  # unsatisfiable because pyaudio2.7 only works on python 2.7
     conda install --yes -c conda-forge speechrecognition
 
-    pip install exrex regex
+    pip install -y exrex regex pyaudio
 
     conda list
-
+    pip freeze
 
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version

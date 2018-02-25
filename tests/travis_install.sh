@@ -56,9 +56,6 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    sudo apt-get build-dep python-pyaudio python3-pyaudio
-    pip install -y pyaudio
-
     conda list
     pip freeze
 

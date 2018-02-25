@@ -31,8 +31,9 @@ addons:
       - python-pip
       - python-pyaudio
       - python3-pyaudio
-# before_install:
-#   - sudo apt-get -qq update
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get build-dep python-pyaudio python3-pyaudio
 # # matplotlib requires a backend (see matplotlibrc), tkagg is one option:
 # #$ sudo apt-get install tcl-dev tk-dev python-tk python3-tk
 #   - sudo apt-get install -y swig libpulse-dev libportaudio-dev python-pyaudio
@@ -40,6 +41,7 @@ addons:
 #   # - sudo apt-get install -y pocketsphinx
 install:
   - source tests/travis_install.sh
+  - pip install pyaudio
   # - pip install -r requirements.txt
 before_script:
   - git config --global user.email "github@aira.io"

@@ -27,7 +27,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     export PATH=$HOME/miniconda/bin:$PATH
     conda update --yes conda
 
-    conda env create -f environment.yml
+    conda env create -f conda/environment.yml
     echo "python=$PYTHON_VERSION"
     # Configure the conda environment and put it in the path using the provided versions
     TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
@@ -57,11 +57,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     source activate testenv
 
     sudo apt-get build-dep python-pyaudio python3-pyaudio
-
-    # conda install -c mutirri pyaudio  # unsatisfiable because pyaudio2.7 only works on python 2.7
-    conda install --yes -c conda-forge speechrecognition
-
-    pip install -y exrex regex pyaudio
+    pip install -y pyaudio
 
     conda list
     pip freeze

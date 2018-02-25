@@ -33,7 +33,7 @@ addons:
       - python3-pyaudio
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get build-dep python-pyaudio python3-pyaudio
+  - sudo apt-get build-dep python-pyaudio python3-pyaudio pocketsphinx
 # # matplotlib requires a backend (see matplotlibrc), tkagg is one option:
 # #$ sudo apt-get install tcl-dev tk-dev python-tk python3-tk
 #   - sudo apt-get install -y swig libpulse-dev libportaudio-dev python-pyaudio

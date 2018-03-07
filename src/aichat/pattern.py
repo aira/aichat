@@ -122,15 +122,24 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
     <regex.Match object; span=(0, 4), match='Hi w', fuzzy_counts=(1, 0, 0)>
     >>> compile_pattern("Hello World!")
     'Hello World!'
+    >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I don't."
+    >>> compile_pattern(patt)
+    '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but I don\'t.'
+    >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s."
+    >>> compile_pattern(patt)
+    '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s).'
+    >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s"
+    >>> compile_pattern(patt)
+    '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s)'
     """
     fuzziness = 3 if fuzziness is True else int(fuzziness) if fuzziness is not None else fuzziness
     if isinstance(fuzziness, float) and 0 < fuzziness < 1:
         fuzziness = int(round(fuzziness * regex_len(patt), 0))
+    if r'|' in patt:
+        patt = regex.sub(r'(^|[^-\(\|a-zA-Z0-9])([a-zA-Z0-9]+\|)', r'\1(\2', patt)
+        patt = regex.sub(r'(\|[a-zA-Z0-9]+)($|[^-\)\|a-zA-Z0-9])', r'\1)\2', patt)
     if next(regex.finditer(r'[[*#{\\]', patt), None):
         # r'{' in patt or r'[' in patt or '\\' or r'*' in patt or r'#' in patt:
-        if r'|' in patt:
-            patt = regex.sub(r'[ ]([a-zA-Z0-9]+\|)', r' (\1', patt)
-            patt = regex.sub(r'([a-zA-Z0-9]+\|)[ ]', r'\1) ', patt)
         if fuzziness:
             patt = '(' + patt + '){e<=' + str(fuzziness) + '}'
         if r'*' in patt or r'#' in patt:

@@ -128,17 +128,20 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
         fuzziness = int(round(fuzziness * regex_len(patt), 0))
     if next(regex.finditer(r'[[*#{\\]', patt), None):
         # r'{' in patt or r'[' in patt or '\\' or r'*' in patt or r'#' in patt:
+        if r'|' in patt:
+            patt = regex.sub(r'[ ]([a-zA-Z0-9]+\|)', r' (\1', patt)
+            patt = regex.sub(r'([a-zA-Z0-9]+\|)[ ]', r'\1) ', patt)
         if fuzziness:
             patt = '(' + patt + '){e<=' + str(fuzziness) + '}'
-        if r'{' in patt or r'[' in patt or '\\' in patt:
-            return regex.compile(patt, **kwargs)
         if r'*' in patt or r'#' in patt:
-            patt.replace(r'*', r'[-a-zA-Z]+')
-            patt.replace(r'#', r'([-a-zA-Z]+[ ]{0,1})+')
-            patt.replace(r' ', r'[ ]')
-            patt.replace(r'[[ ]]', r'[ ]')  # undo redundant brackets
-            patt.replace(r'[[ ]]', r'[ ]')  # undo tripply redundant brackets
+            patt = patt.replace(r'*', r'[-a-zA-Z]+')
+            patt = patt.replace(r'#', r'([-a-zA-Z]+[ ]{0,1})+')
+            patt = patt.replace(r' ', r'[ ]')
+            patt = patt.replace(r'[[ ]]', r'[ ]')  # undo redundant brackets
+            patt = patt.replace(r'[[ ]]', r'[ ]')  # undo tripply redundant brackets
             return regex.compile(patt, **kwargs)
+        # if r'{' in patt or r'[' in patt or '\\' in patt:
+        #     return regex.compile(patt, **kwargs)
     else:
         return patt
 

@@ -27,8 +27,10 @@ if [[ "$DISTRIB" == "conda" ]]; then
     export PATH=$HOME/miniconda/bin:$PATH
     conda update --yes conda
 
-    conda env create -f conda/environment.yml
-    echo "python=$PYTHON_VERSION"
+    conda create -n testenv -f conda/environment.yml --yes python=$PYTHON_VERSION pip
+    echo "PYTHON_VERSION=$PYTHON_VERSION"
+    echo "python --version: $(python --version)"
+    echo "which python: $(which python)"
     # Configure the conda environment and put it in the path using the provided versions
     TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
                 swig \
@@ -56,8 +58,8 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # conda create -n testenv --yes $TO_INSTALL
     source activate testenv
 
-    conda list
-    pip freeze
+    echo "conda list: $(conda list)"
+    echo "pip freeze: $(pip freeze)"
 
 elif [[ "$DISTRIB" == "ubuntu" ]]; then
     # Use standard ubuntu packages in their default version

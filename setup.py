@@ -3,9 +3,9 @@
 """
     Setup file for aichat.
 
-    This file was generated with PyScaffold 3.0.
+    This file was generated with PyScaffold 3.0.2.
     PyScaffold helps you to put up the scaffold of your new Python project.
-    Learn more under: http://pyscaffold.readthedocs.org/
+    Learn more at: http://pyscaffold.org/
 """
 
 import sys

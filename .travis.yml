@@ -12,10 +12,9 @@ cache:
       - $HOME/.cache/pip
       - $HOME/.ccache
 
-dist: trusty
-
 virtualenv:
   system_site_packages: true
+
 env:
   matrix:
     - DISTRIB="conda" PYTHON_VERSION="3.6.2" COVERAGE="true" INSTALL_MKL="true"
@@ -24,6 +23,7 @@ env:
            COVERAGE=true CHECK_PYTEST_SOFT_DEPENDENCY="true" TEST_DOCSTRINGS="true" RUN_FLAKE8="false"
     # - DISTRIB="ubuntu" PYTHON_VERSION="3.6" COVERAGE="true"
     # - DISTRIB="conda" PYTHON_VERSION="3.6" COVERAGE="false"
+
 addons:
   apt:
     packages:
@@ -31,6 +31,7 @@ addons:
       - python-pip
       - python-pyaudio
       - python3-pyaudio
+
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get build-dep python-pyaudio python3-pyaudio pocketsphinx
@@ -39,17 +40,19 @@ before_install:
 #   - sudo apt-get install -y swig libpulse-dev libportaudio-dev python-pyaudio
 #   - sudo apt install gfortran libopenblas-dev liblapack-dev python-scipy python-matplotlib python-numpy libpng12-dev libfreetype6-dev
 #   # - sudo apt-get install -y pocketsphinx
+
 install:
   - source tests/travis_install.sh
-  - pip install pyaudio
-  # - pip install -r requirements.txt
+  - pip install -r requirements.txt
+
 before_script:
-  - git config --global user.email "github@aira.io"
+  - git config --global user.email "github@totalgood.com"
   - git config --global user.name "Aira"
+
 script:
-  - conda list
-  - bash tests/run_tests.sh
+  - python setup.py test
+
 after_success:
   - if [[ "$COVERAGE" == "true" ]]; then coveralls || echo "failed"; fi
-cache:
-  - apt
+
+

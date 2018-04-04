@@ -2,6 +2,9 @@
 
 # aichat has no mandatory dependencies!
 
+# aichat[django]
+django
+
 # aichat[fuzzy]
 regex>=2018.2.8,<2018.3.0
 

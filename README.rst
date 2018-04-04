@@ -5,15 +5,21 @@ aichat
 ======
 
 
-This is a simple chatbot for testing natural language processing approaches. The chatbot architecture combines 3 approaches:
+A chatbot framework for configuring and testing chatbot dialog specifications. 
+
+
+Description
+===========
+
+`aichat` combines 2 approaches (more to come):
 
 1. pattern matching (grammar-based appraoch)
 2. search (retrieval-based approach)
-3. grounding (knowledge-base approach)
 
-You can build your own behaviors/skills by editing the data files in `src/aira/chat/data/*.csv` and then loading them into your chatbot's brain. The data folder contains example .csv files for riddles and other multi-turn dialog games.
+Like AIML `aichat` allows you to control context and build a graph of behaviors (edges are chatbot actions/utterances). 
+You can hand-craft your behaviors or "machine learn" them from example dialog corpora.
 
-Unlike other search and pattern-based chatbots, this architecture allows you to control context and build a decision tree of behaviors. You can hand-craft your behaviors or learn them from example dialog corpora.
+In the future `aichat` will incorporate a knowledge base (a grounding chatbot approach)
 
 Usage
 ===========

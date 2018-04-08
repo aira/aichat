@@ -15,27 +15,37 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # conda-based environment instead
     deactivate
 
-    # Use the miniconda installer for faster download / install of conda
-    # itself
-    DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/.tmp/miniconda}
+    # Use the anaconda3 installer
+    DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/.tmp/anaconda3}
     mkdir -p $DOWNLOAD_DIR
-    wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh \
-        -O $DOWNLOAD_DIR/miniconda.sh
-    chmod +x $DOWNLOAD_DIR/miniconda.sh && \
-        bash $DOWNLOAD_DIR/miniconda.sh -b -p $HOME/miniconda && \
-        rm -r -d -f $DOWNLOAD_DIR
-    export PATH=$HOME/miniconda/bin:$PATH
-    conda update --yes conda
+    wget http://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh \
+        -O $DOWNLOAD_DIR/anaconda3.sh
+    chmod +x $DOWNLOAD_DIR/anaconda3.sh && \
+        bash $DOWNLOAD_DIR/anaconda3.sh -b -u -p $HOME/anaconda3 && \
+        # rm -r -d -f $DOWNLOAD_DIR
+    export PATH=$HOME/anaconda3/bin:$PATH
+    conda update -y conda
+    conda install -y pip
+    conda install -y swig
 
-    conda create -n testenv -f conda/environment.yml --yes python=$PYTHON_VERSION pip
-    echo "PYTHON_VERSION=$PYTHON_VERSION"
-    echo "python --version: $(python --version)"
-    echo "which python: $(which python)"
     # Configure the conda environment and put it in the path using the provided versions
-    TO_INSTALL="python=$PYTHON_VERSION pip pytest pytest-cov \
-                swig \
-                numpy=$NUMPY_VERSION scipy=$SCIPY_VERSION \
-                cython=$CYTHON_VERSION"
+    if [[ -f "$ENVIRONMENT_YML" ]]; then
+        conda env create -n testenv -f "$ENVIRONMENT_YML"
+    else
+        echo "WARNING: Unable to find an environment.yml file !!!!!!"
+        conda create -n testenv --yes python=$PYTHON_VERSION pip
+    fi
+    source activate testenv
+    conda install -y pip
+
+    # download spacy English language model
+    pip install --upgrade spacy
+    python -m spacy download en
+
+    # download NLTK punkt, Penn Treebank, and wordnet corpora 
+    python -c "import nltk; nltk.download('punkt'); nltk.download('treebank'); nltk.download('wordnet');"
+    which python
+    python --version
 
     # if [[ "$INSTALL_MKL" == "true" ]]; then
     #     TO_INSTALL="$TO_INSTALL -c anaconda mkl"
@@ -56,7 +66,6 @@ if [[ "$DISTRIB" == "conda" ]]; then
     # fi
 
     # conda create -n testenv --yes $TO_INSTALL
-    source activate testenv
 
     echo "conda list: $(conda list)"
     echo "pip freeze: $(pip freeze)"

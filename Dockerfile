@@ -69,4 +69,4 @@ RUN django-admin.py startproject website /home/docker/code/app/
 EXPOSE 80
 EXPOSE 8080
 EXPOSE 443
-CMD ["supervisord", "-n"]
+CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisor-app.conf", "-n"]

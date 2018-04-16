@@ -50,7 +50,8 @@ RUN pip3 install uwsgi
 # setup all the configfiles
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 COPY nginx-sites-available-default.conf /etc/nginx/sites-available/default
-COPY supervisor-app.conf /etc/supervisor/conf.d/
+COPY supervisor-app.ini /etc/supervisor/conf.d/
+RUN ls -al etc/supervisor/conf.d/
 
 # COPY requirements.txt and RUN pip install BEFORE adding the rest of your code, this will cause Docker's caching mechanism
 # to prevent re-installing (all your) dependencies when you made a change a line or two in your app.
@@ -69,4 +70,5 @@ RUN django-admin.py startproject website /home/docker/code/app/
 EXPOSE 80
 EXPOSE 8080
 EXPOSE 443
-CMD ["supervisord", "-c", "/etc/supervisor/conf.d/supervisor-app.conf", "-n"]
+# -n means nodaemon=true
+CMD ["supervisord", "-c", "/etc/supervisord.ini", "-n"]

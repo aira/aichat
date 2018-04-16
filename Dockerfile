@@ -37,7 +37,7 @@ RUN apt-get update && \
     apt-get install -y \
 		git python3 python3-dev python3-setuptools python3-pip nginx supervisor sqlite3 \
 		python3.5-dev python3-virtualenv build-essential gfortran \
-		python-pyaudio python-pyaudio3 && \
+		python-pyaudio && \
 	pip3 install -U pip setuptools && \
     rm -rf /var/lib/apt/lists/*
 

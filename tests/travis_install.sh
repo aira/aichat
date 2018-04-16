@@ -34,11 +34,11 @@ fi
 echo "UNVERSIONED_OS=$UNVERSIONED_OS"
 
 if [ $UNVERSIONED_OS == "darwin" ] ; then
-    brew install python3 portaudio cmu-pocketsphinx swig
+    brew install python3 portaudio swig
 elif [ $UNVERSIONED_OS == "darwin" ] ; then
     sudo apt-get -qq update
     sudo apt-get install -y build-essential build-dep gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip 
-    sudo apt-get install -y nginx supervisor sqlite3 python-pyaudio python3-pyaudio pocketsphinx
+    sudo apt-get install -y nginx supervisor sqlite3 python-pyaudio python3-pyaudio
 fi
 
 set -e

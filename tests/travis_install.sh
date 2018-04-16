@@ -36,6 +36,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     fi
     source activate testenv
     conda install -y pip
+    conda install -y swig
     conda install -y nltk
 
     # download spacy English language model

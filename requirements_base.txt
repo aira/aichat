@@ -1,0 +1,28 @@
+# IMPORTANT: Add these dependencies to your setup.cfg but unpinned to a verstion.
+
+# aichat has no mandatory dependencies!
+
+# aichat[django]
+django>=2.0.2,<2.1.0
+pugnlp
+
+# aichat[fuzzy]
+regex>=2018.2.8,<2018.3.0
+
+# aichat[generate] = aichat[fuzzy] + ...
+exrex>=0.10.5,<0.11.0
+
+# # aichat[audio]
+# # sudo apt-get install python-pyaudio python-pyaudio3
+# PyAudio>=0.2.7,<0.3.0
+scipy>=1.0.0,<1.1.0
+numpy>=1.14.0,<1.15.0
+
+# # aichat[voice] = aichat[audio] + ....
+# deepspeech==0.1.1
+# # sudo apt install swig3-dev libpulse* pocketsphinx
+# pocketsphinx>=0.1.3,<0.2.0
+# pyttsx3>=2.7.0,<2.8.0
+# SpeechRecognition>=3.8.1,<3.9.0
+# # -e git+https://github.com/hobson/pyttsx3.git@master#egg=pyttsx3
+

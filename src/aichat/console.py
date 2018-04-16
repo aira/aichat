@@ -1,6 +1,6 @@
 import readline  # noqa
 
-from brain import Responder
+from aichat.brain import Responder
 
 
 class Console:

@@ -3,7 +3,4 @@
 # Remember to also add them in setup.cfg but unpinned.
 aichat
 pugnlp
-<<<<<<< Updated upstream
-=======
-boto3
->>>>>>> Stashed changes
+

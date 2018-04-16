@@ -8,6 +8,39 @@
 #
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
 
+if [ $# -eq 1 ] ; then
+    export HOST_OS=$1  # linux or darwin
+else
+	export HOST_OS=$OSTYPE  # linux or darwin17
+fi
+
+set -e
+
+echo "HOST_OS=$HOST_OS"
+
+export UNVERSIONED_OS=${HOST_OS::6}
+if [ $UNVERSIONED_OS == "darwin" ] ; then
+    # since we're not on travis we need to set the BUILD_DIR
+    export BUILD_DIR=$HOME/build
+    mkdir -p $HOME/build
+
+    export HOST_OS=$UNVERSIONED_OS  # linux or darwin
+else
+    # we're on travis so we need to exit with an error code on any error
+    export UNVERSIONED_OS="linux"
+	export HOST_OS=$UNVERSIONED_OS  # linux or darwin
+fi
+
+echo "UNVERSIONED_OS=$UNVERSIONED_OS"
+
+if [ $UNVERSIONED_OS == "darwin" ] ; then
+    brew install python3 portaudio cmu-pocketsphinx swig
+elif [ $UNVERSIONED_OS == "darwin" ] ; then
+    sudo apt-get -qq update
+    sudo apt-get install -y build-essential build-dep gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip 
+    sudo apt-get install -y nginx supervisor sqlite3 python-pyaudio python3-pyaudio pocketsphinx
+fi
+
 set -e
 
 if [[ "$DISTRIB" == "conda" ]]; then

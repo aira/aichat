@@ -72,11 +72,14 @@ if [[ "$DISTRIB" == "conda" ]]; then
     conda install -y swig
     conda install -y nltk
 
+    pip install -r requirements-base.txt
+
     # download spacy English language model
-    pip install --upgrade spacy
-    python -m spacy download en
+    pip install spacy
+	python -m spacy download en
 
     # download NLTK punkt, Penn Treebank, and wordnet corpora 
+    pip install nltk
     python -c "import nltk; nltk.download('punkt'); nltk.download('treebank'); nltk.download('wordnet');"
     which python
     python --version

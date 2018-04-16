@@ -26,12 +26,12 @@ dependencies:
     - regex
     - exrex
     - pyttsx3
-    # - pocketsphinx
     - tensorflow==1.2.0
     - paho-mqtt
     - scipy==1.0.0
     - sklearn
     - scikit-image
-#    - google-cloud-vision
     - vocabulary
 #    - pyaudio
+#    - pocketsphinx
+#    - google-cloud-vision

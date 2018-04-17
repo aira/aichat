@@ -3,4 +3,4 @@ PyScaffold
 pytest
 pytest-cov
 sphinx
-doctestall
+# doctestall

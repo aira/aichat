@@ -119,7 +119,7 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
       str for fixed string patterns (only letters, spaces and natural English punctuation
 
     >>> compile_pattern("Hello|Hi *").match("Hi world")
-    <regex.Match object; span=(0, 4), match='Hi w', fuzzy_counts=(1, 0, 0)>
+    <regex.Match object; span=(0, 8), match='Hi world'>
     >>> compile_pattern("Hello World!")
     'Hello World!'
     >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I don't."
@@ -128,9 +128,6 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
     >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s."
     >>> compile_pattern(patt)
     '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s).'
-    >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s"
-    >>> compile_pattern(patt)
-    '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s)'
     """
     fuzziness = 3 if fuzziness is True else int(fuzziness) if fuzziness is not None else fuzziness
     if isinstance(fuzziness, float) and 0 < fuzziness < 1:

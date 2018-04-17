@@ -20,8 +20,8 @@ __license__ = "mit"
 #         r"Hi! I'm Bot. I'm here to assist you. I can describe a scene by recognizing objects."
 #         )
 
-# def test_constants():
-#     assert doctest.testmod(constants, raise_on_error=True)
+def test_constants():
+    assert doctest.testmod(constants, raise_on_error=True)
 
 
 # def test_brain():
@@ -32,17 +32,19 @@ __license__ = "mit"
 #     assert doctest.testmod(context, raise_on_error=True)
 
 
-# def test_pattern():
-#     assert doctest.testmod(pattern, raise_on_error=True)
+def test_pattern():
+    assert doctest.testmod(pattern, raise_on_error=True)
 
 
 # def test_audio():
 #     assert doctest.testmod(audio, raise_on_error=True)
 
 
+# doesn't do anything
 def load_tests(loader, tests, ignore):
     tests.addTests(doctest.DocTestSuite(constants))
     tests.addTests(doctest.DocTestSuite(brain))
     tests.addTests(doctest.DocTestSuite(pattern))
     tests.addTests(doctest.DocTestSuite(context))
+    # tests.addTests(doctest.DocTestSuite(audio))
     return tests

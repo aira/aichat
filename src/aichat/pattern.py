@@ -94,7 +94,7 @@ def exrex_pattern(patt, star_len=10, plus_len=None):
 def regex_len(patt, star_len=10, plus_len=None):
     r""" Calculate the approximate minimum length of a str that will match the given regex (# states of FSM)
 
-    >>> 30 <= regex_len(r'([\w]{7}\s{1}\w?[0-9]{2})*', 3) <= 33
+    >>> 32 <= regex_len(r'([\w]{7}[\s]{1}[\w]?[0-9]{2})*', 3) <= 42
     True
     """
     if plus_len is None:

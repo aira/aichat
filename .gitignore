@@ -45,3 +45,6 @@ MANIFEST
 
 # Data files should be explicitly force-added
 src/aichat/data/
+
+# secrets
+local_settings.py

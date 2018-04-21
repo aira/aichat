@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'aichatapp.apps.AichatappConfig',
+    'webapp.apps.AichatappConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',

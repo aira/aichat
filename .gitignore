@@ -48,3 +48,4 @@ src/aichat/data/
 
 # secrets
 local_settings.py
+*secret*

@@ -16,8 +16,8 @@ from .local_settings import SECRET_KEY  # noqa
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, 'data')
-DEFAULT_CSV = os.path.join(DATA_DIR, 'chloe.csv')
+DATA_DIR = os.path.join(BASE_DIR, 'chatapp', 'data')
+CSV_DEFAULT_PATH = os.path.join(DATA_DIR, 'chloe.csv')
 CSV_COLUMNS = ('trigger', 'response', 'source_state', 'dest_state')
 
 

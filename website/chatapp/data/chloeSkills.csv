@@ -1,0 +1,56 @@
+Tell me what you|I|Chloe can do,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
+what can you|I|Chloe do,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
+? ? what your features are,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
+what are your features,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Call Agent
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Quickstart,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Quickstart,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Quickstart,Chloe Skill Quickstart
+* repeat *,"Sure. I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Quickstart
+* again *,"Sure. I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Quickstart
+* one more time *,"Sure. I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Quickstart
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Privacy Mode
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Call Agent,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Call Agent,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Call Agent,Chloe Skill Call Agent
+* repeat *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Call Agent
+* again *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Call Agent
+* one more time *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Call Agent
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"To turn privacy mode on and off during a call, you can press on the call button once. Privacy mode disables your audio and video so that the agent cannot hear or see anything on your end. Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Flashlight
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Privacy Mode,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Privacy Mode,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+* repeat *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+* again *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+* one more time *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Time Date
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Flashlight,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Flashlight,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Flashlight,Chloe Skill Flashlight
+* repeat *,"Sure. I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Flashlight
+* again *,"Sure. I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Flashlight
+* one more time *,"Sure. I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Flashlight
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Jokes
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Time Date,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Time Date,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Time Date,Chloe Skill Time Date
+* repeat *,"Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Time Date
+* again *,"Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Time Date
+* one more time *,"Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Time Date
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes Repeat
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Jokes,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Jokes,
+*,"Sorry, I didn't get that. Would you like to learn more about what I can do?",Chloe Skill Jokes,Chloe Skill Jokes
+* repeat *,"Sure. I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes
+* again *,"Sure. I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes
+* one more time *,"Sure. I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,That's all I know for now. I am excited to learn more skills and become more helpful to you.,Chloe Skill Jokes Repeat,
+no|skip|nah|nope|naw,No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.,Chloe Skill Jokes Repeat,
+maybe later,No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.,Chloe Skill Jokes Repeat,
+*,"Sorry, I didn't get that. But that's all I know for now. I am excited to learn more skills and become more helpful to you.",Chloe Skill Jokes Repeat,
+Thanks,No problem. Do check back for more skills soon!,Chloe Skill Jokes Repeat,
+Thank you,You're welcome. I will learn more skills soon.,Chloe Skill Jokes Repeat,
+* repeat *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
+* again *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
+* one more time *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
+cancel|stop|done|exit|leave|goodbye|bye|enough,OK,Chloe Skill *,

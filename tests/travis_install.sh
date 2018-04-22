@@ -8,8 +8,14 @@
 #
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
 
+echo "Running travis_install.sh from working dir PWD=$PWD"
 export PROJECT_NAME="aichat"
+echo "PROJECT_NAME=$PROJECT_NAME"
 export CENV_NAME=$PROJECT_NAME"_cenv"
+# export DISTRIB="conda"
+echo "CENV_NAME=$CENV_NAME"
+export REQUREMENTS_PATH="$PROJECT_NAME/requirements-base.txt"
+echo "REQUREMENTS_PATH=$REQUREMENTS_PATH"
 
 if [ $# -eq 1 ] ; then
     export HOST_OS=$1  # linux or darwin
@@ -39,26 +45,30 @@ echo "UNVERSIONED_OS=$UNVERSIONED_OS"
 if [ $UNVERSIONED_OS == "darwin" ] ; then
     brew install python3 portaudio swig
 elif [ $UNVERSIONED_OS == "linux" ] ; then
-    sudo apt-get -qq update
-    sudo apt-get install -y build-essential build-dep gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip 
-    sudo apt-get install -y nginx supervisor sqlite3 python-pyaudio python3-pyaudio
+    apt-get -qq -y update
+    apt-get install -y build-essential apt-utils gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip wget
+    apt-get build-dep -y python-pyaudio 
+    apt-get build-dep -y python3-pyaudio
+    apt-get install python-pyaudio python3-pyaudio
+    apt-get install -y nginx supervisor sqlite3 
 fi
 
-set -e
+if [[ "$DISTRIB" == "conda" ]] ; then
+    # Deactivate the travis-provided virtual environment and setup a conda-based environment instead
+    deactivate || echo "no virtualenv has been activated yet (NOT running on a travis container)"
 
-if [[ "$DISTRIB" == "conda" ]]; then
-    # Deactivate the travis-provided virtual environment and setup a
-    # conda-based environment instead
-    deactivate
 
     # Use the anaconda3 installer
-    DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/.tmp/anaconda3}
+    DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/downloads/anaconda3}
     mkdir -p $DOWNLOAD_DIR
-    wget http://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh \
-        -O $DOWNLOAD_DIR/anaconda3.sh
-    chmod +x $DOWNLOAD_DIR/anaconda3.sh && \
-        bash $DOWNLOAD_DIR/anaconda3.sh -b -u -p $HOME/anaconda3 && \
-        # rm -r -d -f $DOWNLOAD_DIR
+
+    if [[ -f "$DOWNLOAD_DIR/anaconda3.sh" ]] ; then
+        echo $(ls -hal $DOWNLOAD_DIR/anaconda3.sh)
+    else
+        wget http://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O $DOWNLOAD_DIR/anaconda3.sh
+        chmod +x $DOWNLOAD_DIR/anaconda3.sh && bash $DOWNLOAD_DIR/anaconda3.sh -b -u -p $HOME/anaconda3
+    fi
+
     export PATH=$HOME/anaconda3/bin:$PATH
     conda update -y conda
     conda install -y pip swig nltk
@@ -68,14 +78,18 @@ if [[ "$DISTRIB" == "conda" ]]; then
         conda env create -n $CENV_NAME -f "$ENVIRONMENT_YML"
     else
         echo "WARNING: Unable to find an environment.yml file !!!!!!"
-        conda create -n testenv --yes python=$PYTHON_VERSION pip
+        conda create -n $CENV_NAME --yes python=$PYTHON_VERSION pip
     fi
-    source activate testenv
-    conda install -y pip
-    conda install -y swig
-    conda install -y nltk
 
-    pip install -r requirements-base.txt
+    source activate $CENV_NAME
+    conda install -y pip swig nltk
+    pip install --upgrade pip
+
+    if [[ -f "$REQUIREMENTS_PATH" ]]; then
+        pip install -r "$REQUIREMENTS_PATH"
+   	else
+        echo "Unable to find requirements file $REQUREMENTS_PATH from PWD=$PWD"
+    fi
 
     # download spacy English language model
     pip install spacy
@@ -105,7 +119,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
     #     TO_INSTALL="$TO_INSTALL -c anaconda pillow=$PILLOW_VERSION"
     # fi
 
-    # conda create -n testenv --yes $TO_INSTALL
+    # conda create -n $CENV_NAME --yes $TO_INSTALL
 
     echo "conda list: $(conda list)"
     echo "pip freeze: $(pip freeze)"

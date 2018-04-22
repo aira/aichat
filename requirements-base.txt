@@ -3,6 +3,7 @@
 # aichat has no mandatory dependencies!
 
 # aichat[nlp]
+nlpia
 pugnlp
 nltk
 spacy

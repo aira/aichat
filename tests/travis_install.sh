@@ -8,6 +8,9 @@
 #
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
 
+export PROJECT_NAME="aichat"
+export CENV_NAME=$PROJECT_NAME"_cenv"
+
 if [ $# -eq 1 ] ; then
     export HOST_OS=$1  # linux or darwin
 else
@@ -35,7 +38,7 @@ echo "UNVERSIONED_OS=$UNVERSIONED_OS"
 
 if [ $UNVERSIONED_OS == "darwin" ] ; then
     brew install python3 portaudio swig
-elif [ $UNVERSIONED_OS == "darwin" ] ; then
+elif [ $UNVERSIONED_OS == "linux" ] ; then
     sudo apt-get -qq update
     sudo apt-get install -y build-essential build-dep gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip 
     sudo apt-get install -y nginx supervisor sqlite3 python-pyaudio python3-pyaudio
@@ -62,7 +65,7 @@ if [[ "$DISTRIB" == "conda" ]]; then
 
     # Configure the conda environment and put it in the path using the provided versions
     if [[ -f "$ENVIRONMENT_YML" ]]; then
-        conda env create -n testenv -f "$ENVIRONMENT_YML"
+        conda env create -n $CENV_NAME -f "$ENVIRONMENT_YML"
     else
         echo "WARNING: Unable to find an environment.yml file !!!!!!"
         conda create -n testenv --yes python=$PYTHON_VERSION pip

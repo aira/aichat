@@ -1,4 +1,4 @@
-name: aichat2
+name: aichat
 channels: !!python/tuple
   - menpo
   - conda-forge

@@ -3,21 +3,36 @@
 # aichat has no mandatory dependencies!
 
 # aichat[nlp]
-nlpia
-pugnlp
-nltk
-spacy
-scipy>=1.0.0,<1.1.0
-numpy>=1.14.0,<1.15.0
+nlpia==0.1.27
+pugnlp==0.1.6
+spacy==2.0.11
+
+# 2nd degree aichat[nlp] dependencies (nlpia, pugnlp, spacy)
+boto3==1.6.18
+Django==2.0.2
+django-extensions==2.0.7
+fuzzywuzzy==0.16.0
+gensim==3.4.0
+jupyter==1.0.0
+jupyter-client==5.2.3
+jupyter-console==5.2.0
+jupyter-core==4.4.0
+nltk==3.2.5
+numpy==1.14.2
+scikit-learn==0.19.1
+scipy==1.0.1
+seaborn==0.8.1
+
 
 # aichat[django]
-django>=2.0.2,<2.1.0
+Django==2.0.2
 
 # aichat[fuzzy]
-regex>=2018.2.8,<2018.3.0
+regex==2017.4.5  # this is what spacy uses
 
 # aichat[generate] = aichat[fuzzy] + ...
-exrex>=0.10.5,<0.11.0
+exrex==0.10.5
+
 
 # # aichat[audio]
 # # sudo apt-get install python-pyaudio python-pyaudio3

@@ -4,6 +4,7 @@
 pugnlp
 nltk
 spacy
+# spacy -> regex==2017.4.5
 scipy>=1.0.0,<1.1.0
 numpy>=1.14.0,<1.15.0
 

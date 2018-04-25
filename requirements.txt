@@ -4,7 +4,6 @@
 pugnlp
 nltk
 spacy
-# spacy -> regex==2017.4.5
 scipy>=1.0.0,<1.1.0
 numpy>=1.14.0,<1.15.0
 
@@ -12,7 +11,8 @@ numpy>=1.14.0,<1.15.0
 django>=2.0.2,<2.1.0
 
 # aichat[fuzzy]
-regex>=2018.2.8,<2018.3.0
+# regex>=2018.2.8,<2018.3.0
+# spacy==2.0.11 -> regex==2017.4.5
 
 # aichat[generate] = aichat[fuzzy] + ...
 exrex>=0.10.5,<0.11.0

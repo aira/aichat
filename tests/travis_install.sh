@@ -7,7 +7,6 @@
 # This script is taken from Scikit-Learn (http://scikit-learn.org/)
 #
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
-
 echo "Running travis_install.sh from working dir PWD=$PWD"
 export PROJECT_NAME="aichat"
 echo "PROJECT_NAME=$PROJECT_NAME"
@@ -75,7 +74,7 @@ if [[ "$DISTRIB" == "conda" ]] ; then
 
     # Configure the conda environment and put it in the path using the provided versions
     if [[ -f "$ENVIRONMENT_YML" ]]; then
-        conda env create -n $CENV_NAME -f "$ENVIRONMENT_YML"
+        conda env create -n $CENV_NAME -f "$ENVIRONMENT_YML" || echo "conda env $CENV_NAME already exists"
     else
         echo "WARNING: Unable to find an environment.yml file !!!!!!"
         conda create -n $CENV_NAME --yes python=$PYTHON_VERSION pip

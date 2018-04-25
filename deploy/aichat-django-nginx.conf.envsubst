@@ -2,11 +2,11 @@ server {
     listen 80;
     server_name ~^(.+)$;
     location = /favicon.ico { access_log off; log_not_found off; }
-    location /static/ {
-        root /srv/code/aichat;
+    location ${AICHAT_SRVSTATIC}/ {
+        root ${AICHAT_SRVPROJ}/;
     }
     location / {
         include proxy_params;
-        proxy_pass http://unix:/srv/code/aichat/aichat.sock;
+        proxy_pass http://unix:${AICHAT_SRVSOCK};
     }
 }

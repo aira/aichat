@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM aichat:latest
 # FROM python:3
 #  ENV PYTHONUNBUFFERED 1
 #  RUN mkdir /code

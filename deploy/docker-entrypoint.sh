@@ -1,4 +1,5 @@
 #!/bin/bash
+export PATH="$HOME/anaconda3/bin:$PATH"
 env
 conda info --envs
 source activate $CENV_NAME || echo "Unable to start conda env named $CENV_NAME"
@@ -25,10 +26,10 @@ touch /srv/logs/access.log
 # exec service nginx start
 
 echo 'Startings gunicorn and nginx logs...'
-tmux aichat-session -d 'tail -n 0 -f /srv/logs/*.log'
+tmux new-session -n:taillog -d 'exec tail -n 0 -f /srv/logs/*.log'
 
 echo 'starting gunicorn'
-tmux new-window -v 'exec gunicorn aichat.wsgi:application \
+tmux new-window -n:gunicorn 'exec gunicorn aichat.wsgi:application \
     --name aichat_django \
     --bind 0.0.0.0:8000 \
     --workers 3 \
@@ -37,5 +38,6 @@ tmux new-window -v 'exec gunicorn aichat.wsgi:application \
     --access-logfile=/srv/logs/access.log &'
 
 echo Starting nginx...
-tmux new-window 'exec service nginx start'
-tmux -2 attach-session -d 
+tmux new-window -n:nginx 'exec service nginx start'
+
+tmux -2 attach

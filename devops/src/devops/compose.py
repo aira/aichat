@@ -37,7 +37,7 @@ def compose2ecs(dc_path='docker-compose.yml', family=None, task_role_arn=None):
         return ecs_task_definition
 
 
-def register_ecs(ecs_client, ecs_task_definition):
+def register_ecs(ecs_client=boto3.client('ecs'), ecs_task_definition=json.load('task.json')):
     """Register an ECS task definition and return it.
 
     Args:
@@ -68,4 +68,3 @@ if __name__ == '__main__':
     """Client interface for ECS"""
 
     compose_file_path = sys.argv[1]
-    

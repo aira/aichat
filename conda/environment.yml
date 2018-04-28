@@ -1,4 +1,4 @@
-name: aichat2
+name: aichat
 channels: !!python/tuple
   - menpo
   - conda-forge
@@ -22,16 +22,16 @@ dependencies:
   - swig
   - speechrecognition
   - pip:
-    - soundfile
-    - regex
     - exrex
-    - pyttsx3
-    - pocketsphinx
-    - tensorflow==1.2.0
+#    - google-cloud-vision
     - paho-mqtt
+#    - pocketsphinx
+#    - pyaudio
+    - pyttsx3
+    - regex
+    - soundfile
     - scipy==1.0.0
     - sklearn
     - scikit-image
-#    - google-cloud-vision
+    - tensorflow==1.2.0
     - vocabulary
-#    - pyaudio

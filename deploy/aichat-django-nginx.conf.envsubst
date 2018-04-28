@@ -1,0 +1,12 @@
+server {
+    listen 80;
+    server_name ~^(.+)$;
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location ${AICHAT_SRVSTATIC}/ {
+        root ${AICHAT_SRVPROJ}/;
+    }
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:${AICHAT_SRVSOCK};
+    }
+}

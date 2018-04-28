@@ -1,0 +1,5 @@
+call ? Aira|agent ? ? ?,"<call_agent>",,Call Agent
+call * Aira|agent *,"<call_agent>",,Call Agent
+call ? agent,"<call_agent>",,Call Agent
+cancel|stop,"<cancel_call>",Call Agent,
+*,"<cancel_call> Sorry, I didn't get that.",Call Agent,

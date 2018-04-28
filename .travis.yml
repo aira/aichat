@@ -11,6 +11,7 @@ cache:
     directories:
       - $HOME/.cache/pip
       - $HOME/.ccache
+      - $HOME/anaconda3
 
 virtualenv:
   system_site_packages: true
@@ -24,26 +25,32 @@ env:
     # - DISTRIB="ubuntu" PYTHON_VERSION="3.6" COVERAGE="true"
     # - DISTRIB="conda" PYTHON_VERSION="3.6" COVERAGE="false"
 
-addons:
-  apt:
-    packages:
-      - git
-      - python-pip
-      - python-pyaudio
-      - python3-pyaudio
+# addons:
+#   apt:
+#     packages:
+#       - git
+#       - python-pip
+#       - python-pyaudio
+#       - python3-pyaudio
+#       - pocketsphinx
+#       - nginx
+#       - supervisor
+#       - sqlite3
 
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get build-dep python-pyaudio python3-pyaudio pocketsphinx
-# # matplotlib requires a backend (see matplotlibrc), tkagg is one option:
-# #$ sudo apt-get install tcl-dev tk-dev python-tk python3-tk
-#   - sudo apt-get install -y swig libpulse-dev libportaudio-dev python-pyaudio
-#   - sudo apt install gfortran libopenblas-dev liblapack-dev python-scipy python-matplotlib python-numpy libpng12-dev libfreetype6-dev
-#   # - sudo apt-get install -y pocketsphinx
+# before_install:
+#   - sudo apt-get -qq update
+#   - sudo apt-get build-dep python-pyaudio python3-pyaudio pocketsphinx
+#   - git python3 python3-dev python3-setuptools python3-pip nginx supervisor sqlite3 \
+#     python3.5-dev python3-virtualenv build-essential gfortran \
+#     python-pyaudio
+# # # matplotlib requires a backend (see matplotlibrc), tkagg is one option:
+# # #$ sudo apt-get install tcl-dev tk-dev python-tk python3-tk
+# #   - sudo apt-get install -y swig libpulse-dev libportaudio-dev python-pyaudio
+# #   - sudo apt install gfortran libopenblas-dev liblapack-dev python-scipy python-matplotlib python-numpy libpng12-dev libfreetype6-dev
+# #   # - sudo apt-get install -y pocketsphinx
 
 install:
   - source tests/travis_install.sh
-  - pip install -r requirements.txt
 
 before_script:
   - git config --global user.email "github@totalgood.com"

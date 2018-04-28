@@ -1,0 +1,5 @@
+[program:django-uwsgi]
+command = /usr/local/bin/uwsgi --ini ${AICHAT_SRVPROJ}/uwsgi.ini
+
+[program:nginx-django]
+command = /usr/sbin/nginx

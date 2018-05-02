@@ -9,6 +9,7 @@ numpy>=1.14.0,<1.15.0
 
 # aichat[django]
 django>=2.0.2,<2.1.0
+gunicorn
 
 # aichat[fuzzy]
 # regex>=2018.2.8,<2018.3.0

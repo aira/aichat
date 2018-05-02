@@ -29,15 +29,19 @@ echo 'Startings gunicorn and nginx logs...'
 tmux new-session -n:taillog -d 'exec tail -n 0 -f /srv/logs/*.log'
 
 echo 'starting gunicorn'
-tmux new-window -n:gunicorn 'exec gunicorn aichat.wsgi:application \
-    --name aichat_django \
-    --bind 0.0.0.0:8000 \
-    --workers 3 \
-    --log-level=info \
+tmux new-window -n:gunicorn 'exec gunicorn \
+	--name aichat_gunicorn \
+	--bind 0.0.0.0:8000 \
+	--workers 3 \
     --log-file=/srv/logs/gunicorn.log \
-    --access-logfile=/srv/logs/access.log &'
+    --access-logfile=/srv/logs/access.log \
+	website.wsgi:application --reload'
+
+echo Starting bash terminal
+tmux new-window -n:bash 'exec bash'
 
 echo Starting nginx...
 tmux new-window -n:nginx 'exec service nginx start'
 
 tmux -2 attach
+http://stackoverflow.com/questions/23948527/ddg#24830777

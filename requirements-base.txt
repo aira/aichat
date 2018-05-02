@@ -3,9 +3,10 @@
 # aichat has no mandatory dependencies!
 
 # aichat[nlp]
-nlpia==0.1.27
+# nlpia==0.1.27
 pugnlp==0.1.6
 spacy==2.0.11
+gunicorn
 
 # 2nd degree aichat[nlp] dependencies (nlpia, pugnlp, spacy)
 boto3==1.6.18
@@ -25,10 +26,11 @@ seaborn==0.8.1
 
 
 # aichat[django]
-Django==2.0.2
+# Django==2.0.2
+# gunicorn
 
 # aichat[fuzzy]
-regex==2017.4.5  # this is what spacy uses
+# regex==2017.4.5  # this is what spacy uses
 
 # aichat[generate] = aichat[fuzzy] + ...
 exrex==0.10.5

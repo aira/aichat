@@ -13,8 +13,8 @@ echo "PROJECT_NAME=$PROJECT_NAME"
 export CENV_NAME=$PROJECT_NAME"_cenv"
 # export DISTRIB="conda"
 echo "CENV_NAME=$CENV_NAME"
-export REQUREMENTS_PATH="$PROJECT_NAME/requirements-base.txt"
-echo "REQUREMENTS_PATH=$REQUREMENTS_PATH"
+export REQUIREMENTS_PATH="$PROJECT_NAME/requirements-base.txt"
+echo "REQUIREMENTS_PATH=$REQUIREMENTS_PATH"
 
 if [ $# -eq 1 ] ; then
     export HOST_OS=$1  # linux or darwin
@@ -84,11 +84,14 @@ if [[ "$DISTRIB" == "conda" ]] ; then
     conda install -y pip swig nltk
     pip install --upgrade pip
 
-    if [[ -f "$REQUIREMENTS_PATH" ]]; then
+    if [[ -f "$REQUIREMENTS_PATH" ]] ; then
+    	echo "Installing requirements file $REQUIREMENTS_PATH from PWD=$PWD"
         pip install -r "$REQUIREMENTS_PATH"
    	else
-        echo "Unable to find requirements file $REQUREMENTS_PATH from PWD=$PWD"
+        echo "Unable to find requirements file $REQUIREMENTS_PATH from PWD=$PWD"
+        ls "$REQUIREMENTS_PATH"
     fi
+    pip list
 
     # download spacy English language model
     pip install spacy

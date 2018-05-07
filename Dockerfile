@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:1.13.12 as base
 
 MAINTAINER Hobson Lane
 
@@ -39,6 +39,8 @@ COPY $AICHAT_SRC $AICHAT_SRVPROJ
 # RUN python3 -m venv "${AICHAT_SRVVENV}"
 # ENV PATH="${AICHAT_SRVVENV}:$PATH"
 RUN pip3 install -r "$AICHAT_SRVREQ"
+
+FROM base
 
 WORKDIR $AICHAT_SRVMANAGEPY
 

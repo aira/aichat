@@ -21,6 +21,8 @@ dependencies:
   - scipy
   - swig
   - speechrecognition
+  - gensim
+  - boto3
   - pip:
     - exrex
 #    - google-cloud-vision

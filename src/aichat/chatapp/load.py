@@ -1,6 +1,6 @@
 import os
 
-from nlpia.loaders import read_csv
+from pandas import read_csv
 
 from aichat.chatsite.settings import CSV_DEFAULT_PATH, CSV_COLUMNS
 from .models import TriggerResponse

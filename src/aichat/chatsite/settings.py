@@ -25,7 +25,7 @@ def random_str(n=50):
 try:
     from .secret_settings import SECRET_KEY  # noqa
 except ImportError:
-    SECRET_KEY = os.enriron.get('DJANGO_SECRET_KEY', random_str(50))
+    SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', random_str(50))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

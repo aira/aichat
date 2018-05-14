@@ -1,0 +1,36 @@
+Tell me a riddle,"What's black and white and red all over?",,riddle 1 1
+* newspaper *,"Perfect! Great job!",riddle 1 1,
+* newspaper *,"Excellent! You must've heard that one before.",riddle 1 1,
+* answer *,"It's a newspaper! See? The word red is spelled R, E, A, D!",riddle 1 1,
+* hint *,"This thing is sometimes delivered to people by a boy on a bicycle.",riddle 1 1,riddle 1 1
+* tell me *,"It's a newspaper! See? The word red is spelled R, E, A, D!",riddle 1 1,
+* don't know *,"It's a newspaper! See? The word red is spelled R, E, A, D!",riddle 1 1,
+*,"Nope. Think about the sound of the words rather than their spelling. That may help.",riddle 1 1,riddle 1 1
+*,"Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",riddle * 1,riddle * 1
+* newspaper *,"Perfect! Great job!",,riddle 1 2
+* another,"Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",riddle 1 1,riddle 2 1
+* another,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 1 1,riddle 3 1
+* another riddle|one,"Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",riddle 1 1,riddle 2 1
+* another riddle|one,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 1 1,riddle 3 1
+Tell me a riddle,"Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",,riddle 2 1
+* African *,"Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",riddle 2 1,
+* European *,"Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",riddle 2 1,
+* don't know *,"I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ",riddle 2 1,
+* tell me *,"I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ",riddle 2 1,
+* hint *,"Have you seen any movies by Monty Python?",riddle 2 1,riddle 2 1
+* another,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 2 1,riddle 3 1
+* another,"Ok. What's black and white and red all over?",riddle 2 1,riddle 1 1
+* another one|riddle,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 2 1,riddle 3 1
+* another one|riddle,"Ok. What's black and white and red all over?",riddle 2 1,riddle 1 1
+Tell me a riddle,"What starts with an E, ends with an E, and has one letter in it?",,riddle 3 1
+* envelope *,"Perfect! Great job!",riddle 3 1,
+* envelope *,"Excellent! You must've heard that one before.",riddle 3 1,
+* hint *,"It's not the word ""eye"". That's too easy",riddle 3 1,riddle 3 1
+* hint *,"This is a thing that you might find in the post office.",riddle 3 1,riddle 3 1
+* answer *,"It's an Envelope! See, it (usually) only contains one letter!",riddle 3 1,
+* tell me *,"It's an Envelope! See, it (usually) only contains one letter!",riddle 3 1,
+* don't know *,"It's an Envelope! See, it (usually) only contains one letter!",riddle 3 1,
+* another,"Ok. What's black and white and red all over?",riddle 3 1,riddle 1 1
+* another,"Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",riddle 3 1,riddle 2 1
+* another one|riddle,"Ok. What's black and white and red all over?",riddle 3 1,riddle 1 1
+* another one|riddle,"Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",riddle 3 1,riddle 2 1

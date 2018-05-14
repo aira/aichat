@@ -53,13 +53,12 @@ def say(s, voice='stdout', **kwargs):
     """ Output utterance to UX (stdout, slack, twitter, TTS, etc)
 
     >>> say("Say this to the stdout.")
-    "Say this to the stdout."
+    Say this to the stdout.
     """
     if voice is 'stdout':
         print(s, **kwargs)
     elif callable(voice):
         return voice(s, **kwargs)
-    return s
 
 
 class Responder:

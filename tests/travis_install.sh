@@ -15,6 +15,9 @@ export CENV_NAME=$PROJECT_NAME"_cenv"
 echo "CENV_NAME=$CENV_NAME"
 export REQUIREMENTS_PATH="requirements-base.txt"
 echo "REQUIREMENTS_PATH=$REQUIREMENTS_PATH"
+DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/Downloads}
+mkdir -p $DOWNLOAD_DIR
+echo "DOWNLOAD_DIR=$DOWNLOAD_DIR"
 
 if [ $# -eq 1 ] ; then
     export HOST_OS=$1  # linux or darwin
@@ -59,8 +62,6 @@ if [[ "$DISTRIB" == "conda" ]] ; then
 
 
     # Use the anaconda3 installer
-    DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/downloads/anaconda3}
-    mkdir -p $DOWNLOAD_DIR
 
     if [[ -f "$DOWNLOAD_DIR/anaconda3.sh" || -f "$HOME/anaconda3/bin"  ]] ; then
         echo $(ls -hal $DOWNLOAD_DIR)

@@ -40,8 +40,8 @@ addons:
       - supervisor
       - sqlite3
       - gfortran
-      # - python-boto
-      # - python-boto3
+#       - python-boto
+#       - python3-boto
 #       - nginx
 
 # before_install:

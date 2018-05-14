@@ -44,12 +44,12 @@ echo "UNVERSIONED_OS=$UNVERSIONED_OS"
 if [ $UNVERSIONED_OS == "darwin" ] ; then
     brew install python3 portaudio swig
 elif [ $UNVERSIONED_OS == "linux" ] ; then
-    apt-get -qq -y update
-    apt-get install -y build-essential apt-utils gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip wget
-    apt-get build-dep -y python-pyaudio 
-    apt-get build-dep -y python3-pyaudio
-    apt-get install python-pyaudio python3-pyaudio
-    apt-get install -y nginx supervisor sqlite3 
+	sudo apt-get -qq -y update
+    # apt-get install -y build-essential apt-utils gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip wget
+    # apt-get build-dep -y python-pyaudio 
+    # apt-get build-dep -y python3-pyaudio
+    # apt-get install python-pyaudio python3-pyaudio
+    # apt-get install -y nginx supervisor sqlite3 
 fi
 
 if [[ "$DISTRIB" == "conda" ]] ; then

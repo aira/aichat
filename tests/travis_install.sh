@@ -136,3 +136,6 @@ fi
 if [[ "$COVERAGE" == "true" ]]; then
     pip install coverage coveralls
 fi
+
+echo "Currently working directory: $PWD"
+

@@ -56,7 +56,9 @@ addons:
 
 install:
   - source tests/travis_install.sh
-  - pip install -r requirements-base.txt
+  - ls
+  - echo $PWD
+#  - pip3 install -r requirements-base.txt
 
 before_script:
   - git config --global user.email "github@totalgood.com"

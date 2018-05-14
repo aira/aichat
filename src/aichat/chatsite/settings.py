@@ -11,8 +11,21 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import random
+import string
 
-from .secret_settings import SECRET_KEY  # noqa
+
+def random_str(n=50):
+    chars = ''.join(
+        [string.ascii_letters, string.digits, string.punctuation]
+    ).replace('\'', '').replace('"', '').replace('\\', '')
+    return ''.join([random.SystemRandom().choice(chars) for i in range(n)])
+
+
+try:
+    from .secret_settings import SECRET_KEY  # noqa
+except ImportError:
+    SECRET_KEY = os.enriron.get('DJANGO_SECRET_KEY', random_str(50))
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

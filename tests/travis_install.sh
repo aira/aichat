@@ -66,7 +66,7 @@ if [[ "$DISTRIB" == "conda" ]] ; then
         echo $(ls -hal $DOWNLOAD_DIR/anaconda3.sh)
     else
         wget http://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O $DOWNLOAD_DIR/anaconda3.sh
-        # chmod +x $DOWNLOAD_DIR/anaconda3.sh
+        chmod +x $DOWNLOAD_DIR/anaconda3.sh
         bash $DOWNLOAD_DIR/anaconda3.sh -b -u -p $HOME/anaconda3
     fi
 

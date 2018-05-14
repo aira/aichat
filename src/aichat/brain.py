@@ -49,8 +49,17 @@ except IOError:
     CONTEXT = Context(constants.DEFAULT_CONTEXT)
 
 
-def say(s):
-    print(s)
+def say(s, voice='stdout', **kwargs):
+    """ Output utterance to UX (stdout, slack, twitter, TTS, etc)
+
+    >>> say("Say this to the stdout.")
+    "Say this to the stdout."
+    """
+    if voice is 'stdout':
+        print(s, **kwargs)
+    elif callable(voice):
+        return voice(s, **kwargs)
+    return s
 
 
 class Responder:
@@ -116,7 +125,7 @@ class Responder:
             str: populated template to be uttered by the chat bot
 
         >>> responder = Responder()
-        >>> responder.find_response('Hi Bot') in ['Hi! How can I help you.', 'Hi user, how can I help you?']
+        >>> responder.find_response("Hi Bot") in ["Hi!", "Hi! How can I help you.", "Hi user, how can I help you?"]
         True
         """
         templates = self.find_response_templates(statement)
@@ -152,4 +161,6 @@ def respond(statement):
     True
     """
     return respond.responder.respond(statement)
+
+
 respond.responder = Responder()  # noqa

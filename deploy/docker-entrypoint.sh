@@ -35,7 +35,7 @@ tmux new-window -n:gunicorn 'exec gunicorn \
 	--workers 3 \
     --log-file=/srv/logs/gunicorn.log \
     --access-logfile=/srv/logs/access.log \
-	website.wsgi:application --reload'
+	aichat.chatsite.wsgi:application --reload'
 
 echo Starting bash terminal
 tmux new-window -n:bash 'exec bash'

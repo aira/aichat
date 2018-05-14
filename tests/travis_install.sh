@@ -62,14 +62,14 @@ if [[ "$DISTRIB" == "conda" ]] ; then
     DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/downloads/anaconda3}
     mkdir -p $DOWNLOAD_DIR
 
-    if [ -f "$DOWNLOAD_DIR/anaconda3.sh" || -f "$HOME/anaconda3/bin"  ] ; then
+    if [[ -f "$DOWNLOAD_DIR/anaconda3.sh" || -f "$HOME/anaconda3/bin"  ]] ; then
         echo $(ls -hal $DOWNLOAD_DIR)
     else
         wget http://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O $DOWNLOAD_DIR/anaconda3.sh
         chmod +x $DOWNLOAD_DIR/anaconda3.sh
     fi
 
-    if [ -f "$HOME/anaconda3/bin"  ] ; then
+    if [[ -f "$HOME/anaconda3/bin"  ]] ; then
         echo $(ls -hal "$HOME/anaconda3")
     else
         bash $DOWNLOAD_DIR/anaconda3.sh -b -u -p $HOME/anaconda3

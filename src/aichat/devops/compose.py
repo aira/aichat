@@ -40,13 +40,16 @@ def compose2ecs(dc_path='docker-compose.yml', family=None, task_role_arn=None):
         return ecs_task_definition
 
 
-def register_ecs(ecs_client=boto3.client('ecs'), ecs_task_definition='task.json'):
+def register_ecs(ecs_client=None, ecs_task_definition='task.json'):
     """Register an ECS task definition and return it.
 
     Args:
       ecs_client (boto3.client): Boto client to register your task with ECS
-      ecs_task_definition (dict): task definition, from Micah Hausler's ecs_from_dc
+          default: boto3.client('ecs', region_name='us-west-2')
+      ecs_task_definition (path, str, or dict): task definition, from Micah Hausler's ecs_from_dc
+          default: 'task.json'
     """
+    ecs_client = ecs_client | boto3.client('ecs', region_name='us-west-2')
     if isinstance(ecs_task_definition, str):
         if (not os.path.isfile(ecs_task_definition) and
                 os.path.isfile(os.path.join(DATA_DIR, ecs_task_definition))):

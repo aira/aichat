@@ -4,7 +4,7 @@
 
 # aichat[nlp]
 nlpia>=0.1.29
-pugnlp>=0.1.6
+pugnlp
 spacy==2.0.11
 gunicorn
 

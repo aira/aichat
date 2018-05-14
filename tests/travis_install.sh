@@ -44,11 +44,12 @@ echo "UNVERSIONED_OS=$UNVERSIONED_OS"
 if [ $UNVERSIONED_OS == "darwin" ] ; then
     brew install python3 portaudio swig
 elif [ $UNVERSIONED_OS == "linux" ] ; then
-	sudo apt-get -qq -y update
-    sudo apt-get install -y build-essential apt-utils gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip wget
-    sudo apt-get build-dep -y python-pyaudio 
-    sudo apt-get build-dep -y python3-pyaudio
-    sudo apt-get install python-pyaudio python3-pyaudio
+	echo "not installing anything, assuming that travis already installed python3, pyaudio, swig, etc..."
+ # sudo apt-get -qq -y update
+ #    sudo apt-get install -y build-essential apt-utils gfortran git python3 python3-dev python3-setuptools python3-virtualenv python3-pip wget
+ #    sudo apt-get build-dep -y python-pyaudio 
+ #    sudo apt-get build-dep -y python3-pyaudio
+ #    sudo apt-get install python-pyaudio python3-pyaudio
     # apt-get install -y nginx supervisor sqlite3 
 fi
 

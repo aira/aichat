@@ -13,7 +13,7 @@ echo "PROJECT_NAME=$PROJECT_NAME"
 export CENV_NAME=$PROJECT_NAME"_cenv"
 # export DISTRIB="conda"
 echo "CENV_NAME=$CENV_NAME"
-export REQUIREMENTS_PATH="$PROJECT_NAME/requirements-base.txt"
+export REQUIREMENTS_PATH="requirements-base.txt"
 echo "REQUIREMENTS_PATH=$REQUIREMENTS_PATH"
 
 if [ $# -eq 1 ] ; then
@@ -91,7 +91,9 @@ if [[ "$DISTRIB" == "conda" ]] ; then
         pip install -r "$REQUIREMENTS_PATH"
    	else
         echo "Unable to find requirements file $REQUIREMENTS_PATH from PWD=$PWD"
-        ls "$REQUIREMENTS_PATH"
+        echo "Currently working directory: $PWD"
+        echo "ls:"
+        ls
     fi
     pip list
 
@@ -137,5 +139,5 @@ if [[ "$COVERAGE" == "true" ]]; then
     pip install coverage coveralls
 fi
 
-echo "Currently working directory: $PWD"
+
 

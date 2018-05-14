@@ -56,8 +56,6 @@ addons:
 
 install:
   - source tests/travis_install.sh
-  - ls
-  - echo $PWD
 #  - pip3 install -r requirements-base.txt
 
 before_script:

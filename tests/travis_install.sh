@@ -54,6 +54,7 @@ elif [ $UNVERSIONED_OS == "linux" ] ; then
 fi
 
 if [[ "$DISTRIB" == "conda" ]] ; then
+	if [[ -f "CO"]]
     # Deactivate the travis-provided virtual environment and setup a conda-based environment instead
     deactivate || echo "no virtualenv has been activated yet (NOT running on a travis container)"
 
@@ -62,24 +63,28 @@ if [[ "$DISTRIB" == "conda" ]] ; then
     DOWNLOAD_DIR=${DOWNLOAD_DIR:-$HOME/downloads/anaconda3}
     mkdir -p $DOWNLOAD_DIR
 
-    if [[ -f "$DOWNLOAD_DIR/anaconda3.sh" ]] ; then
-        echo $(ls -hal $DOWNLOAD_DIR/anaconda3.sh)
+    if [ -f "$DOWNLOAD_DIR/anaconda3.sh" || -f "$HOME/anaconda3/bin"  ] ; then
+        echo $(ls -hal $DOWNLOAD_DIR)
     else
         wget http://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh -O $DOWNLOAD_DIR/anaconda3.sh
         chmod +x $DOWNLOAD_DIR/anaconda3.sh
-        bash $DOWNLOAD_DIR/anaconda3.sh -b -u -p $HOME/anaconda3
     fi
 
-    export PATH=$HOME/anaconda3/bin:$PATH
-    conda update -y conda
-    conda install -y pip swig nltk
-
-    # Configure the conda environment and put it in the path using the provided versions
-    if [[ -f "$ENVIRONMENT_YML" ]]; then
-        conda env create -n $CENV_NAME -f "$ENVIRONMENT_YML" || echo "conda env $CENV_NAME already exists"
+    if [ -f "$HOME/anaconda3/bin"  ] ; then
+        echo $(ls -hal "$HOME/anaconda3")
     else
-        echo "WARNING: Unable to find an environment.yml file !!!!!!"
-        conda create -n $CENV_NAME --yes python=$PYTHON_VERSION pip
+        bash $DOWNLOAD_DIR/anaconda3.sh -b -u -p $HOME/anaconda3
+	    export PATH=$HOME/anaconda3/bin:$PATH
+	    conda update -y conda
+	    conda install -y pip swig nltk
+
+	    # Configure the conda environment and put it in the path using the provided versions
+	    if [[ -f "$ENVIRONMENT_YML" ]]; then
+	        conda env create -n $CENV_NAME -f "$ENVIRONMENT_YML" || echo "conda env $CENV_NAME already exists"
+	    else
+	        echo "WARNING: Unable to find an environment.yml file !!!!!!"
+	        conda create -n $CENV_NAME --yes python=$PYTHON_VERSION pip
+	    fi
     fi
 
     source activate $CENV_NAME
@@ -95,7 +100,6 @@ if [[ "$DISTRIB" == "conda" ]] ; then
         echo "ls:"
         ls
     fi
-    pip list
 
     # download spacy English language model
     pip install spacy

@@ -54,7 +54,6 @@ elif [ $UNVERSIONED_OS == "linux" ] ; then
 fi
 
 if [[ "$DISTRIB" == "conda" ]] ; then
-	if [[ -f "CO"]]
     # Deactivate the travis-provided virtual environment and setup a conda-based environment instead
     deactivate || echo "no virtualenv has been activated yet (NOT running on a travis container)"
 

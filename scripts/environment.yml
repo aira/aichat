@@ -1,0 +1,40 @@
+name: aichat
+channels: !!python/tuple
+  - menpo
+  - conda-forge
+  - defaults
+  - akode
+dependencies:
+  - python=3.6
+#  - opencv
+  - cffi
+  - jasper
+#  - matplotlib
+  - numpy
+  - pandas
+  - pillow
+#  - pyqt
+  - pytest
+  - pytest-cov
+  - portaudio
+  - readline     
+  - scipy
+  - swig
+  - speechrecognition
+  - gensim
+  - boto3
+  - jupyter
+  - scipy
+  - pip:
+    - exrex
+#    - google-cloud-vision
+    - paho-mqtt
+#    - pocketsphinx
+#    - pyaudio
+    - pyttsx3
+    - regex
+    - soundfile
+    - sklearn
+    - scikit-image
+    - tensorflow==1.2.0
+    - vocabulary

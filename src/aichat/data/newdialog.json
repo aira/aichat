@@ -1,0 +1,138 @@
+{
+  "directed": true, 
+  "nodes": [
+    {
+      "name:": "root", 
+      "id": "node0"
+    }, 
+    {
+      "name:": "Bluetooth ?", 
+      "id": "node1"
+    }, 
+    {
+      "name:": "Chloe Skill Call Agent", 
+      "id": "node2"
+    }, 
+    {
+      "name:": "riddle * 1", 
+      "id": "node3"
+    }, 
+    {
+      "name:": "Tutorial Done", 
+      "id": "node4"
+    }, 
+    {
+      "name:": "Chloe Skill Jokes", 
+      "id": "node5"
+    }, 
+    {
+      "name:": "Bluetooth *", 
+      "id": "node6"
+    }, 
+    {
+      "name:": "Chloe Skill *", 
+      "id": "node7"
+    }, 
+    {
+      "name:": "Tutorial Start", 
+      "id": "node8"
+    }, 
+    {
+      "name:": "Tutorial Setup", 
+      "id": "node9"
+    }, 
+    {
+      "name:": "Call Agent", 
+      "id": "node10"
+    }, 
+    {
+      "name:": "Chloe Skill Privacy Mode", 
+      "id": "node11"
+    }, 
+    {
+      "name:": "riddle 1 1", 
+      "id": "node12"
+    }, 
+    {
+      "name:": "riddle 1 2", 
+      "id": "node13"
+    }, 
+    {
+      "name:": "Chloe Skill Jokes Repeat", 
+      "id": "node14"
+    }, 
+    {
+      "name:": "Bluetooth disconnect", 
+      "id": "node15"
+    }, 
+    {
+      "name:": "Chloe Skill Flashlight", 
+      "id": "node16"
+    }, 
+    {
+      "name:": "riddle 3 1", 
+      "id": "node17"
+    }, 
+    {
+      "name:": "riddle 2 1", 
+      "id": "node18"
+    }, 
+    {
+      "name:": "Chloe Skill Quickstart", 
+      "id": "node19"
+    }, 
+    {
+      "name:": "Bluetooth connecting speaker", 
+      "id": "node20"
+    }, 
+    {
+      "name:": "Tutorial *", 
+      "id": "node21"
+    }, 
+    {
+      "name:": "Bluetooth connecting paired", 
+      "id": "node22"
+    }, 
+    {
+      "name:": "Tutorial Last Tip", 
+      "id": "node23"
+    }, 
+    {
+      "name:": "Bluetooth connecting ?", 
+      "id": "node24"
+    }, 
+    {
+      "name:": "Chloe Skill Time Date", 
+      "id": "node25"
+    }, 
+    {
+      "name:": "Bluetooth connecting headset", 
+      "id": "node26"
+    }
+  ], 
+  "name": "Dialog", 
+  "links": [
+    {
+      "source": 0, 
+      "command": "Tell me ? riddle", 
+      "target": 1, 
+      "value": 1, 
+      "response": "What's black and white and read all over."
+    }, 
+    {
+      "source": 0, 
+      "command": "Tell me ? joke", 
+      "target": 2, 
+      "value": 2, 
+      "response": "A large number of mathematicians walk into a bar. The first one orders a beer, the second orders half a beer, the third orders a quarter of a glass of beer. Before the 4th mathematician can say anything the bartender slams 2 beers on the bar and says that's all you're getting. You women need to learn your limits."
+    }, 
+    {
+      "source": 1, 
+      "command": "* newspaper *", 
+      "target": 0, 
+      "value": 3, 
+      "response": "You got it!"
+    }
+  ], 
+  "multigraph": false
+}

@@ -1,6 +1,12 @@
 import os
+import json
 import pandas as pd
 import dialog_graph
+#Import Pattern.py
+import sys
+sys.path.insert(0, '/Users/rigom/src/aichat/src/aichat')
+
+import pattern.py
 
 
 def load_df(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
@@ -52,8 +58,13 @@ def nodes_to_dict(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
 	return dict_list
 
 def links_to_list(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
+	links = []
 	trigger_list = states_to_list('trigger')
 	response_list = states_to_list('response')
+	for state in range(len(trigger_list)):
+		patt = pattern.compile_pattern(trigger_list[state]).match(response_list[state])
+		links.append({'source': state, 'target': , 'command': 'response': 'value': 1})
+
 
 
 
@@ -61,8 +72,11 @@ def create_json(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
 	node_list = nodes_to_dict(path)
 	dialog = dialog_graph.base_dialog()
 	dialog['nodes'] = node_list
-	dialog['nodes'][0]['name:'] = 'root'
-	return dialog
+	#dialog['nodes'][0]['name:'] = 'root'
+	js = json.dumps(dialog,indent=2)
+	with open("../data/newdialog.json","w") as f:
+		f.write(js)
+	return js
 
 
 

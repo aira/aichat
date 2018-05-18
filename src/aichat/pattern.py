@@ -128,6 +128,8 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
     >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s."
     >>> compile_pattern(patt)
     '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s).'
+    >>> bool(re.match(patt, 'Joe says hello or "Yo!", but he don\' t'))
+    True
     """
     fuzziness = 3 if fuzziness is True else int(fuzziness) if fuzziness is not None else fuzziness
     if isinstance(fuzziness, float) and 0 < fuzziness < 1:

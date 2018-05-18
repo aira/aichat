@@ -14,7 +14,7 @@ REGEX_ALIASES = {
     r'\s': r'\t\r\n\ ',
     # r'\W': r'^a-zA-Z_',
     # r'\S': r'^\t\r\n\ ',
-    }
+}
 
 logger = logging.getLogger(__name__)
 
@@ -108,7 +108,7 @@ RESPONSE_MAPPING = [('Hi', 'Hi!'), ("Hi", "Hi, I'm Bot")]
 CONTEXT = {}
 
 
-def compile_pattern(patt, fuzziness=False, **kwargs):
+def expand_globstar(patt, fuzziness=False, **kwargs):
     r""" Compile a Bot Language Pattern (glob star or AIML syntax) into a python regular experssion object
 
     Args:
@@ -118,15 +118,15 @@ def compile_pattern(patt, fuzziness=False, **kwargs):
       compiled regex object if patt contains _, +, *, #, or | characters
       str for fixed string patterns (only letters, spaces and natural English punctuation
 
-    >>> compile_pattern("Hello|Hi *").match("Hi world")
+    >>> expand_globstar("Hello|Hi *").match("Hi world")
     <regex.Match object; span=(0, 8), match='Hi world'>
-    >>> compile_pattern("Hello World!")
+    >>> expand_globstar("Hello World!")
     'Hello World!'
     >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I don't."
-    >>> compile_pattern(patt)
+    >>> expand_globstar(patt)
     '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but I don\'t.'
     >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s."
-    >>> patt = compile_pattern(patt)
+    >>> patt = expand_globstar(patt)
     >>> patt
     '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s).'
     >>> bool(regex.match(patt, 'Joe says hello or "Yo!", but he don\' t.'))
@@ -142,20 +142,35 @@ def compile_pattern(patt, fuzziness=False, **kwargs):
         # r'{' in patt or r'[' in patt or '\\' or r'*' in patt or r'#' in patt:
         if fuzziness:
             patt = '(' + patt + '){e<=' + str(fuzziness) + '}'
-        if r'*' in patt or r'#' in patt:
-            patt = patt.replace(r'*', r'[-a-zA-Z]+')
-            patt = patt.replace(r'#', r'([-a-zA-Z]+[ ]{0,1})+')
-            patt = patt.replace(r' ', r'[ ]')
-            patt = patt.replace(r'[[ ]]', r'[ ]')  # undo redundant brackets
-            patt = patt.replace(r'[[ ]]', r'[ ]')  # undo tripply redundant brackets
-            return regex.compile(patt, **kwargs)
+        patt = patt.replace(r'*', r'[-.a-zA-Z0-9 ]+')
+        patt = regex.sub(r'\b?', r'([-a-zA-Z0-9]+[ ]*){0,1}')
+        patt = regex.sub(r'([^ ])\?', r'\1', patt)
         # if r'{' in patt or r'[' in patt or '\\' in patt:
         #     return regex.compile(patt, **kwargs)
-    else:
-        return patt
+    patt = patt.replace(r' ', r'[ ]')
+    patt = patt.replace(r'[[ ]]', r'[ ]')  # undo redundant brackets
+    patt = patt.replace(r'[[ ]]', r'[ ]')  # undo tripply redundant brackets
+    return patt
 
 
-def remove_punc(s: str):
+def compile_globstar(s):
+    """ Expand globstar pattern to create regex then compile that regex (but only if it looks like a regex)
+    >>> compile_globstar("Hello world?")
+    'Hello world?'
+    >>> compile_globstar("Hello|Hi world ?")
+    '(Hello|Hi) world '
+    """
+    patt = expand_globstar(s)
+    return compile_regex(patt)
+
+
+def compile_regex(s):
+    if isinstance(s, str) and next(regex.finditer(r'[[|*?{(\\]', s), None):
+        return regex.compile(s)
+    return s
+
+
+def remove_punc(s):
     r""" Replace all nondigit-nonword characters with spaces and delete meaningless spaces
 
     >>> remove_punc('<"hyphenated-word {variable}!!?">')  # doctest.NORMALIZE_WHITESPACE
@@ -214,7 +229,7 @@ class PatternMap:
             if pattern_template is None:
                 continue
             patt, template = pattern_template[0], pattern_template[1]
-            patt = compile_pattern(patt)
+            patt = expand_globstar(patt)
             if isinstance(patt, str):
                 self.exact_strs[patt] = self.exact_strs.get(patt, []) + [template]
                 lowered_patt = patt.lower()

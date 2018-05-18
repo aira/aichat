@@ -108,7 +108,7 @@ RESPONSE_MAPPING = [('Hi', 'Hi!'), ("Hi", "Hi, I'm Bot")]
 CONTEXT = {}
 
 
-def compile_pattern(patt, fuzziness=1, **kwargs):
+def compile_pattern(patt, fuzziness=False, **kwargs):
     r""" Compile a Bot Language Pattern (glob star or AIML syntax) into a python regular experssion object
 
     Args:
@@ -126,9 +126,10 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
     >>> compile_pattern(patt)
     '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but I don\'t.'
     >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s."
-    >>> compile_pattern(patt)
+    >>> patt = compile_pattern(patt)
+    >>> patt
     '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s).'
-    >>> bool(re.match(patt, 'Joe says hello or "Yo!", but he don\' t'))
+    >>> bool(regex.match(patt, 'Joe says hello or "Yo!", but he don\' t.'))
     True
     """
     fuzziness = 3 if fuzziness is True else int(fuzziness) if fuzziness is not None else fuzziness

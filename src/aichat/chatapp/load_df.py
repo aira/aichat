@@ -6,9 +6,9 @@ from aichat.constants import DATA_DIR
 
 def load_df(path=DATA_DIR):
     """
-    >>> load_df()
-                                                   trigger   response  source_state  dest_state
-    ...
+    >>> df = load_df()
+    >>> df.head(1)  # doctest: +ELLIPSIS +NORMALIZE_WHITESPACE
+                                                   trigger ...
     >>> len(load_df()) > 200
     True
     """

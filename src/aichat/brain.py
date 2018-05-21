@@ -91,6 +91,8 @@ class Responder:
     def interpolate_template(self, template, context_update=None):
         # FIXME: need `Context.recursive_update(nested_dict)`
         self.context.update(context_update if context_update is not None else {})
+        if not isinstance(template, str):
+            template = template[random.randint(0, len(template) - 1)]
         return template.format(**self.context)
 
     def find_response_templates(self, statement):

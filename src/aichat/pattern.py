@@ -1,6 +1,8 @@
 """ Statement->response mappings to select best response template for any statement """
+from __future__ import print_function
 import regex
 import logging
+
 
 try:
     import exrex

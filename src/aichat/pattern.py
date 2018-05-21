@@ -131,6 +131,8 @@ def expand_globstar(patt, fuzziness=False, **kwargs):
     '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s).'
     >>> bool(regex.match(patt, 'Joe says hello or "Yo!", but he don\' t.'))
     True
+    >>> expand_globstar('? hello? ? world? ? ?')
+    '?[ ]hello([-a-zA-Z0-9]{1,20}[\\s]{0,8}){0,1}[ ]?[ ]world([-a-zA-Z0-9]{1,20}[\\s]{0,8}){0,1}[ ]?[ ]?'
     """
     fuzziness = 3 if fuzziness is True else int(fuzziness) if fuzziness is not None else fuzziness
     if isinstance(fuzziness, float) and 0 < fuzziness < 1:
@@ -138,12 +140,13 @@ def expand_globstar(patt, fuzziness=False, **kwargs):
     if r'|' in patt:
         patt = regex.sub(r'(^|[^-\(\|a-zA-Z0-9])([a-zA-Z0-9]+\|)', r'\1(\2', patt)
         patt = regex.sub(r'(\|[a-zA-Z0-9]+)($|[^-\)\|a-zA-Z0-9])', r'\1)\2', patt)
-    if next(regex.finditer(r'[[*#{\\]', patt), None):
+    if next(regex.finditer(r'[[|?*#{\\]', patt), None):
         # r'{' in patt or r'[' in patt or '\\' or r'*' in patt or r'#' in patt:
         if fuzziness:
             patt = '(' + patt + '){e<=' + str(fuzziness) + '}'
-        patt = patt.replace(r'*', r'[-.a-zA-Z0-9 ]+')
-        patt = regex.sub(r'\b?', r'([-a-zA-Z0-9]+[ ]*){0,1}')
+        word_space = r'([-a-zA-Z0-9]{1,20}[\s]{0,8})'
+        patt = patt.replace(r'*', word_space + r'{0,64}')  # "*" => 0-64 words
+        patt = regex.sub(r'((^|[\s])[?])', r'\2' + word_space + r'{0,1}', patt)    # "?" => 0-1 word
         patt = regex.sub(r'([^ ])\?', r'\1', patt)
         # if r'{' in patt or r'[' in patt or '\\' in patt:
         #     return regex.compile(patt, **kwargs)

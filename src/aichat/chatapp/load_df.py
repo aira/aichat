@@ -4,8 +4,9 @@ import json
 import pandas as pd
 import dialog_graph
 import sys
+import regex
 
-from aichat.chatapp import dialog_graph
+# from aichat.chatapp import dialog_graph
 from aichat.constants import DATA_DIR
 
 
@@ -35,7 +36,7 @@ def load_df(path=DATA_DIR):
     return df_clean
 
 
-def nodes_to_list(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
+def nodes_to_list(path=DATA_DIR):
     state_list = states_to_list('source_state')
     dest_state = states_to_list('dest_state')
     node_list = state_list + dest_state
@@ -71,17 +72,6 @@ def nodes_to_dict(path=DATA_DIR):
     return dict_list
 
 
-def create_json(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
-    node_list = nodes_to_list(path)
-    dialog = dialog_graph.base_dialog()
-    dialog['nodes'] = node_list
-    #dialog['nodes'][0]['name:'] = 'root'
-    js = json.dumps(dialog, indent=2)
-    with open("../data/newdialog.json", "w") as f:
-        f.write(js)
-    return js
-
-
 def links_to_list(path=DATA_DIR):
     links = []
     trigger_list = states_to_list('trigger')
@@ -89,11 +79,21 @@ def links_to_list(path=DATA_DIR):
     for trig in range(len(trigger_list)):
         # get pattern from func
         for resp in range(len(response_list)):
-            match = re.match(patt, response_list[resp])
+            match = regex.match(patt, response_list[resp])
             if match:
                 links.append({'source': trig, 'target': resp,
                               'command': trigger_list[trig]['name:'], 'response': response_list[resp]['name:'], 'value': Fval})
     return links
+
+# def create_json(path=DATA_DIR):
+#     node_list = nodes_to_list(path)
+#     dialog = dialog_graph.base_dialog()
+#     dialog['nodes'] = node_list
+#     #dialog['nodes'][0]['name:'] = 'root'
+#     js = json.dumps(dialog, indent=2)
+#     with open("../data/newdialog.json", "w") as f:
+#         f.write(js)
+#     return js
 
 
 def create_json(path=DATA_DIR):

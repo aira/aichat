@@ -35,7 +35,7 @@ def load_df(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
 	df_clean = df_clean.fillna('')
 	return df_clean
 
-def states_to_list(state,path='/Users/rigom/src/aichat/src/aichat/chatapp/data',Fval = 1):
+def states_to_list(state,path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
 	state_list = []
 	df = load_df(path)
 	if state == 'source_state':
@@ -58,16 +58,15 @@ def nodes_to_list(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
 		dict_list.append({'name': node_list[node], 'id': 'node' + str(node)})
 	return dict_list
 
-def links_to_list(path='/Users/rigom/src/aichat/src/aichat/chatapp/data'):
+def links_to_list(path='/Users/rigom/src/aichat/src/aichat/chatapp/data',Fval = 1):
 	links = []
 	trigger_list = states_to_list('trigger')
 	response_list = states_to_list('response')
 	for trig in range(len(trigger_list)):
-		!#get Patter from func
 		for resp in range(len(response_list)):
 			match = re.match(patt,response_list[resp])
 			if match:
-				links.append({'source': trig, 'target': resp, 'command': trigger_list[trig]['name:'],'response': response_list[resp]['name:'],'value': Fval})
+				links.append({'source': trig, 'target': resp, 'command': trigger_list[trig]['name'],'response': response_list[resp]['name'],'value': Fval})
 	return links
 
 

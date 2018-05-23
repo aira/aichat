@@ -73,8 +73,43 @@ function draw_force_directed_graph(graph, width, height, tag, process_group, pro
         .enter().append("line")
             .attr("class", "link")
             .style("stroke", "#888")
-            .style("stroke-width", function(d) { return (stroke_width * Math.pow(pow_scale(d.value), 4.0) + 0.25); })
-            .style("opacity", function(d) { return (stroke_width * Math.pow(pow_scale(d.value), 4.0) + 0.15); });
+            .style(20, function(d) { return (stroke_width * Math.pow(pow_scale(d.value), 4.0) + 0.25); })
+            //.style("opacity", function(d) { return (stroke_width * Math.pow(pow_scale(d.value), 4.0) + 0.15); });
+            .style("opacity", opacity)
+            .on('mouseover', function(d) { var linkSelected = d3.select(this).style({opacity: '1.0'});})
+            .on('mouseout', function(d) { var linkSelected = d3.select(this).style({opacity: '' + opacity});});
+    var arrowHead = svg.append("svg:defs").selectAll(".link")
+        .data(graph.links)
+        .enter().append("marker")
+            .attr("id", "triangle")
+            .attr("refX", 100)
+            .attr("markerWidth", 60)
+            .attr("markerHeight", 60)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M 0 0 12 6 0 12 3 6")
+            .style("fill", "black");
+
+    // Currently does not work
+    // link.append("link:marker")
+        // .attr("id", "triangle")
+        // .attr("refX", 6)
+        // .attr("refY", 6)
+        // .attr("markerWidth", 30)
+        // .attr("markerHeight", 30)
+        // .attr("orient", "auto")
+        // .append("path")
+        // .attr("d", "M 0 0 12 6 0 12 3 6")
+        // .style("fill", "black");
+            
+    link.append("title")
+        .text(function(d) {
+            if (d.command.length <= 0) {
+                return "" + process_name(d.command); }
+            else {
+                return process_name(d.command) + "\n" + d.response; }
+            });
+
     var node = svg.selectAll(".node")
         .data(graph.nodes)
         .enter().append("circle")

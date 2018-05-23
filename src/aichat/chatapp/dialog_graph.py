@@ -43,4 +43,4 @@ def base_dialog():
           }
       ]
   }
-  return dialog
+    return dialog

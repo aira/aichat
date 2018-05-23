@@ -4,7 +4,6 @@ import json
 import pandas as pd
 import dialog_graph
 import regex
-from tqdm import tqdm
 from aichat import pattern
 
 # from aichat.chatapp import dialog_graph
@@ -33,7 +32,7 @@ def load_df(path=DATA_DIR):
         df_clean[column] = df[column]
     df_clean.to_csv("Export.csv", index=None)
     df_clean = df_clean.reset_index(drop=True)
-    df_clean = df_clean.fillna('')
+    df_clean = df_clean.fillna('root')
     return df_clean
 
 
@@ -41,41 +40,68 @@ DF = load_df()
 
 
 def nodes_to_list(path=DATA_DIR):
-    state_list = DF.source_state
-    dest_state = DF.dest_state
-    node_list = state_list + dest_state
-    node_list = list(set(node_list))
+    node_list = list(set(DF.dest_state.fillna('root')))
     dict_list = []
-    for node in range(len(node_list)):
-        dict_list.append({'name': node_list[node], 'id': 'node' + str(node)})
+    node_index = 0
+    for node in node_list:
+        # if '*' not in node and '?' not in node and '|' not in node:
+        dict_list.append(
+            {'name': node, 'id': 'node' + str(node_index)})
+        node_index = node_index + 1
     return dict_list
 
 
 def links_to_list(path=DATA_DIR, value=1):
+    # links = []
+    # source_list = DF.source_state
+    # dest_list = DF.dest_state
+    # nodes = nodes_to_list()
+    # nodes_index = {}
+    # for node_name in nodes:
+    #     nodes_index[node_name['name']] = node_name['id'].replace('node', '')
+    # for i, source in enumerate(source_list):
+    #     patt = pattern.expand_globstar(source)
+    #     for j, dest in enumerate(dest_list):
+    #         match = regex.match(patt, dest)
+    #         if match:
+    #             # if int(nodes_index[source]) == int(nodes_index[dest]):
+    #             #     continue
+    #             links.append({'source': int(nodes_index[source]),
+    #                           'target': int(nodes_index[dest]),
+    #                           'command': DF.trigger[j],
+    #                           'response': DF.response[j],
+    #                           'value': value})
+    # return links
     links = []
-    source_list = DF.source_state
-    dest_list = DF.dest_state
-    for i, source in enumerate(source_list):
-        for j, dest in enumerate(dest_list):
-            patt = pattern.expand_globstar(source)
-            match = regex.match(patt, dest)
-            if match:
-                links.append({'source': i,
-                              'target': j,
+    node_names = list(set(DF.dest_state))  # list of node names (states)
+    # print(nodes_index)
+    for i, source_pattern in enumerate(DF.source_state.values):
+        patt = pattern.expand_globstar(source_pattern)
+        for j, name in enumerate(node_names):
+            if ('{' in patt or '[' in patt) and regex.match(patt, name):
+                print(str(j) + source_pattern + ',' + name)
+                links.append({'source': node_names.index(name),
+                              'target': node_names.index(DF.dest_state.values[i]),
                               'command': DF.trigger[i],
                               'response': DF.response[i],
                               'value': value})
+            elif source_pattern == name:
+                print("nonpattern:" + str(j) + source_pattern + ',' + name)
+                links.append({'source': node_names.index(name),
+                              'target': node_names.index(DF.dest_state.values[i]),
+                              'command': DF.trigger[i],
+                              'response': DF.response[i],
+                              'value': value})
+
     return links
 
 
 def create_json(path=DATA_DIR):
-    node_list = nodes_to_list(path)
-    links_list = links_to_list()
     dialog = dialog_graph.base_dialog()
-    dialog['nodes'] = node_list
-    dialog['links'] = links_list
+    dialog['nodes'] = nodes_to_list()
+    dialog['links'] = links_to_list()
     js = json.dumps(dialog, indent=2)
-    with open("../data/dialog.json", "w") as f:
+    with open("../data/newdialog.json", "w") as f:
         f.write(js)
     return js
 

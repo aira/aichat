@@ -3,9 +3,11 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 # from django.views import generic
 from .models import TriggerResponse
+from . import load
 
 
 def index(request):
+    load.load_all()
     return render(request, 'chatapp/index.html', )
 
 

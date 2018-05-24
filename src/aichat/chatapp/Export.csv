@@ -1,0 +1,425 @@
+trigger,response,source_state,dest_state
+call * Aira|agent *,<call_agent>,,Call Agent
+call ? agent,<call_agent>,,Call Agent
+cancel|stop,<cancel_call>,Call Agent,
+*,"<cancel_call> Sorry, I didn't get that.",Call Agent,
+*,"Welcome Explorer! I'm Chloe, your Aira AI assistant. I have three tips to share with you to help you get started. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Start,Tutorial Setup
+,"Welcome Explorer! I'm Chloe, your Aira AI assistant. I have three tips to share with you to help you get started. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Start,Tutorial Setup
+* continue|next *,"To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Setup,Tutorial Last Tip
+*,"Sorry, I didn't get that. Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* repeat *,"Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* again *,"Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* one more time *,"Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* continue|next *,"For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Last Tip,Tutorial Done
+*,"Sorry, I didn't get that. Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* repeat *,"Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* again *,"Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* one more time *,"Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* no|skip|nah|nope|naw|dont *,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+* no thanks|thank *,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+Im good,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+* continue|next *,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+*,"Sorry, I wish I could understand that. It was probably something really nice.",Tutorial Done,
+Thanks,You got it,Tutorial Done,
+Thank you,It was my pleasure,Tutorial Done,
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+* repeat *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+* again *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+* one more time *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+cancel|stop|done|exit|leave|goodbye|bye|enough|stop,OK. You can always hold down on the call button and ask me how to use the Horizon phone.,Tutorial *,
+give|tell me a joke,"Hypochondriacs always take things, literally.",,
+give|tell me a joke,"I was going to tell a time traveling joke, but you didn't like it.",,
+give|tell me a joke,"If your parachute doesn't deploy, you have the rest of your life to fix it.",,
+give|tell me a joke,I just invented a new word: plagarism.,,
+give|tell me a joke,"Rest in peace, boiling water. You will be mist.",,
+give|tell me a joke,I wonder if the guy who came up with the term 'One Hit Wonder' came up with any other phrases.,,
+give|tell me a joke,"With the rise of self-driving vehicles, it’s only a matter of time before we get a country song where a guy’s truck leaves him too.",,
+stop,<stop>,,
+? read document ? high quality ? ?,<ms_ocr>,,
+? read ? ? continuous ? ?,<continuous_ocr>,,
+? read ? document,<google_ocr>,,
+read this,<google_ocr>,,
+read this document,<google_ocr>,,
+? read this ?,<google_ocr>,,
+read now,<abby_ocr>,,
+where ? ? ? pill|pills|bottle|bottles|medicine|meds,<pill_ocr_position>,,
+? ? read ? ? pill|pills|bottle|bottles|medicine|meds|label ? ?,<pill_ocr>,,
+what ? ? ? pill|pills|bottle|bottles|medicine|meds ?,<pill_ocr>,,
+detect pill|bottle,<pill_ocr_detection>,,
+what time is it|now ?,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+what date|day is it|today ?,"Today is {{now ""full""}}",,
+what is the time,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+what is the time ? now|today,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+what is the time of the day,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+what ? ? time ? ? ?,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+? tell me what|the ? ? time ? ?,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+time,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+do you have the time,"It is {{now ""pattern""  ""hh:mm, z""}}",,
+what day is today,"Today is {{now ""full""}}",,
+what ? ? day|date,"Today is {{now ""full""}}",,
+what ? ? today,"Today is {{now ""full""}}",,
+day|date,"Today is {{now ""full""}}",,
+turn ? ? flashlight ? ? on,<flashlight_on>,,
+turn ? ? on ? ? flashlight,<flashlight_on>,,
+turn ? ? flashlight ? ? off,<flashlight_off>,,
+turn ? ? off ? ? flashlight,<flashlight_off>,,
+is ? ? flashlight ? ? on|off|power|powered|deactivated|activated,flashlight is {{onoff flashlight_state}},,
+what is the flashlight status|state|power|powered,flashlight is {{onoff flashlight_state}},,
+? ? plan|minutes ? ?,<account_usage>,,
+? ? plan|minutes ? ?,<account_usage>,,
+? ? agent ? plan|minutes|minute ? ?,<account_usage>,,
+how many agent call minutes|minute|time|hours do I have this month,<account_usage>,,
+how many ? call minutes|minute|time|hours do I have left ? ?,<account_usage>,,
+how much time|minutes|minute|hour|agent|call|calls do I have left ? ?,<account_usage>,,
+how many minutes do I have left on my account,<account_usage>,,
+what is my account balance,<account_usage>,,
+? account balance ?,<account_usage>,,
+? account ? remaining ?,<account_usage>,,
+how many minutes do I have left|remaining|month,<account_usage>,,
+what minutes do I have left|remaining|month,<account_usage>,,
+how ? ? ? minute|minutes ? ? ? ?,<account_usage>,,
+how many minute|minutes ? ? ? ?,<account_usage>,,
+what version are we on,My version is {{version}},,
+what version are you,My version is {{version}},,
+what version ? ?,My version is {{version}},,
+version,My version is {{version}},,
+chloe version,My version is {{version}},,
+version number,My version is {{version}},,
+chloe version number,My version is {{version}},,
+? on airplane ?,<airplane_on>,,
+? off airplane ?,<airplane_off>,,
+turn on video correction,<turn_on_video_correction>,,
+turn off video correction,<turn_off_video_correction>,,
+turn on image correction,<turn_on_image_correction>,,
+turn off image correction,<turn_off_image_correction>,,
+switch to the phone camera,<use_phone_camera>,,
+switch to the horizon phone camera,<use_horizon_camera>,,
+start reading,<gcv_start_continuous_ocr>,,
+stop reading,<gcv_stop_continuous_ocr>,,
+start looking,<abby_start_continuous_ocr>,,
+stop looking,<abby_stop_continuous_ocr>,,
+shut down ?,<shutdown_device>,,
+power off ?,<shutdown_device>,,
+give|tell me a quote,Failure is success if we learn from it.,,
+give|tell me a quote,Never let schooling interfere with your education.,,
+give|tell me a quote,Take care of your body. It's the only place you have to live.,,
+give|tell me a quote,"quote,, This too shall pass,, end quote,, This is an ancient poet adage reflecting on the ephemeral nature of the human condition.",,
+tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"Bump dots are tactile stickers that can be placed on touchscreen interfaces like a refrigerator or microwave, as long as the screen doesn't dynamically change the location of buttons.",,
+tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",,
+tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,Never take a medicine that you aren't 100% sure of it's origin and usage or dosage. When in doubt call an Aira agent. Many medicine bottle labels can only be read accurately by a human.,,
+tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",,
+tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"If you have strong mobility skills, taking the stairs rather than the elevator at every opportunity can improve your long term health. If you prefer exercise machines you can play an interesting podcast or have Chloe read you a book while you work out.",,
+what|how is my|this|a|the ? wife i,{{active_network_status}},,
+what|how is my|this|a|the ? wi fi,{{active_network_status}},,
+what's my|this|a|the ? wifi|data|network|connectivity|internet,{{active_network_status}},,
+what's my|this|a|the ? wife i,{{active_network_status}},,
+what's my|this|a|the ? wi fi,{{active_network_status}},,
+how's my|this|a|the ? wifi|data|network|connectivity|internet,{{active_network_status}},,
+how's my|this|a|the ? wife i,{{active_network_status}},,
+how's my|this|a|the ? wi fi,{{active_network_status}},,
+what wifi|data|network|connectivity|internet ? am|is ? connected ?,{{active_network_status}},,
+what wifi|data|network|connectivity|internet ? am|is ? using,{{active_network_status}},,
+what wifi|data|network|connectivity|internet do ? have,{{active_network_status}},,
+what wife i ? am|is ? connected ?,{{active_network_status}},,
+what wife i ? am|is ? using,{{active_network_status}},,
+what wife i do ? have,{{active_network_status}},,
+am I connected to ? wifi|data|network|connectivity|internet,{{active_network_status}},,
+am I connected to ? cellular network,{{active_network_status}},,
+am I connected to ? wife i,{{active_network_status}},,
+what cellular network ? am|is ? connected ?,{{active_network_status}},,
+what cellular network ? am|is ? using,{{active_network_status}},,
+what cellular network do ? have,{{active_network_status}},,
+test signal strength,{{active_network_status}},,
+* newspaper *,Perfect! Great job!,riddle 1 1,
+* newspaper *,Excellent! You must've heard that one before.,riddle 1 1,
+* answer *,"It's a newspaper! See? The word red is spelled R, E, A, D!",riddle 1 1,
+* hint *,This thing is sometimes delivered to people by a boy on a bicycle.,riddle 1 1,riddle 1 1
+* tell me *,"It's a newspaper! See? The word red is spelled R, E, A, D!",riddle 1 1,
+* don't know *,"It's a newspaper! See? The word red is spelled R, E, A, D!",riddle 1 1,
+*,Nope. Think about the sound of the words rather than their spelling. That may help.,riddle 1 1,riddle 1 1
+*,Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.,riddle * 1,riddle * 1
+* newspaper *,Perfect! Great job!,,riddle 1 2
+* another,Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?,riddle 1 1,riddle 2 1
+* another,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 1 1,riddle 3 1
+* another riddle|one,Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?,riddle 1 1,riddle 2 1
+* another riddle|one,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 1 1,riddle 3 1
+Tell me a riddle,Sure. Here you go. What... is the air-speed velocity of an unladen swallow?,,riddle 2 1
+* African *,"Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",riddle 2 1,
+* European *,"Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",riddle 2 1,
+* don't know *,I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ,riddle 2 1,
+* tell me *,I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ,riddle 2 1,
+* hint *,Have you seen any movies by Monty Python?,riddle 2 1,riddle 2 1
+* another,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 2 1,riddle 3 1
+* another,Ok. What's black and white and red all over?,riddle 2 1,riddle 1 1
+* another one|riddle,"Ok. What starts with an E, ends with an E, and has one letter in it?",riddle 2 1,riddle 3 1
+* another one|riddle,Ok. What's black and white and red all over?,riddle 2 1,riddle 1 1
+Tell me a riddle,"What starts with an E, ends with an E, and has one letter in it?",,riddle 3 1
+* envelope *,Perfect! Great job!,riddle 3 1,
+* envelope *,Excellent! You must've heard that one before.,riddle 3 1,
+* hint *,"It's not the word ""eye"". That's too easy",riddle 3 1,riddle 3 1
+* hint *,This is a thing that you might find in the post office.,riddle 3 1,riddle 3 1
+* answer *,"It's an Envelope! See, it (usually) only contains one letter!",riddle 3 1,
+* tell me *,"It's an Envelope! See, it (usually) only contains one letter!",riddle 3 1,
+* don't know *,"It's an Envelope! See, it (usually) only contains one letter!",riddle 3 1,
+* another,Ok. What's black and white and red all over?,riddle 3 1,riddle 1 1
+* another,Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?,riddle 3 1,riddle 2 1
+* another one|riddle,Ok. What's black and white and red all over?,riddle 3 1,riddle 1 1
+* another one|riddle,Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?,riddle 3 1,riddle 2 1
+*,"Welcome Explorer! I'm Chloe, your Aira assistant. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" 
+ Would you like me to repeat that or continue?",Tutorial Start,Tutorial Setup
+,"Welcome Explorer! I'm Chloe, your Aira assistant. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" 
+ Would you like me to repeat that or continue?",Tutorial Start,Tutorial Setup
+* continue|next *,"To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Setup,Tutorial Last Tip
+*,"Sorry, I didn't get that. Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* repeat *,"Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* again *,"Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* one more time *,"Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Setup,Tutorial Setup
+* continue|next *,"For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Last Tip,Tutorial Done
+*,"Sorry, I didn't get that. Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* repeat *,"Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* again *,"Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* one more time *,"Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Last Tip,Tutorial Last Tip
+* no|skip|nah|nope|naw|dont *,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+* no thanks|thank *,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+Im good,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+* continue|next *,Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.,Tutorial Done,
+*,"Sorry, I wish I could understand that. It was probably something really nice.",Tutorial Done,
+Thanks,You got it,Tutorial Done,
+Thank you,It was my pleasure,Tutorial Done,
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+* repeat *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+* again *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+* one more time *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
+cancel|stop|done|exit|leave|goodbye|bye|enough,OK. You can always hold down on the call button and ask me how to use the Horizon phone.,Tutorial *,
+what is new,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
+what's new in this release|update,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
+what is new in this release|update,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
+read ? ? release notes,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
+read ? ? release notes ? 27,"version 27 adds 1 feature and 4 bug fixes. Feature 1, MQTT remote agent call initiation. Bug fix 1, remove deprecated calls of `onSpeechError`. Bug fix 2 Gradle build script cleanup and library version correction. Bug fix 3, Open source Android Speech library compiled to AAR and removed from source tree. Bug fix 4, build documentation and notes added.",,
+read ? ? release notes ? 34,version 34 adds Network connectivity bug fixes and templating language for Chloe utterance building.,,
+read ? ? release notes ? 35,"You can now ask Chloe to record a note, but she isn't yet able to search or list those notes. Also, bluetooth connection dialog and agent dashboard connectivity is now more robust.",,
+read ? ? release notes ? 36,More robust connection to the agent,,
+read ? ? release notes ? 37,"on version 37 I can now share your signal strength status. You can say, How is my connectivity? or What network am I connected to? Additionally, Aira has made Horizon connectivity improvements in this release, and will continue to make progress on the bluetooth and document reading features. Thank you for tuning in today!",,
+read ? ? release notes ? 38,Speaker mode and bluetooth improvements.,,
+read ? ? release notes ? 39,"Improved robustness of the app, automatic restarting on unexpected errors.",,
+read ? ? release notes ? 40,"Added Samsung KNOX support, text recognition with the phone's camera. Chloe now supports proximity-based reading.",,
+read ? ? release notes ? 41,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
+*,"Sorry, I haven't learned that yet. Thanks for being patient with me.",,
+*,"Sorry, I don't know that.",,
+*,"Sorry, I didn't get that.",,
+,"Sorry, I didn't hear you.",,
+,"Sorry, I didn't hear you. You can ask me what I can do any time.",,
+Are you there?,"Yes, I'm here for you.",,
+Are you there?,"Yes, I'm ready to help.",,
+hi|hello|hey|howdy|yo|sup,Hello! It's good to hear from you.,,
+hi|hello|hey|howdy|yo|sup,Hi! I'm listening.,,
+hi|hello|hey|howdy|yo|sup,"Hi, how can I help you?",,
+hi|hello|hey|howdy|yo|sup *,Hello! It's good to hear from you.,,
+hi|hello|hey|howdy|yo|sup *,Hi! I'm listening.,,
+hi|hello|hey|howdy|yo|sup *,"Hi, how can I help you?",,
+help,"You can ask me to call an agent, or dial customer support at 858 876 2472",,
+"Testing 1, 2, 3","4,5,6",,
+"Testing 1, 2, 3",Ok. What now?,,
+* nevermind,OK,,
+what|how is my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+what's my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+how's my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+how much battery do I have ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+how much battery ? ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+check my|the|this battery ? ,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+connect|find|look ? ? bluetooth|wireless device|devices|headset|headsets|earphone|earphones|earbud|earbuds,<find_bluetooth_devices>,,Bluetooth connecting headset
+connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices,<find_bluetooth_devices>,Bluetooth connecting ?,Bluetooth connecting headset
+connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices,<find_bluetooth_devices>,Bluetooth connecting ?,Bluetooth connecting headset
+connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices,<find_bluetooth_devices>,Bluetooth ?,Bluetooth connecting headset
+connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices,<find_bluetooth_devices>,Bluetooth ?,Bluetooth connecting headset
+connect|find|look ? ? speaker|speakers|tv|tvs,<find_bluetooth_speakers>,,Bluetooth connecting speaker
+connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs,<find_bluetooth_speakers>,,Bluetooth connecting speaker
+connect|find|look ? ? speaker|speakers|tv|tvs,<find_bluetooth_speakers>,Bluetooth connecting ?,Bluetooth connecting speaker
+connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs,<find_bluetooth_speakers>,Bluetooth connecting ?,Bluetooth connecting speaker
+connect|find|look ? ? speaker|speakers|tv|tvs,<find_bluetooth_speakers>,Bluetooth ?,Bluetooth connecting speaker
+connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs,<find_bluetooth_speakers>,Bluetooth ?,Bluetooth connecting speaker
+connect|find|look ? ? pair|paired|current ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones,<find_paired_devices>,,Bluetooth connecting paired
+what bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected,<paired_bluetooth_status>,,
+connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones,<find_paired_devices>,Bluetooth *,Bluetooth connecting paired
+connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones,<find_paired_devices>,Bluetooth *,Bluetooth connecting paired
+what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected,<paired_bluetooth_status>,Bluetooth *,
+disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?,<disconnect_bluetooth_device>,,Bluetooth disconnect
+disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?,<disconnect_bluetooth_device>,Bluetooth *,Bluetooth disconnect
+? ? turn on ? bluetooth,<bluetooth_on>,,
+? ? turn off ? bluetooth,<bluetooth_off>,,
+? ? turn on ? bluetooth,<bluetooth_on>,Bluetooth *,
+? ? turn off ? bluetooth,<bluetooth_off>,Bluetooth *,
+? ? turn ? bluetooth on,<bluetooth_on>,,
+? ? turn ? bluetooth off,<bluetooth_off>,,
+? ? turn ? bluetooth on,<bluetooth_on>,Bluetooth *,
+? ? turn ? bluetooth off,<bluetooth_off>,Bluetooth *,
+? ? enable ? bluetooth,<bluetooth_on>,,
+? ? disable ? bluetooth,<bluetooth_off>,,
+? ? enable ? bluetooth,<bluetooth_on>,Bluetooth *,
+? ? disable ? bluetooth,<bluetooth_off>,Bluetooth *,
+? ? bluetooth ? ? status,<bluetooth_status>,,
+? ? bluetooth ? ? status,<bluetooth_status>,Bluetooth *,
+? ? is ? bluetooth on|off|enabled|disabled ?,<bluetooth_status>,,
+? ? is ? bluetooth on|off|enabled|disabled ?,<bluetooth_status>,Bluetooth *,
+* no *,Ok. You can always connect to a device later,Bluetooth connecting speaker,
+* one|first|1|yes *,<connect_bluetooth_speaker_1>,Bluetooth connecting speaker,
+* two|second|2 *,<connect_bluetooth_speaker_2>,Bluetooth connecting speaker,
+* three|third|3 *,<connect_bluetooth_speaker_3>,Bluetooth connecting speaker,
+* four|fourth|4 *,<connect_bluetooth_speaker_4>,Bluetooth connecting speaker,
+* five|fifth|5 *,<connect_bluetooth_speaker_5>,Bluetooth connecting speaker,
+* six|sixth|6 *,<connect_bluetooth_speaker_6>,Bluetooth connecting speaker,
+* seven|seventh|7 *,<connect_bluetooth_speaker_7>,Bluetooth connecting speaker,
+* eight|eight|8 *,<connect_bluetooth_speaker_8>,Bluetooth connecting speaker,
+* nine|ninth|9 *,<connect_bluetooth_speaker_9>,Bluetooth connecting speaker,
+* ten|tenth|10 *,<connect_bluetooth_speaker_10>,Bluetooth connecting speaker,
+* eleven|eleventh|11 *,<connect_bluetooth_speaker_11>,Bluetooth connecting speaker,
+* twelve|twelfth|12 *,<connect_bluetooth_speaker_12>,Bluetooth connecting speaker,
+* thirteen|thirteenth|13 *,<connect_bluetooth_speaker_13>,Bluetooth connecting speaker,
+* fourteen|fourteenth|14 *,<connect_bluetooth_speaker_14>,Bluetooth connecting speaker,
+* fifteen|fifteenth|15 *,<connect_bluetooth_speaker_15>,Bluetooth connecting speaker,
+* sixteen|sixteenth|16 *,<connect_bluetooth_speaker_16>,Bluetooth connecting speaker,
+* seventeen|seventeenth|17 *,<connect_bluetooth_speaker_17>,Bluetooth connecting speaker,
+* eighteen|eighteenth|18 *,<connect_bluetooth_speaker_18>,Bluetooth connecting speaker,
+* nineteen|nineteenth|19 *,<connect_bluetooth_speaker_19>,Bluetooth connecting speaker,
+* twenty|twentieth|20 *,<connect_bluetooth_speaker_20>,Bluetooth connecting speaker,
+* no *,Ok. You can always connect to a device later,Bluetooth connecting headset,
+* one|first|1|yes *,<connect_bluetooth_headset_1>,Bluetooth connecting headset,
+* two|second|2 *,<connect_bluetooth_headset_2>,Bluetooth connecting headset,
+* three|third|3 *,<connect_bluetooth_headset_3>,Bluetooth connecting headset,
+* four|fourth|4 *,<connect_bluetooth_headset_4>,Bluetooth connecting headset,
+* five|fifth|5 *,<connect_bluetooth_headset_5>,Bluetooth connecting headset,
+* six|sixth|6 *,<connect_bluetooth_headset_6>,Bluetooth connecting headset,
+* seven|seventh|7 *,<connect_bluetooth_headset_7>,Bluetooth connecting headset,
+* eight|eight|8 *,<connect_bluetooth_headset_8>,Bluetooth connecting headset,
+* nine|ninth|9 *,<connect_bluetooth_headset_9>,Bluetooth connecting headset,
+* ten|tenth|10 *,<connect_bluetooth_headset_10>,Bluetooth connecting headset,
+* eleven|eleventh|11 *,<connect_bluetooth_headset_11>,Bluetooth connecting headset,
+* twelve|twelfth|12 *,<connect_bluetooth_headset_12>,Bluetooth connecting headset,
+* thirteen|thirteenth|13 *,<connect_bluetooth_headset_13>,Bluetooth connecting headset,
+* fourteen|fourteenth|14 *,<connect_bluetooth_headset_14>,Bluetooth connecting headset,
+* fifteen|fifteenth|15 *,<connect_bluetooth_headset_15>,Bluetooth connecting headset,
+* sixteen|sixteenth|16 *,<connect_bluetooth_headset_16>,Bluetooth connecting headset,
+* seventeen|seventeenth|17 *,<connect_bluetooth_headset_17>,Bluetooth connecting headset,
+* eighteen|eighteenth|18 *,<connect_bluetooth_headset_18>,Bluetooth connecting headset,
+* nineteen|nineteenth|19 *,<connect_bluetooth_headset_19>,Bluetooth connecting headset,
+* twenty|twentieth|20 *,<connect_bluetooth_headset_20>,Bluetooth connecting headset,
+* one|first|1|yes *,<disconnect_bluetooth_1>,Bluetooth disconnect,
+* two|second|2 *,<disconnect_bluetooth_2>,Bluetooth disconnect,
+* three|third|3 *,<disconnect_bluetooth_3>,Bluetooth disconnect,
+* four|fourth|4 *,<disconnect_bluetooth_4>,Bluetooth disconnect,
+* five|fifth|5 *,<disconnect_bluetooth_5>,Bluetooth disconnect,
+* six|sixth|6 *,<disconnect_bluetooth_6>,Bluetooth disconnect,
+* seven|seventh|7 *,<disconnect_bluetooth_7>,Bluetooth disconnect,
+* eight|eight|8 *,<disconnect_bluetooth_8>,Bluetooth disconnect,
+* nine|ninth|9 *,<disconnect_bluetooth_9>,Bluetooth disconnect,
+* ten|tenth|10 *,<disconnect_bluetooth_10>,Bluetooth disconnect,
+* eleven|eleventh|11 *,<disconnect_bluetooth_11>,Bluetooth disconnect,
+* twelve|twelfth|12 *,<disconnect_bluetooth_12>,Bluetooth disconnect,
+* thirteen|thirteenth|13 *,<disconnect_bluetooth_13>,Bluetooth disconnect,
+* fourteen|fourteenth|14 *,<disconnect_bluetooth_14>,Bluetooth disconnect,
+* fifteen|fifteenth|15 *,<disconnect_bluetooth_15>,Bluetooth disconnect,
+* sixteen|sixteenth|16 *,<disconnect_bluetooth_16>,Bluetooth disconnect,
+* seventeen|seventeenth|17 *,<disconnect_bluetooth_17>,Bluetooth disconnect,
+* eighteen|eighteenth|18 *,<disconnect_bluetooth_18>,Bluetooth disconnect,
+* nineteen|nineteenth|19 *,<disconnect_bluetooth_19>,Bluetooth disconnect,
+* twenty|twentieth|20 *,<disconnect_bluetooth_20>,Bluetooth disconnect,
+* no *,Ok. You can always connect to a device later,Bluetooth connecting paired,
+* one|first|1|yes *,<connect_bluetooth_paired_1>,Bluetooth connecting paired,
+* two|second|2 *,<connect_bluetooth_paired_2>,Bluetooth connecting paired,
+* three|third|3 *,<connect_bluetooth_paired_3>,Bluetooth connecting paired,
+* four|fourth|4 *,<connect_bluetooth_paired_4>,Bluetooth connecting paired,
+* five|fifth|5 *,<connect_bluetooth_paired_5>,Bluetooth connecting paired,
+* six|sixth|6 *,<connect_bluetooth_paired_6>,Bluetooth connecting paired,
+* seven|seventh|7 *,<connect_bluetooth_paired_7>,Bluetooth connecting paired,
+* eight|eight|8 *,<connect_bluetooth_paired_8>,Bluetooth connecting paired,
+* nine|ninth|9 *,<connect_bluetooth_paired_9>,Bluetooth connecting paired,
+* ten|tenth|10 *,<connect_bluetooth_paired_10>,Bluetooth connecting paired,
+* eleven|eleventh|11 *,<connect_bluetooth_paired_11>,Bluetooth connecting paired,
+* twelve|twelfth|12 *,<connect_bluetooth_paired_12>,Bluetooth connecting paired,
+* thirteen|thirteenth|13 *,<connect_bluetooth_paired_13>,Bluetooth connecting paired,
+* fourteen|fourteenth|14 *,<connect_bluetooth_paired_14>,Bluetooth connecting paired,
+* fifteen|fifteenth|15 *,<connect_bluetooth_paired_15>,Bluetooth connecting paired,
+* sixteen|sixteenth|16 *,<connect_bluetooth_paired_16>,Bluetooth connecting paired,
+* seventeen|seventeenth|17 *,<connect_bluetooth_paired_17>,Bluetooth connecting paired,
+* eighteen|eighteenth|18 *,<connect_bluetooth_paired_18>,Bluetooth connecting paired,
+* nineteen|nineteenth|19 *,<connect_bluetooth_paired_19>,Bluetooth connecting paired,
+* twenty|twentieth|20 *,<connect_bluetooth_paired_20>,Bluetooth connecting paired,
+* stop|cancel|exit|nevermind *,Stopping <stop_bluetooth_timer>,Bluetooth *,
+what can you|I|Chloe do,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
+? ? what your features are,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
+what are your features,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Call Agent
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Quickstart,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Quickstart,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Quickstart,Chloe Skill Quickstart
+* repeat *,"Sure. I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Quickstart
+* again *,"Sure. I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Quickstart
+* one more time *,"Sure. I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",Chloe Skill Quickstart,Chloe Skill Quickstart
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Privacy Mode
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Call Agent,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Call Agent,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Call Agent,Chloe Skill Call Agent
+* repeat *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Call Agent
+* again *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Call Agent
+* one more time *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Call Agent,Chloe Skill Call Agent
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"To turn privacy mode on and off during a call, you can press on the call button once. Privacy mode disables your audio and video so that the agent cannot hear or see anything on your end. Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Flashlight
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Privacy Mode,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Privacy Mode,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+* repeat *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+* again *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+* one more time *,"Sure. To call an agent, you can double press the call button, or say, ""Call an agent."" Would you like to learn more?",Chloe Skill Privacy Mode,Chloe Skill Privacy Mode
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Time Date
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Flashlight,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Flashlight,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Flashlight,Chloe Skill Flashlight
+* repeat *,"Sure. I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Flashlight
+* again *,"Sure. I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Flashlight
+* one more time *,"Sure. I can tell you the status of your minutes and battery level. You can say, ""how many minutes do I have?"" or ""how much battery do I have?"" Would you like to learn more?",Chloe Skill Flashlight,Chloe Skill Flashlight
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Jokes
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Time Date,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Time Date,
+*,"Sorry, I didn't get that. Would you like to know more about what I can do?",Chloe Skill Time Date,Chloe Skill Time Date
+* repeat *,"Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Time Date
+* again *,"Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Time Date
+* one more time *,"Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say ""turn on the flashlight"" or ""turn off the flashlight."" Would you like to learn more?",Chloe Skill Time Date,Chloe Skill Time Date
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes Repeat
+no|skip|nah|nope|naw,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Jokes,
+maybe later,No worries. You can always hold down on the call button and ask me what I can do.,Chloe Skill Jokes,
+*,"Sorry, I didn't get that. Would you like to learn more about what I can do?",Chloe Skill Jokes,Chloe Skill Jokes
+* repeat *,"Sure. I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes
+* again *,"Sure. I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes
+* one more time *,"Sure. I can tell the time and day. You can say ""what time is it?"" or ""what day is it?"" Would you like to learn more?",Chloe Skill Jokes,Chloe Skill Jokes
+yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,That's all I know for now. I am excited to learn more skills and become more helpful to you.,Chloe Skill Jokes Repeat,
+no|skip|nah|nope|naw,No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.,Chloe Skill Jokes Repeat,
+maybe later,No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.,Chloe Skill Jokes Repeat,
+*,"Sorry, I didn't get that. But that's all I know for now. I am excited to learn more skills and become more helpful to you.",Chloe Skill Jokes Repeat,
+Thanks,No problem. Do check back for more skills soon!,Chloe Skill Jokes Repeat,
+Thank you,You're welcome. I will learn more skills soon.,Chloe Skill Jokes Repeat,
+* repeat *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
+* again *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
+* one more time *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
+cancel|stop|done|exit|leave|goodbye|bye|enough,OK,Chloe Skill *,
+turn on ? wife i ?,<wifi_on>,,
+turn on ? wi fi ?,<wifi_on>,,
+enable ? wifi|wireless ?,<wifi_on>,,
+enable ? wife i ?,<wifi_on>,,
+enable ? wi fi ?,<wifi_on>,,
+wireless|wifi turned on,<wifi_on>,,
+wife i turned on,<wifi_on>,,
+wi fi turned on,<wifi_on>,,
+wireless|wifi enabled,<wifi_on>,,
+wife i enabled,<wifi_on>,,
+wi fi enabled,<wifi_on>,,
+turn off ? wifi|wireless ?,<wifi_off>,,
+turn off ? wife i ?,<wifi_off>,,
+turn off ? wi fi ?,<wifi_off>,,
+disable ? wifi|wireless ?,<wifi_off>,,
+disable ? wife i ?,<wifi_off>,,
+disable ? wi fi ?,<wifi_off>,,
+wireless|wifi turned off,<wifi_off>,,
+wife i turned off,<wifi_off>,,
+wi fi turned off,<wifi_off>,,
+wireless|wifi disabled,<wifi_off>,,
+wife i disabled,<wifi_off>,,
+wi fi disabled,<wifi_off>,,

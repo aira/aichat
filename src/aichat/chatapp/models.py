@@ -27,3 +27,6 @@ class TriggerResponse(AuthoredModel):
     source_state = CharField(max_length=200)
     dest_state = CharField(max_length=200)
     is_globstar = NullBooleanField(choices=CHOICES_IS_GLOBSTAR, max_length=3, null=True, blank=True, default=None)
+
+    def __str__(self):
+        return self.source_state + '  ' + self.dest_state

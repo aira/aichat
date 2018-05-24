@@ -29,4 +29,4 @@ class TriggerResponse(AuthoredModel):
     is_globstar = NullBooleanField(choices=CHOICES_IS_GLOBSTAR, max_length=3, null=True, blank=True, default=None)
 
     def __str__(self):
-        return self.source_state + '  ' + self.dest_state
+        return self.source_state + ' to ' + self.dest_state

@@ -1,6 +1,16 @@
 from django.contrib import admin
 
-from .models import TriggerResponse
+from .models import TriggerResponse, node, edge
 
 
-admin.site.register(TriggerResponse)
+class TriggerResponseAdmin(admin.ModelAdmin):
+    list_display = ('source_state', 'dest_state', 'trigger', 'response')
+
+
+class edgeAdmin(admin.ModelAdmin):
+    list_display = ('trigger', 'response')
+
+
+admin.site.register(TriggerResponse, TriggerResponseAdmin)
+admin.site.register(edge, edgeAdmin)
+admin.site.register(node)

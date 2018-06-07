@@ -5,8 +5,6 @@ import pandas as pd
 import dialog_graph
 import regex
 from aichat import pattern
-
-# from aichat.chatapp import dialog_graph
 from aichat.constants import DATA_DIR
 
 
@@ -44,7 +42,6 @@ def nodes_to_list(path=DATA_DIR):
     dict_list = []
     node_index = 0
     for node in node_list:
-        # if '*' not in node and '?' not in node and '|' not in node:
         dict_list.append(
             {'name': node, 'id': 'node' + str(node_index)})
         node_index = node_index + 1
@@ -52,29 +49,9 @@ def nodes_to_list(path=DATA_DIR):
 
 
 def links_to_list(path=DATA_DIR, value=1):
-    # links = []
-    # source_list = DF.source_state
-    # dest_list = DF.dest_state
-    # nodes = nodes_to_list()
-    # nodes_index = {}
-    # for node_name in nodes:
-    #     nodes_index[node_name['name']] = node_name['id'].replace('node', '')
-    # for i, source in enumerate(source_list):
-    #     patt = pattern.expand_globstar(source)
-    #     for j, dest in enumerate(dest_list):
-    #         match = regex.match(patt, dest)
-    #         if match:
-    #             # if int(nodes_index[source]) == int(nodes_index[dest]):
-    #             #     continue
-    #             links.append({'source': int(nodes_index[source]),
-    #                           'target': int(nodes_index[dest]),
-    #                           'command': DF.trigger[j],
-    #                           'response': DF.response[j],
-    #                           'value': value})
-    # return links
+
     links = []
-    node_names = list(set(DF.dest_state))  # list of node names (states)
-    # print(nodes_index)
+    node_names = list(set(DF.dest_state))
     for i, source_pattern in enumerate(DF.source_state.values):
         patt = pattern.expand_globstar(source_pattern)
         for j, name in enumerate(node_names):
@@ -92,7 +69,6 @@ def links_to_list(path=DATA_DIR, value=1):
                               'command': DF.trigger[i],
                               'response': DF.response[i],
                               'value': value})
-
     return links
 
 

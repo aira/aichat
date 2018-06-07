@@ -27,6 +27,12 @@ try:
 except ImportError:
     SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', random_str(50))
 
+try:
+    from .secret_settings import DATABASES_DEFAULT_PASSWORD  # noqa
+except ImportError:
+    DATABASES_DEFAULT_PASSWORD = None
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, 'chatapp', 'data')
@@ -91,6 +97,14 @@ WSGI_APPLICATION = 'aichat.chatsite.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ai',
+        'USER': 'aidev',
+        'PASSWORD': DATABASES_DEFAULT_PASSWORD,
+        'HOST': 'ai-agent-videos-db-small.ca9rqvayki87.us-west-2.rds.amazonaws.com',
+        'PORT': '5432',
+    },
+    'sqlite': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }

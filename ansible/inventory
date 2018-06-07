@@ -1,0 +1,16 @@
+---
+all:
+    hosts:
+        localhost:
+            ansible_ssh_user: hobs
+aira:
+    hosts:
+        aichat:
+            ansible_ssh_host: 54.201.54.71
+            ansible_ssh_user: ubuntu
+            ansible_ssh_port: 22
+            ansible_ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/ai-dev-external.pem"
+totalgood:
+    hosts:
+        openchat:
+            ansible_ssh_private_key_file: "{{ lookup('env', 'HOME') }}/.ssh/~/.ssh/totalgood_openchat.pem"

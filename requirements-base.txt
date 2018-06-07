@@ -1,6 +1,5 @@
 # IMPORTANT: Add these dependencies to your setup.cfg but unpinned to a verstion.
-
-# aichat has no mandatory dependencies!
+psycopg2>=2.7.4
 
 # aichat[nlp]
 nlpia>=0.1.29
@@ -10,8 +9,9 @@ gunicorn
 
 # 2nd degree aichat[nlp] dependencies (nlpia, pugnlp, spacy)
 boto3==1.6.18
-Django==2.0.2
-django-extensions==2.0.7
+# aichat[django]
+django>=2.0.2,<2.1.0
+django-extensions>=2.0.7
 future
 fuzzywuzzy==0.16.0
 gensim==3.4.0

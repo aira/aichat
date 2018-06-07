@@ -20,7 +20,7 @@ except ImportError:
     SECRET_KEY = None
 
 try:
-    from .secret_settings import DATABASES_DEFAULT_PASSWORD  # noqa
+    from .secret_settings import DATABASES_DEFAULT  # noqa
 except ImportError:
     DATABASES_DEFAULT = None
 
@@ -96,11 +96,18 @@ WSGI_APPLICATION = 'aichat.chatsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': DATABASES_DEFAULT or {
+if DATABASES_DEFAULT:
+    print('Using AWS RDS Database server...')
+else:
+    DATABASES_DEFAULT = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
+    }
+    print('Using Local sqlite file at {}'.format(DATABASES_DEFAULT['NAME']))
+
+
+DATABASES = {
+    'default': DATABASES_DEFAULT
 }
 
 

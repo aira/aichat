@@ -14,23 +14,15 @@ import os
 import random
 import string
 
-
-def random_str(n=50):
-    chars = ''.join(
-        [string.ascii_letters, string.digits, string.punctuation]
-    ).replace('\'', '').replace('"', '').replace('\\', '')
-    return ''.join([random.SystemRandom().choice(chars) for i in range(n)])
-
-
 try:
     from .secret_settings import SECRET_KEY  # noqa
 except ImportError:
-    SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', random_str(50))
+    SECRET_KEY = None
 
 try:
     from .secret_settings import DATABASES_DEFAULT_PASSWORD  # noqa
 except ImportError:
-    DATABASES_DEFAULT_PASSWORD = None
+    DATABASES_DEFAULT = None
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -39,6 +31,15 @@ DATA_DIR = os.path.join(BASE_DIR, 'chatapp', 'data')
 CSV_DEFAULT_PATH = os.path.join(DATA_DIR, 'chloe.csv')
 CSV_COLUMNS = ('trigger', 'response', 'source_state', 'dest_state')
 
+
+def random_str(n=50):
+    chars = ''.join(
+        [string.ascii_letters, string.digits, string.punctuation]
+    ).replace('\'', '').replace('"', '').replace('\\', '')
+    return ''.join([random.SystemRandom().choice(chars) for i in range(n)])
+
+
+SECRET_KEY = SECRET_KEY or os.environ.get('DJANGO_SECRET_KEY', random_str(50))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -96,18 +97,10 @@ WSGI_APPLICATION = 'aichat.chatsite.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'ai',
-        'USER': 'aidev',
-        'PASSWORD': DATABASES_DEFAULT_PASSWORD,
-        'HOST': 'ai-agent-videos-db-small.ca9rqvayki87.us-west-2.rds.amazonaws.com',
-        'PORT': '5432',
-    },
-    'sqlite': {
+    'default': DATABASES_DEFAULT or {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
 }
 
 

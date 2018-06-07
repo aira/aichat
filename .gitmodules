@@ -1,0 +1,3 @@
+[submodule "ansible-django-stack"]
+	path = ansible-django-stack
+	url = git@github.com:aira/ansible-django-stack

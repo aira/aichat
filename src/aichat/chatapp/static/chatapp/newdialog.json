@@ -1,0 +1,765 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "name": "Dialog",
+  "nodes": [
+    {
+      "name": "Tutorial Setup",
+      "id": "node0"
+    },
+    {
+      "name": "riddle * 1",
+      "id": "node1"
+    },
+    {
+      "name": "riddle 1 2",
+      "id": "node2"
+    },
+    {
+      "name": "Tutorial Done",
+      "id": "node3"
+    },
+    {
+      "name": "Chloe Skill Jokes Repeat",
+      "id": "node4"
+    },
+    {
+      "name": "Chloe Skill Flashlight",
+      "id": "node5"
+    },
+    {
+      "name": "root",
+      "id": "node6"
+    },
+    {
+      "name": "Chloe Skill Quickstart",
+      "id": "node7"
+    },
+    {
+      "name": "riddle 2 1",
+      "id": "node8"
+    },
+    {
+      "name": "Tutorial Last Tip",
+      "id": "node9"
+    },
+    {
+      "name": "Bluetooth connecting headset",
+      "id": "node10"
+    },
+    {
+      "name": "Bluetooth disconnect",
+      "id": "node11"
+    },
+    {
+      "name": "riddle 1 1",
+      "id": "node12"
+    },
+    {
+      "name": "Call Agent",
+      "id": "node13"
+    },
+    {
+      "name": "Chloe Skill Time Date",
+      "id": "node14"
+    },
+    {
+      "name": "Bluetooth connecting paired",
+      "id": "node15"
+    },
+    {
+      "name": "riddle 3 1",
+      "id": "node16"
+    },
+    {
+      "name": "Bluetooth connecting speaker",
+      "id": "node17"
+    },
+    {
+      "name": "Chloe Skill Privacy Mode",
+      "id": "node18"
+    },
+    {
+      "name": "Chloe Skill Call Agent",
+      "id": "node19"
+    },
+    {
+      "name": "Chloe Skill Jokes",
+      "id": "node20"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough|stop",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough|stop",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough|stop",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 1,
+      "command": "*",
+      "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 1,
+      "command": "*",
+      "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 1,
+      "command": "*",
+      "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 # Read more under http://docs.travis-ci.com/user/build-configuration/
 # THIS SCRIPT IS SUPPOSED TO BE AN EXAMPLE. MODIFY IT ACCORDING TO YOUR NEEDS!
 
-sudo: false
+sudo: required
 
 language: python
 
@@ -22,20 +22,29 @@ env:
            NUMPY_VERSION="1.13.1" SCIPY_VERSION="0.19.1" PANDAS_VERSION="0.20.3"
            CYTHON_VERSION="0.26.1" PYAMG_VERSION="3.3.2" PILLOW_VERSION="4.3.0"
            COVERAGE=true CHECK_PYTEST_SOFT_DEPENDENCY="true" TEST_DOCSTRINGS="true" RUN_FLAKE8="false"
+    - DISTRIB="conda" PYTHON_VERSION="2.7.10" COVERAGE="true"
+           COVERAGE=true CHECK_PYTEST_SOFT_DEPENDENCY="true" TEST_DOCSTRINGS="true" RUN_FLAKE8="false"
     # - DISTRIB="ubuntu" PYTHON_VERSION="3.6" COVERAGE="true"
     # - DISTRIB="conda" PYTHON_VERSION="3.6" COVERAGE="false"
 
-# addons:
-#   apt:
-#     packages:
-#       - git
-#       - python-pip
-#       - python-pyaudio
-#       - python3-pyaudio
-#       - pocketsphinx
+addons:
+  apt:
+    packages:
+      - git
+      - wget
+      - build-essential
+      - apt-utils
+      - python3
+      - python3-dev
+      - python3-setuptools
+      - python3-pip
+      - python3-pyaudio
+      - supervisor
+      - sqlite3
+      - gfortran
+#       - python-boto
+#       - python3-boto
 #       - nginx
-#       - supervisor
-#       - sqlite3
 
 # before_install:
 #   - sudo apt-get -qq update
@@ -51,10 +60,11 @@ env:
 
 install:
   - source tests/travis_install.sh
+#  - pip3 install -r requirements-base.txt
 
 before_script:
   - git config --global user.email "github@totalgood.com"
-  - git config --global user.name "Aira"
+  - git config --global user.name "Hobson Lane"
 
 script:
   - python setup.py test

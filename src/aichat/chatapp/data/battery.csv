@@ -1,0 +1,7 @@
+battery level,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+what|how is my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+what's my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+how's my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+how much battery do I have ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+how much battery ? ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+check my|the|this battery ? ,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,

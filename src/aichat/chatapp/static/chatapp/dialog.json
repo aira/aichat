@@ -1,0 +1,3523 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "name": "Dialog",
+  "nodes": [
+    {
+      "name": "Tutorial Setup",
+      "id": "node0"
+    },
+    {
+      "name": "riddle * 1",
+      "id": "node1"
+    },
+    {
+      "name": "riddle 1 2",
+      "id": "node2"
+    },
+    {
+      "name": "Tutorial Done",
+      "id": "node3"
+    },
+    {
+      "name": "Chloe Skill Jokes Repeat",
+      "id": "node4"
+    },
+    {
+      "name": "Chloe Skill Flashlight",
+      "id": "node5"
+    },
+    {
+      "name": "root",
+      "id": "node6"
+    },
+    {
+      "name": "Chloe Skill Quickstart",
+      "id": "node7"
+    },
+    {
+      "name": "riddle 2 1",
+      "id": "node8"
+    },
+    {
+      "name": "Tutorial Last Tip",
+      "id": "node9"
+    },
+    {
+      "name": "Bluetooth connecting headset",
+      "id": "node10"
+    },
+    {
+      "name": "Bluetooth disconnect",
+      "id": "node11"
+    },
+    {
+      "name": "riddle 1 1",
+      "id": "node12"
+    },
+    {
+      "name": "Call Agent",
+      "id": "node13"
+    },
+    {
+      "name": "Chloe Skill Time Date",
+      "id": "node14"
+    },
+    {
+      "name": "Bluetooth connecting paired",
+      "id": "node15"
+    },
+    {
+      "name": "riddle 3 1",
+      "id": "node16"
+    },
+    {
+      "name": "Bluetooth connecting speaker",
+      "id": "node17"
+    },
+    {
+      "name": "Chloe Skill Privacy Mode",
+      "id": "node18"
+    },
+    {
+      "name": "Chloe Skill Call Agent",
+      "id": "node19"
+    },
+    {
+      "name": "Chloe Skill Jokes",
+      "id": "node20"
+    }
+  ],
+  "links": [
+    {
+      "source": 6,
+      "target": 13,
+      "command": "call * Aira|agent *",
+      "response": "<call_agent>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 13,
+      "command": "call ? agent",
+      "response": "<call_agent>",
+      "value": 1
+    },
+    {
+      "source": 13,
+      "target": 6,
+      "command": "cancel|stop",
+      "response": "<cancel_call>",
+      "value": 1
+    },
+    {
+      "source": 13,
+      "target": 6,
+      "command": "*",
+      "response": "<cancel_call> Sorry, I didn't get that.",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "command": "* continue|next *",
+      "response": "To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "* repeat *",
+      "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "* again *",
+      "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "* one more time *",
+      "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 3,
+      "command": "* continue|next *",
+      "response": "For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "* repeat *",
+      "response": "Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "* again *",
+      "response": "Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "* one more time *",
+      "response": "Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "* no|skip|nah|nope|naw|dont *",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "* no thanks|thank *",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "Im good",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "* continue|next *",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "*",
+      "response": "Sorry, I wish I could understand that. It was probably something really nice.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "Thanks",
+      "response": "You got it",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "Thank you",
+      "response": "It was my pleasure",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "* repeat *",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "* again *",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "* one more time *",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough|stop",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough|stop",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough|stop",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a joke",
+      "response": "Hypochondriacs always take things, literally.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a joke",
+      "response": "I was going to tell a time traveling joke, but you didn't like it.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a joke",
+      "response": "If your parachute doesn't deploy, you have the rest of your life to fix it.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a joke",
+      "response": "I just invented a new word: plagarism.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a joke",
+      "response": "Rest in peace, boiling water. You will be mist.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a joke",
+      "response": "I wonder if the guy who came up with the term 'One Hit Wonder' came up with any other phrases.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a joke",
+      "response": "With the rise of self-driving vehicles, it\u2019s only a matter of time before we get a country song where a guy\u2019s truck leaves him too.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "stop",
+      "response": "<stop>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? read document ? high quality ? ?",
+      "response": "<ms_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? read ? ? continuous ? ?",
+      "response": "<continuous_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? read ? document",
+      "response": "<google_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read this",
+      "response": "<google_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read this document",
+      "response": "<google_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? read this ?",
+      "response": "<google_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read now",
+      "response": "<abby_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "where ? ? ? pill|pills|bottle|bottles|medicine|meds",
+      "response": "<pill_ocr_position>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? read ? ? pill|pills|bottle|bottles|medicine|meds|label ? ?",
+      "response": "<pill_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what ? ? ? pill|pills|bottle|bottles|medicine|meds ?",
+      "response": "<pill_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "detect pill|bottle",
+      "response": "<pill_ocr_detection>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what time is it|now ?",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what date|day is it|today ?",
+      "response": "Today is {{now \"full\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what is the time",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what is the time ? now|today",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what is the time of the day",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what ? ? time ? ? ?",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? tell me what|the ? ? time ? ?",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "time",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "do you have the time",
+      "response": "It is {{now \"pattern\"  \"hh:mm, z\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what day is today",
+      "response": "Today is {{now \"full\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what ? ? day|date",
+      "response": "Today is {{now \"full\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what ? ? today",
+      "response": "Today is {{now \"full\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "day|date",
+      "response": "Today is {{now \"full\"}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn ? ? flashlight ? ? on",
+      "response": "<flashlight_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn ? ? on ? ? flashlight",
+      "response": "<flashlight_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn ? ? flashlight ? ? off",
+      "response": "<flashlight_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn ? ? off ? ? flashlight",
+      "response": "<flashlight_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "is ? ? flashlight ? ? on|off|power|powered|deactivated|activated",
+      "response": "flashlight is {{onoff flashlight_state}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what is the flashlight status|state|power|powered",
+      "response": "flashlight is {{onoff flashlight_state}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? plan|minutes ? ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? plan|minutes ? ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? agent ? plan|minutes|minute ? ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how many agent call minutes|minute|time|hours do I have this month",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how many ? call minutes|minute|time|hours do I have left ? ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how much time|minutes|minute|hour|agent|call|calls do I have left ? ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how many minutes do I have left on my account",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what is my account balance",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? account balance ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? account ? remaining ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how many minutes do I have left|remaining|month",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what minutes do I have left|remaining|month",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how ? ? ? minute|minutes ? ? ? ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how many minute|minutes ? ? ? ?",
+      "response": "<account_usage>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what version are we on",
+      "response": "My version is {{version}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what version are you",
+      "response": "My version is {{version}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what version ? ?",
+      "response": "My version is {{version}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "version",
+      "response": "My version is {{version}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "chloe version",
+      "response": "My version is {{version}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "version number",
+      "response": "My version is {{version}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "chloe version number",
+      "response": "My version is {{version}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? on airplane ?",
+      "response": "<airplane_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? off airplane ?",
+      "response": "<airplane_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn on video correction",
+      "response": "<turn_on_video_correction>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn off video correction",
+      "response": "<turn_off_video_correction>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn on image correction",
+      "response": "<turn_on_image_correction>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn off image correction",
+      "response": "<turn_off_image_correction>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "switch to the phone camera",
+      "response": "<use_phone_camera>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "switch to the horizon phone camera",
+      "response": "<use_horizon_camera>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "start reading",
+      "response": "<gcv_start_continuous_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "stop reading",
+      "response": "<gcv_stop_continuous_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "start looking",
+      "response": "<abby_start_continuous_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "stop looking",
+      "response": "<abby_stop_continuous_ocr>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "shut down ?",
+      "response": "<shutdown_device>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "power off ?",
+      "response": "<shutdown_device>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a quote",
+      "response": "Failure is success if we learn from it.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a quote",
+      "response": "Never let schooling interfere with your education.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a quote",
+      "response": "Take care of your body. It's the only place you have to live.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "give|tell me a quote",
+      "response": "quote,, This too shall pass,, end quote,, This is an ancient poet adage reflecting on the ephemeral nature of the human condition.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+      "response": "Bump dots are tactile stickers that can be placed on touchscreen interfaces like a refrigerator or microwave, as long as the screen doesn't dynamically change the location of buttons.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+      "response": "Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+      "response": "Never take a medicine that you aren't 100% sure of it's origin and usage or dosage. When in doubt call an Aira agent. Many medicine bottle labels can only be read accurately by a human.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+      "response": "Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+      "response": "If you have strong mobility skills, taking the stairs rather than the elevator at every opportunity can improve your long term health. If you prefer exercise machines you can play an interesting podcast or have Chloe read you a book while you work out.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what|how is my|this|a|the ? wife i",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what|how is my|this|a|the ? wi fi",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what's my|this|a|the ? wifi|data|network|connectivity|internet",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what's my|this|a|the ? wife i",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what's my|this|a|the ? wi fi",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how's my|this|a|the ? wifi|data|network|connectivity|internet",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how's my|this|a|the ? wife i",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how's my|this|a|the ? wi fi",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what wifi|data|network|connectivity|internet ? am|is ? connected ?",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what wifi|data|network|connectivity|internet ? am|is ? using",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what wifi|data|network|connectivity|internet do ? have",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what wife i ? am|is ? connected ?",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what wife i ? am|is ? using",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what wife i do ? have",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "am I connected to ? wifi|data|network|connectivity|internet",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "am I connected to ? cellular network",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "am I connected to ? wife i",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what cellular network ? am|is ? connected ?",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what cellular network ? am|is ? using",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what cellular network do ? have",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "test signal strength",
+      "response": "{{active_network_status}}",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 6,
+      "command": "* newspaper *",
+      "response": "Perfect! Great job!",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 6,
+      "command": "* newspaper *",
+      "response": "Excellent! You must've heard that one before.",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 6,
+      "command": "* answer *",
+      "response": "It's a newspaper! See? The word red is spelled R, E, A, D!",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 12,
+      "command": "* hint *",
+      "response": "This thing is sometimes delivered to people by a boy on a bicycle.",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 6,
+      "command": "* tell me *",
+      "response": "It's a newspaper! See? The word red is spelled R, E, A, D!",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 6,
+      "command": "* don't know *",
+      "response": "It's a newspaper! See? The word red is spelled R, E, A, D!",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 12,
+      "command": "*",
+      "response": "Nope. Think about the sound of the words rather than their spelling. That may help.",
+      "value": 1
+    },
+    {
+      "source": 1,
+      "target": 1,
+      "command": "*",
+      "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 1,
+      "command": "*",
+      "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 1,
+      "command": "*",
+      "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 1,
+      "command": "*",
+      "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 2,
+      "command": "* newspaper *",
+      "response": "Perfect! Great job!",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 8,
+      "command": "* another",
+      "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 16,
+      "command": "* another",
+      "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 8,
+      "command": "* another riddle|one",
+      "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+      "value": 1
+    },
+    {
+      "source": 12,
+      "target": 16,
+      "command": "* another riddle|one",
+      "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 8,
+      "command": "Tell me a riddle",
+      "response": "Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 6,
+      "command": "* African *",
+      "response": "Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 6,
+      "command": "* European *",
+      "response": "Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 6,
+      "command": "* don't know *",
+      "response": "I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 6,
+      "command": "* tell me *",
+      "response": "I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 8,
+      "command": "* hint *",
+      "response": "Have you seen any movies by Monty Python?",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "command": "* another",
+      "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "command": "* another",
+      "response": "Ok. What's black and white and red all over?",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 16,
+      "command": "* another one|riddle",
+      "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+      "value": 1
+    },
+    {
+      "source": 8,
+      "target": 12,
+      "command": "* another one|riddle",
+      "response": "Ok. What's black and white and red all over?",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 16,
+      "command": "Tell me a riddle",
+      "response": "What starts with an E, ends with an E, and has one letter in it?",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 6,
+      "command": "* envelope *",
+      "response": "Perfect! Great job!",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 6,
+      "command": "* envelope *",
+      "response": "Excellent! You must've heard that one before.",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 16,
+      "command": "* hint *",
+      "response": "It's not the word \"eye\". That's too easy",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 16,
+      "command": "* hint *",
+      "response": "This is a thing that you might find in the post office.",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 6,
+      "command": "* answer *",
+      "response": "It's an Envelope! See, it (usually) only contains one letter!",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 6,
+      "command": "* tell me *",
+      "response": "It's an Envelope! See, it (usually) only contains one letter!",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 6,
+      "command": "* don't know *",
+      "response": "It's an Envelope! See, it (usually) only contains one letter!",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 12,
+      "command": "* another",
+      "response": "Ok. What's black and white and red all over?",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 8,
+      "command": "* another",
+      "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 12,
+      "command": "* another one|riddle",
+      "response": "Ok. What's black and white and red all over?",
+      "value": 1
+    },
+    {
+      "source": 16,
+      "target": 8,
+      "command": "* another one|riddle",
+      "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 9,
+      "command": "* continue|next *",
+      "response": "To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "* repeat *",
+      "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "* again *",
+      "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 0,
+      "command": "* one more time *",
+      "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 3,
+      "command": "* continue|next *",
+      "response": "For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "* repeat *",
+      "response": "Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "* again *",
+      "response": "Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 9,
+      "command": "* one more time *",
+      "response": "Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "* no|skip|nah|nope|naw|dont *",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "* no thanks|thank *",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "Im good",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "* continue|next *",
+      "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "*",
+      "response": "Sorry, I wish I could understand that. It was probably something really nice.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "Thanks",
+      "response": "You got it",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "Thank you",
+      "response": "It was my pleasure",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "* repeat *",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "* again *",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 3,
+      "command": "* one more time *",
+      "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+      "value": 1
+    },
+    {
+      "source": 0,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 3,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 9,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what is new",
+      "response": "Chloe now supports enabling or disabling Wi-Fi on the fly.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what's new in this release|update",
+      "response": "Chloe now supports enabling or disabling Wi-Fi on the fly.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what is new in this release|update",
+      "response": "Chloe now supports enabling or disabling Wi-Fi on the fly.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes",
+      "response": "Chloe now supports enabling or disabling Wi-Fi on the fly.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 27",
+      "response": "version 27 adds 1 feature and 4 bug fixes. Feature 1, MQTT remote agent call initiation. Bug fix 1, remove deprecated calls of `onSpeechError`. Bug fix 2 Gradle build script cleanup and library version correction. Bug fix 3, Open source Android Speech library compiled to AAR and removed from source tree. Bug fix 4, build documentation and notes added.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 34",
+      "response": "version 34 adds Network connectivity bug fixes and templating language for Chloe utterance building.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 35",
+      "response": "You can now ask Chloe to record a note, but she isn't yet able to search or list those notes. Also, bluetooth connection dialog and agent dashboard connectivity is now more robust.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 36",
+      "response": "More robust connection to the agent",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 37",
+      "response": "on version 37 I can now share your signal strength status. You can say, How is my connectivity? or What network am I connected to? Additionally, Aira has made Horizon connectivity improvements in this release, and will continue to make progress on the bluetooth and document reading features. Thank you for tuning in today!",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 38",
+      "response": "Speaker mode and bluetooth improvements.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 39",
+      "response": "Improved robustness of the app, automatic restarting on unexpected errors.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 40",
+      "response": "Added Samsung KNOX support, text recognition with the phone's camera. Chloe now supports proximity-based reading.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "read ? ? release notes ? 41",
+      "response": "Chloe now supports enabling or disabling Wi-Fi on the fly.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "*",
+      "response": "Sorry, I haven't learned that yet. Thanks for being patient with me.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "*",
+      "response": "Sorry, I don't know that.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "*",
+      "response": "Sorry, I didn't get that.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "root",
+      "response": "Sorry, I didn't hear you.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "root",
+      "response": "Sorry, I didn't hear you. You can ask me what I can do any time.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "Are you there?",
+      "response": "Yes, I'm here for you.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "Are you there?",
+      "response": "Yes, I'm ready to help.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "hi|hello|hey|howdy|yo|sup",
+      "response": "Hello! It's good to hear from you.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "hi|hello|hey|howdy|yo|sup",
+      "response": "Hi! I'm listening.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "hi|hello|hey|howdy|yo|sup",
+      "response": "Hi, how can I help you?",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "hi|hello|hey|howdy|yo|sup *",
+      "response": "Hello! It's good to hear from you.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "hi|hello|hey|howdy|yo|sup *",
+      "response": "Hi! I'm listening.",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "hi|hello|hey|howdy|yo|sup *",
+      "response": "Hi, how can I help you?",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "help",
+      "response": "You can ask me to call an agent, or dial customer support at 858 876 2472",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "Testing 1, 2, 3",
+      "response": "4,5,6",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "Testing 1, 2, 3",
+      "response": "Ok. What now?",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "* nevermind",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what|how is my|the|this battery ?",
+      "response": "Battery {{#with battery}}{{numberFormat level \"integer\"}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what's my|the|this battery ?",
+      "response": "Battery {{#with battery}}{{numberFormat level \"integer\"}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how's my|the|this battery ?",
+      "response": "Battery {{#with battery}}{{numberFormat level \"integer\"}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how much battery do I have ?",
+      "response": "Battery {{#with battery}}{{numberFormat level \"integer\"}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "how much battery ? ?",
+      "response": "Battery {{#with battery}}{{numberFormat level \"integer\"}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "check my|the|this battery ? ",
+      "response": "Battery {{#with battery}}{{numberFormat level \"integer\"}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless device|devices|headset|headsets|earphone|earphones|earbud|earbuds",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 10,
+      "command": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+      "response": "<find_bluetooth_devices>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 17,
+      "command": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+      "response": "<find_bluetooth_speakers>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "what bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 15,
+      "command": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+      "response": "<find_paired_devices>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+      "response": "<paired_bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 11,
+      "command": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+      "response": "<disconnect_bluetooth_device>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn on ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn off ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn ? bluetooth on",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? turn ? bluetooth off",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? enable ? bluetooth",
+      "response": "<bluetooth_on>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? disable ? bluetooth",
+      "response": "<bluetooth_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? bluetooth ? ? status",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "? ? is ? bluetooth on|off|enabled|disabled ?",
+      "response": "<bluetooth_status>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* no *",
+      "response": "Ok. You can always connect to a device later",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* one|first|1|yes *",
+      "response": "<connect_bluetooth_speaker_1>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* two|second|2 *",
+      "response": "<connect_bluetooth_speaker_2>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* three|third|3 *",
+      "response": "<connect_bluetooth_speaker_3>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* four|fourth|4 *",
+      "response": "<connect_bluetooth_speaker_4>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* five|fifth|5 *",
+      "response": "<connect_bluetooth_speaker_5>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* six|sixth|6 *",
+      "response": "<connect_bluetooth_speaker_6>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* seven|seventh|7 *",
+      "response": "<connect_bluetooth_speaker_7>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* eight|eight|8 *",
+      "response": "<connect_bluetooth_speaker_8>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* nine|ninth|9 *",
+      "response": "<connect_bluetooth_speaker_9>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* ten|tenth|10 *",
+      "response": "<connect_bluetooth_speaker_10>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* eleven|eleventh|11 *",
+      "response": "<connect_bluetooth_speaker_11>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* twelve|twelfth|12 *",
+      "response": "<connect_bluetooth_speaker_12>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* thirteen|thirteenth|13 *",
+      "response": "<connect_bluetooth_speaker_13>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* fourteen|fourteenth|14 *",
+      "response": "<connect_bluetooth_speaker_14>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* fifteen|fifteenth|15 *",
+      "response": "<connect_bluetooth_speaker_15>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* sixteen|sixteenth|16 *",
+      "response": "<connect_bluetooth_speaker_16>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* seventeen|seventeenth|17 *",
+      "response": "<connect_bluetooth_speaker_17>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* eighteen|eighteenth|18 *",
+      "response": "<connect_bluetooth_speaker_18>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* nineteen|nineteenth|19 *",
+      "response": "<connect_bluetooth_speaker_19>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* twenty|twentieth|20 *",
+      "response": "<connect_bluetooth_speaker_20>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* no *",
+      "response": "Ok. You can always connect to a device later",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* one|first|1|yes *",
+      "response": "<connect_bluetooth_headset_1>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* two|second|2 *",
+      "response": "<connect_bluetooth_headset_2>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* three|third|3 *",
+      "response": "<connect_bluetooth_headset_3>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* four|fourth|4 *",
+      "response": "<connect_bluetooth_headset_4>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* five|fifth|5 *",
+      "response": "<connect_bluetooth_headset_5>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* six|sixth|6 *",
+      "response": "<connect_bluetooth_headset_6>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* seven|seventh|7 *",
+      "response": "<connect_bluetooth_headset_7>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* eight|eight|8 *",
+      "response": "<connect_bluetooth_headset_8>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* nine|ninth|9 *",
+      "response": "<connect_bluetooth_headset_9>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* ten|tenth|10 *",
+      "response": "<connect_bluetooth_headset_10>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* eleven|eleventh|11 *",
+      "response": "<connect_bluetooth_headset_11>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* twelve|twelfth|12 *",
+      "response": "<connect_bluetooth_headset_12>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* thirteen|thirteenth|13 *",
+      "response": "<connect_bluetooth_headset_13>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* fourteen|fourteenth|14 *",
+      "response": "<connect_bluetooth_headset_14>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* fifteen|fifteenth|15 *",
+      "response": "<connect_bluetooth_headset_15>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* sixteen|sixteenth|16 *",
+      "response": "<connect_bluetooth_headset_16>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* seventeen|seventeenth|17 *",
+      "response": "<connect_bluetooth_headset_17>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* eighteen|eighteenth|18 *",
+      "response": "<connect_bluetooth_headset_18>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* nineteen|nineteenth|19 *",
+      "response": "<connect_bluetooth_headset_19>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* twenty|twentieth|20 *",
+      "response": "<connect_bluetooth_headset_20>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* one|first|1|yes *",
+      "response": "<disconnect_bluetooth_1>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* two|second|2 *",
+      "response": "<disconnect_bluetooth_2>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* three|third|3 *",
+      "response": "<disconnect_bluetooth_3>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* four|fourth|4 *",
+      "response": "<disconnect_bluetooth_4>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* five|fifth|5 *",
+      "response": "<disconnect_bluetooth_5>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* six|sixth|6 *",
+      "response": "<disconnect_bluetooth_6>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* seven|seventh|7 *",
+      "response": "<disconnect_bluetooth_7>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* eight|eight|8 *",
+      "response": "<disconnect_bluetooth_8>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* nine|ninth|9 *",
+      "response": "<disconnect_bluetooth_9>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* ten|tenth|10 *",
+      "response": "<disconnect_bluetooth_10>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* eleven|eleventh|11 *",
+      "response": "<disconnect_bluetooth_11>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* twelve|twelfth|12 *",
+      "response": "<disconnect_bluetooth_12>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* thirteen|thirteenth|13 *",
+      "response": "<disconnect_bluetooth_13>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* fourteen|fourteenth|14 *",
+      "response": "<disconnect_bluetooth_14>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* fifteen|fifteenth|15 *",
+      "response": "<disconnect_bluetooth_15>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* sixteen|sixteenth|16 *",
+      "response": "<disconnect_bluetooth_16>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* seventeen|seventeenth|17 *",
+      "response": "<disconnect_bluetooth_17>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* eighteen|eighteenth|18 *",
+      "response": "<disconnect_bluetooth_18>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* nineteen|nineteenth|19 *",
+      "response": "<disconnect_bluetooth_19>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* twenty|twentieth|20 *",
+      "response": "<disconnect_bluetooth_20>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* no *",
+      "response": "Ok. You can always connect to a device later",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* one|first|1|yes *",
+      "response": "<connect_bluetooth_paired_1>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* two|second|2 *",
+      "response": "<connect_bluetooth_paired_2>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* three|third|3 *",
+      "response": "<connect_bluetooth_paired_3>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* four|fourth|4 *",
+      "response": "<connect_bluetooth_paired_4>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* five|fifth|5 *",
+      "response": "<connect_bluetooth_paired_5>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* six|sixth|6 *",
+      "response": "<connect_bluetooth_paired_6>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* seven|seventh|7 *",
+      "response": "<connect_bluetooth_paired_7>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* eight|eight|8 *",
+      "response": "<connect_bluetooth_paired_8>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* nine|ninth|9 *",
+      "response": "<connect_bluetooth_paired_9>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* ten|tenth|10 *",
+      "response": "<connect_bluetooth_paired_10>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* eleven|eleventh|11 *",
+      "response": "<connect_bluetooth_paired_11>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* twelve|twelfth|12 *",
+      "response": "<connect_bluetooth_paired_12>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* thirteen|thirteenth|13 *",
+      "response": "<connect_bluetooth_paired_13>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* fourteen|fourteenth|14 *",
+      "response": "<connect_bluetooth_paired_14>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* fifteen|fifteenth|15 *",
+      "response": "<connect_bluetooth_paired_15>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* sixteen|sixteenth|16 *",
+      "response": "<connect_bluetooth_paired_16>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* seventeen|seventeenth|17 *",
+      "response": "<connect_bluetooth_paired_17>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* eighteen|eighteenth|18 *",
+      "response": "<connect_bluetooth_paired_18>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* nineteen|nineteenth|19 *",
+      "response": "<connect_bluetooth_paired_19>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* twenty|twentieth|20 *",
+      "response": "<connect_bluetooth_paired_20>",
+      "value": 1
+    },
+    {
+      "source": 10,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 11,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 15,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 17,
+      "target": 6,
+      "command": "* stop|cancel|exit|nevermind *",
+      "response": "Stopping <stop_bluetooth_timer>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "command": "what can you|I|Chloe do",
+      "response": "I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "command": "? ? what your features are",
+      "response": "I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 7,
+      "command": "what are your features",
+      "response": "I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 19,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "command": "no|skip|nah|nope|naw",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "command": "maybe later",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "command": "* repeat *",
+      "response": "Sure. I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "command": "* again *",
+      "response": "Sure. I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 7,
+      "command": "* one more time *",
+      "response": "Sure. I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 18,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 6,
+      "command": "no|skip|nah|nope|naw",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 6,
+      "command": "maybe later",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 19,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 19,
+      "command": "* repeat *",
+      "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 19,
+      "command": "* again *",
+      "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 19,
+      "command": "* one more time *",
+      "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 5,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "To turn privacy mode on and off during a call, you can press on the call button once. Privacy mode disables your audio and video so that the agent cannot hear or see anything on your end. Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 6,
+      "command": "no|skip|nah|nope|naw",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 6,
+      "command": "maybe later",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 18,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 18,
+      "command": "* repeat *",
+      "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 18,
+      "command": "* again *",
+      "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 18,
+      "command": "* one more time *",
+      "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 14,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "command": "no|skip|nah|nope|naw",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "command": "maybe later",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "command": "* repeat *",
+      "response": "Sure. I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "command": "* again *",
+      "response": "Sure. I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 5,
+      "command": "* one more time *",
+      "response": "Sure. I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 20,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "command": "no|skip|nah|nope|naw",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "command": "maybe later",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "command": "* repeat *",
+      "response": "Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "command": "* again *",
+      "response": "Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 14,
+      "command": "* one more time *",
+      "response": "Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 4,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 6,
+      "command": "no|skip|nah|nope|naw",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 6,
+      "command": "maybe later",
+      "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 20,
+      "command": "*",
+      "response": "Sorry, I didn't get that. Would you like to learn more about what I can do?",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 20,
+      "command": "* repeat *",
+      "response": "Sure. I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 20,
+      "command": "* again *",
+      "response": "Sure. I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 20,
+      "command": "* one more time *",
+      "response": "Sure. I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+      "response": "That's all I know for now. I am excited to learn more skills and become more helpful to you.",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "no|skip|nah|nope|naw",
+      "response": "No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "maybe later",
+      "response": "No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "*",
+      "response": "Sorry, I didn't get that. But that's all I know for now. I am excited to learn more skills and become more helpful to you.",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "Thanks",
+      "response": "No problem. Do check back for more skills soon!",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "Thank you",
+      "response": "You're welcome. I will learn more skills soon.",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "command": "* repeat *",
+      "response": "Sure. I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "command": "* again *",
+      "response": "Sure. I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 4,
+      "command": "* one more time *",
+      "response": "Sure. I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+      "value": 1
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 5,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 7,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 14,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 18,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 19,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 20,
+      "target": 6,
+      "command": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+      "response": "OK",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn on ? wife i ?",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn on ? wi fi ?",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "enable ? wifi|wireless ?",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "enable ? wife i ?",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "enable ? wi fi ?",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wireless|wifi turned on",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wife i turned on",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wi fi turned on",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wireless|wifi enabled",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wife i enabled",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wi fi enabled",
+      "response": "<wifi_on>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn off ? wifi|wireless ?",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn off ? wife i ?",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "turn off ? wi fi ?",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "disable ? wifi|wireless ?",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "disable ? wife i ?",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "disable ? wi fi ?",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wireless|wifi turned off",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wife i turned off",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wi fi turned off",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wireless|wifi disabled",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wife i disabled",
+      "response": "<wifi_off>",
+      "value": 1
+    },
+    {
+      "source": 6,
+      "target": 6,
+      "command": "wi fi disabled",
+      "response": "<wifi_off>",
+      "value": 1
+    }
+  ]
+}

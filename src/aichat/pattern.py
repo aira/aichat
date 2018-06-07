@@ -1,6 +1,8 @@
 """ Statement->response mappings to select best response template for any statement """
+from __future__ import print_function
 import regex
 import logging
+
 
 try:
     import exrex
@@ -14,7 +16,7 @@ REGEX_ALIASES = {
     r'\s': r'\t\r\n\ ',
     # r'\W': r'^a-zA-Z_',
     # r'\S': r'^\t\r\n\ ',
-    }
+}
 
 logger = logging.getLogger(__name__)
 
@@ -108,7 +110,7 @@ RESPONSE_MAPPING = [('Hi', 'Hi!'), ("Hi", "Hi, I'm Bot")]
 CONTEXT = {}
 
 
-def compile_pattern(patt, fuzziness=1, **kwargs):
+def expand_globstar(patt, fuzziness=False, **kwargs):
     r""" Compile a Bot Language Pattern (glob star or AIML syntax) into a python regular experssion object
 
     Args:
@@ -118,16 +120,20 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
       compiled regex object if patt contains _, +, *, #, or | characters
       str for fixed string patterns (only letters, spaces and natural English punctuation
 
-    >>> compile_pattern("Hello|Hi *").match("Hi world")
+    >>> compile_globstar("Hello|Hi *").match("Hi world")
     <regex.Match object; span=(0, 8), match='Hi world'>
-    >>> compile_pattern("Hello World!")
+    >>> expand_globstar("Hello World?")
+    'Hello[ ]World'
+    >>> expand_globstar("Hello World!")
     'Hello World!'
-    >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I don't."
-    >>> compile_pattern(patt)
-    '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but I don\'t.'
-    >>> patt = "Billy|Joe|Bob says hi|hello|sup or \"Yo!\", but I|he don' t|s."
-    >>> compile_pattern(patt)
-    '(Billy|Joe|Bob) says (hi|hello|sup) or "Yo!", but (I|he) don\' (t|s).'
+    >>> patt = "Billy|Joe|Bob says hi|hello|sup or Yo but I don't."
+    >>> patt = expand_globstar(patt)
+    >>> patt
+    "(Billy|Joe|Bob)[ ]says[ ](hi|hello|sup)[ ]or[ ]Yo[ ]but[ ]I[ ]don't[.]"
+    >>> bool(regex.match(patt, "Joe says sup or Yo but I don't."))
+    True
+    >>> expand_globstar('? hello? ?')
+    '([-a-zA-Z0-9]{1,20}[\\s]{0,8}){0,1}[ ]hello[ ]([-a-zA-Z0-9]{1,20}[\\s]{0,8}){0,1}'
     """
     fuzziness = 3 if fuzziness is True else int(fuzziness) if fuzziness is not None else fuzziness
     if isinstance(fuzziness, float) and 0 < fuzziness < 1:
@@ -135,24 +141,44 @@ def compile_pattern(patt, fuzziness=1, **kwargs):
     if r'|' in patt:
         patt = regex.sub(r'(^|[^-\(\|a-zA-Z0-9])([a-zA-Z0-9]+\|)', r'\1(\2', patt)
         patt = regex.sub(r'(\|[a-zA-Z0-9]+)($|[^-\)\|a-zA-Z0-9])', r'\1)\2', patt)
-    if next(regex.finditer(r'[[*#{\\]', patt), None):
+    if next(regex.finditer(r'[[|?*#{\\]', patt), None):
         # r'{' in patt or r'[' in patt or '\\' or r'*' in patt or r'#' in patt:
         if fuzziness:
             patt = '(' + patt + '){e<=' + str(fuzziness) + '}'
-        if r'*' in patt or r'#' in patt:
-            patt = patt.replace(r'*', r'[-a-zA-Z]+')
-            patt = patt.replace(r'#', r'([-a-zA-Z]+[ ]{0,1})+')
-            patt = patt.replace(r' ', r'[ ]')
-            patt = patt.replace(r'[[ ]]', r'[ ]')  # undo redundant brackets
-            patt = patt.replace(r'[[ ]]', r'[ ]')  # undo tripply redundant brackets
-            return regex.compile(patt, **kwargs)
+        word_space = r'([-a-zA-Z0-9]{1,20}[\s]{0,8})'
+        patt = patt.replace(r'*', word_space + r'{0,64}')  # "*" => 0-64 words
+        patt = regex.sub(r'((^|[\s])[?])', r'\2' + word_space + r'{0,1}', patt)    # "?" => 0-1 word
+        patt = regex.sub(r'([^ ])\?', r'\1', patt)  # Get rid of question marks
         # if r'{' in patt or r'[' in patt or '\\' in patt:
         #     return regex.compile(patt, **kwargs)
-    else:
-        return patt
+        patt = patt.replace(r' ', r'[ ]')
+        patt = patt.replace(r'.', r'[.]')
+        patt = patt.replace(r'!', r'[!]')
+        patt = patt.replace(r'?', r'[?]')  # question marks have already been discarded
+        patt = patt.replace(r'+', r'[+]')
+        patt = patt.replace(r'[[ ]]', r'[ ]')  # undo redundant brackets
+        patt = patt.replace(r'[[ ]]', r'[ ]')  # undo tripply redundant brackets
+    return patt
 
 
-def remove_punc(s: str):
+def compile_globstar(s):
+    r""" Expand globstar pattern to create regex then compile that regex (but only if it looks like a regex)
+    >>> compile_globstar("Hello world?")
+    regex.Regex('Hello[ ]world', flags=regex.V0)
+    >>> compile_globstar("Hello|Hi world ?")
+    regex.Regex('(Hello|Hi)[ ]world[ ]([-a-zA-Z0-9]{1,20}[\\s]{0,8}){0,1}', flags=regex.V0)
+    """
+    patt = expand_globstar(s)
+    return compile_regex(patt)
+
+
+def compile_regex(s):
+    if isinstance(s, str) and next(regex.finditer(r'[[|*?{(\\]', s), None):
+        return regex.compile(s)
+    return s
+
+
+def remove_punc(s):
     r""" Replace all nondigit-nonword characters with spaces and delete meaningless spaces
 
     >>> remove_punc('<"hyphenated-word {variable}!!?">')  # doctest.NORMALIZE_WHITESPACE
@@ -185,15 +211,15 @@ class PatternMap:
     >>> responses['Hey']
     ['Hi!']
     >>> responses['Hello World!']
-    ['Bye!']
+    []
     >>> responses['Hello World What are you up to?']
-    ['Bye!']
+    []
     >>> responses['Hey World What are you up to?']
-    ['WAT?']
+    []
     >>> responses['Hey Joe,']
-    ['WAT?']
+    []
     >>> len(responses.patterns)
-    2
+    0
     """
 
     def __init__(self, mapping=None, case_sensitive=False, fuzziness=1):
@@ -211,7 +237,7 @@ class PatternMap:
             if pattern_template is None:
                 continue
             patt, template = pattern_template[0], pattern_template[1]
-            patt = compile_pattern(patt)
+            patt = expand_globstar(patt)
             if isinstance(patt, str):
                 self.exact_strs[patt] = self.exact_strs.get(patt, []) + [template]
                 lowered_patt = patt.lower()

@@ -1,0 +1,4 @@
+Host $SUBDOMAIN_NAME
+    Hostname $PUBLIC_IP
+    User $REMOTE_USER
+    IdentityFile ~/.ssh/ai-dev-external.pem

@@ -1,0 +1,17 @@
+what's new,"Chloe now supports enabling or disabling Wi-Fi on the fly.",,
+what is new,"Chloe now supports enabling or disabling Wi-Fi on the fly.",,
+what's new in this release|update,"Chloe now supports enabling or disabling Wi-Fi on the fly.",,
+what is new in this release|update,"Chloe now supports enabling or disabling Wi-Fi on the fly.",,
+read ? ? release notes,"Chloe now supports enabling or disabling Wi-Fi on the fly.",,
+read ? ? release notes ? 27,"version 27 adds 1 feature and 4 bug fixes. Feature 1, MQTT remote agent call initiation. Bug fix 1, remove deprecated calls of `onSpeechError`. Bug fix 2 Gradle build script cleanup and library version correction. Bug fix 3, Open source Android Speech library compiled to AAR and removed from source tree. Bug fix 4, build documentation and notes added.",,
+read ? ? release notes ? 34,"version 34 adds Network connectivity bug fixes and templating language for Chloe utterance building.",,
+read ? ? release notes ? 35,"You can now ask Chloe to record a note, but she isn't yet able to search or list those notes. Also, bluetooth connection dialog and agent dashboard connectivity is now more robust.",,
+read ? ? release notes ? 36,"More robust connection to the agent",,
+read ? ? release notes ? 37,"on version 37 I can now share your signal strength status. You can say, How is my connectivity? or What network am I connected to? Additionally, Aira has made Horizon connectivity improvements in this release, and will continue to make progress on the bluetooth and document reading features. Thank you for tuning in today!",,
+read ? ? release notes ? 38,"Speaker mode and bluetooth improvements.",,
+read ? ? release notes ? 39,"Improved robustness of the app, automatic restarting on unexpected errors.",,
+read ? ? release notes ? 40,"Added Samsung KNOX support, text recognition with the phone's camera. Chloe now supports proximity-based reading.",,
+read ? ? release notes ? 41,"Chloe now supports enabling or disabling Wi-Fi on the fly.",,
+
+
+

@@ -1,0 +1,5064 @@
+[
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 1,
+  "fields": {
+    "created": "2018-05-13T15:44:01.073Z",
+    "modified": "2018-05-13T15:44:01.073Z",
+    "author": "",
+    "trigger": "call ? Aira|agent ? ? ?",
+    "response": "<call_agent>",
+    "source_state": "nan",
+    "dest_state": "Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 2,
+  "fields": {
+    "created": "2018-05-13T15:44:01.074Z",
+    "modified": "2018-05-13T15:44:01.074Z",
+    "author": "",
+    "trigger": "call * Aira|agent *",
+    "response": "<call_agent>",
+    "source_state": "nan",
+    "dest_state": "Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 3,
+  "fields": {
+    "created": "2018-05-13T15:44:01.075Z",
+    "modified": "2018-05-13T15:44:01.075Z",
+    "author": "",
+    "trigger": "call ? agent",
+    "response": "<call_agent>",
+    "source_state": "nan",
+    "dest_state": "Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 4,
+  "fields": {
+    "created": "2018-05-13T15:44:01.076Z",
+    "modified": "2018-05-13T15:44:01.076Z",
+    "author": "",
+    "trigger": "cancel|stop",
+    "response": "<cancel_call>",
+    "source_state": "Call Agent",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 5,
+  "fields": {
+    "created": "2018-05-13T15:44:01.078Z",
+    "modified": "2018-05-13T15:44:01.078Z",
+    "author": "",
+    "trigger": "*",
+    "response": "<cancel_call> Sorry, I didn't get that.",
+    "source_state": "Call Agent",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 6,
+  "fields": {
+    "created": "2018-05-13T15:44:01.081Z",
+    "modified": "2018-05-13T15:44:01.081Z",
+    "author": "",
+    "trigger": "reset first boot experience",
+    "response": "<set_first_boot>",
+    "source_state": "*",
+    "dest_state": "Tutorial Start",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 7,
+  "fields": {
+    "created": "2018-05-13T15:44:01.082Z",
+    "modified": "2018-05-13T15:44:01.082Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Welcome Explorer! I'm Chloe, your Aira AI assistant. I have three tips to share with you to help you get started. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Start",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 8,
+  "fields": {
+    "created": "2018-05-13T15:44:01.083Z",
+    "modified": "2018-05-13T15:44:01.083Z",
+    "author": "",
+    "trigger": "nan",
+    "response": "Welcome Explorer! I'm Chloe, your Aira AI assistant. I have three tips to share with you to help you get started. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Start",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 9,
+  "fields": {
+    "created": "2018-05-13T15:44:01.085Z",
+    "modified": "2018-05-13T15:44:01.085Z",
+    "author": "",
+    "trigger": "* continue|next *",
+    "response": "To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 10,
+  "fields": {
+    "created": "2018-05-13T15:44:01.086Z",
+    "modified": "2018-05-13T15:44:01.086Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 11,
+  "fields": {
+    "created": "2018-05-13T15:44:01.087Z",
+    "modified": "2018-05-13T15:44:01.087Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 12,
+  "fields": {
+    "created": "2018-05-13T15:44:01.088Z",
+    "modified": "2018-05-13T15:44:01.088Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 13,
+  "fields": {
+    "created": "2018-05-13T15:44:01.089Z",
+    "modified": "2018-05-13T15:44:01.089Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 14,
+  "fields": {
+    "created": "2018-05-13T15:44:01.090Z",
+    "modified": "2018-05-13T15:44:01.090Z",
+    "author": "",
+    "trigger": "* continue|next *",
+    "response": "For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 15,
+  "fields": {
+    "created": "2018-05-13T15:44:01.091Z",
+    "modified": "2018-05-13T15:44:01.091Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 16,
+  "fields": {
+    "created": "2018-05-13T15:44:01.093Z",
+    "modified": "2018-05-13T15:44:01.093Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 17,
+  "fields": {
+    "created": "2018-05-13T15:44:01.094Z",
+    "modified": "2018-05-13T15:44:01.094Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 18,
+  "fields": {
+    "created": "2018-05-13T15:44:01.095Z",
+    "modified": "2018-05-13T15:44:01.095Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 19,
+  "fields": {
+    "created": "2018-05-13T15:44:01.096Z",
+    "modified": "2018-05-13T15:44:01.096Z",
+    "author": "",
+    "trigger": "* no|skip|nah|nope|naw|dont *",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 20,
+  "fields": {
+    "created": "2018-05-13T15:44:01.097Z",
+    "modified": "2018-05-13T15:44:01.097Z",
+    "author": "",
+    "trigger": "* no thanks|thank *",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 21,
+  "fields": {
+    "created": "2018-05-13T15:44:01.098Z",
+    "modified": "2018-05-13T15:44:01.098Z",
+    "author": "",
+    "trigger": "Im good",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 22,
+  "fields": {
+    "created": "2018-05-13T15:44:01.100Z",
+    "modified": "2018-05-13T15:44:01.100Z",
+    "author": "",
+    "trigger": "* continue|next *",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 23,
+  "fields": {
+    "created": "2018-05-13T15:44:01.101Z",
+    "modified": "2018-05-13T15:44:01.101Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I wish I could understand that. It was probably something really nice.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 24,
+  "fields": {
+    "created": "2018-05-13T15:44:01.102Z",
+    "modified": "2018-05-13T15:44:01.103Z",
+    "author": "",
+    "trigger": "Thanks",
+    "response": "You got it",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 25,
+  "fields": {
+    "created": "2018-05-13T15:44:01.104Z",
+    "modified": "2018-05-13T15:44:01.104Z",
+    "author": "",
+    "trigger": "Thank you",
+    "response": "It was my pleasure",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 26,
+  "fields": {
+    "created": "2018-05-13T15:44:01.105Z",
+    "modified": "2018-05-13T15:44:01.105Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 27,
+  "fields": {
+    "created": "2018-05-13T15:44:01.106Z",
+    "modified": "2018-05-13T15:44:01.106Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 28,
+  "fields": {
+    "created": "2018-05-13T15:44:01.107Z",
+    "modified": "2018-05-13T15:44:01.107Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 29,
+  "fields": {
+    "created": "2018-05-13T15:44:01.109Z",
+    "modified": "2018-05-13T15:44:01.109Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 30,
+  "fields": {
+    "created": "2018-05-13T15:44:01.110Z",
+    "modified": "2018-05-13T15:44:01.110Z",
+    "author": "",
+    "trigger": "cancel|stop|done|exit|leave|goodbye|bye|enough|stop",
+    "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+    "source_state": "Tutorial *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 31,
+  "fields": {
+    "created": "2018-05-13T15:44:01.114Z",
+    "modified": "2018-05-13T15:44:01.114Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "I own the world's worst thesaurus. Not only is it awful, it's awful.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 32,
+  "fields": {
+    "created": "2018-05-13T15:44:01.115Z",
+    "modified": "2018-05-13T15:44:01.115Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "Hypochondriacs always take things, literally.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 33,
+  "fields": {
+    "created": "2018-05-13T15:44:01.116Z",
+    "modified": "2018-05-13T15:44:01.116Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "I was going to tell a time traveling joke, but you didn't like it.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 34,
+  "fields": {
+    "created": "2018-05-13T15:44:01.118Z",
+    "modified": "2018-05-13T15:44:01.118Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "If your parachute doesn't deploy, you have the rest of your life to fix it.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 35,
+  "fields": {
+    "created": "2018-05-13T15:44:01.119Z",
+    "modified": "2018-05-13T15:44:01.119Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "I just invented a new word: plagarism.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 36,
+  "fields": {
+    "created": "2018-05-13T15:44:01.120Z",
+    "modified": "2018-05-13T15:44:01.120Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "Rest in peace, boiling water. You will be mist.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 37,
+  "fields": {
+    "created": "2018-05-13T15:44:01.121Z",
+    "modified": "2018-05-13T15:44:01.121Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "I wonder if the guy who came up with the term 'One Hit Wonder' came up with any other phrases.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 38,
+  "fields": {
+    "created": "2018-05-13T15:44:01.123Z",
+    "modified": "2018-05-13T15:44:01.123Z",
+    "author": "",
+    "trigger": "give|tell me a joke",
+    "response": "With the rise of self-driving vehicles, it\u2019s only a matter of time before we get a country song where a guy\u2019s truck leaves him too.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 39,
+  "fields": {
+    "created": "2018-05-13T15:44:01.126Z",
+    "modified": "2018-05-13T15:44:01.126Z",
+    "author": "",
+    "trigger": "are you there",
+    "response": "Yes, I'm here for you.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 40,
+  "fields": {
+    "created": "2018-05-13T15:44:01.127Z",
+    "modified": "2018-05-13T15:44:01.128Z",
+    "author": "",
+    "trigger": "stop",
+    "response": "<stop>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 41,
+  "fields": {
+    "created": "2018-05-13T15:44:01.129Z",
+    "modified": "2018-05-13T15:44:01.129Z",
+    "author": "",
+    "trigger": "battery level",
+    "response": "<battery>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 42,
+  "fields": {
+    "created": "2018-05-13T15:44:01.130Z",
+    "modified": "2018-05-13T15:44:01.130Z",
+    "author": "",
+    "trigger": "what is the battery level",
+    "response": "<battery>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 43,
+  "fields": {
+    "created": "2018-05-13T15:44:01.131Z",
+    "modified": "2018-05-13T15:44:01.131Z",
+    "author": "",
+    "trigger": "what is the battery",
+    "response": "<battery>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 44,
+  "fields": {
+    "created": "2018-05-13T15:44:01.132Z",
+    "modified": "2018-05-13T15:44:01.132Z",
+    "author": "",
+    "trigger": "what|how is the battery",
+    "response": "<battery>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 45,
+  "fields": {
+    "created": "2018-05-13T15:44:01.133Z",
+    "modified": "2018-05-13T15:44:01.133Z",
+    "author": "",
+    "trigger": "what|how is the battery level",
+    "response": "<battery>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 46,
+  "fields": {
+    "created": "2018-05-13T15:44:01.134Z",
+    "modified": "2018-05-13T15:44:01.134Z",
+    "author": "",
+    "trigger": "how much battery do I have",
+    "response": "<battery>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 47,
+  "fields": {
+    "created": "2018-05-13T15:44:01.135Z",
+    "modified": "2018-05-13T15:44:01.135Z",
+    "author": "",
+    "trigger": "what|how is ? wifi",
+    "response": "<signal_strength>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 48,
+  "fields": {
+    "created": "2018-05-13T15:44:01.137Z",
+    "modified": "2018-05-13T15:44:01.137Z",
+    "author": "",
+    "trigger": "what|how network ? am ? connected ?",
+    "response": " \"<signal_strength>\"",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 49,
+  "fields": {
+    "created": "2018-05-13T15:44:01.138Z",
+    "modified": "2018-05-13T15:44:01.138Z",
+    "author": "",
+    "trigger": "? read document ? high quality ? ?",
+    "response": "<ms_ocr>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 50,
+  "fields": {
+    "created": "2018-05-13T15:44:01.139Z",
+    "modified": "2018-05-13T15:44:01.139Z",
+    "author": "",
+    "trigger": "? read ? ? continuous ? ?",
+    "response": "<continuous_ocr>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 51,
+  "fields": {
+    "created": "2018-05-13T15:44:01.140Z",
+    "modified": "2018-05-13T15:44:01.140Z",
+    "author": "",
+    "trigger": "? read ? document",
+    "response": "<google_ocr>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 52,
+  "fields": {
+    "created": "2018-05-13T15:44:01.142Z",
+    "modified": "2018-05-13T15:44:01.142Z",
+    "author": "",
+    "trigger": "read this",
+    "response": "<google_ocr>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 53,
+  "fields": {
+    "created": "2018-05-13T15:44:01.143Z",
+    "modified": "2018-05-13T15:44:01.143Z",
+    "author": "",
+    "trigger": "read this document",
+    "response": "<google_ocr>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 54,
+  "fields": {
+    "created": "2018-05-13T15:44:01.144Z",
+    "modified": "2018-05-13T15:44:01.144Z",
+    "author": "",
+    "trigger": "? read this ?",
+    "response": "<google_ocr>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 55,
+  "fields": {
+    "created": "2018-05-13T15:44:01.145Z",
+    "modified": "2018-05-13T15:44:01.145Z",
+    "author": "",
+    "trigger": "what time is it|now ?",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 56,
+  "fields": {
+    "created": "2018-05-13T15:44:01.146Z",
+    "modified": "2018-05-13T15:44:01.146Z",
+    "author": "",
+    "trigger": "what date|day is it|today ?",
+    "response": "<date_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 57,
+  "fields": {
+    "created": "2018-05-13T15:44:01.148Z",
+    "modified": "2018-05-13T15:44:01.148Z",
+    "author": "",
+    "trigger": "what is the time",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 58,
+  "fields": {
+    "created": "2018-05-13T15:44:01.149Z",
+    "modified": "2018-05-13T15:44:01.149Z",
+    "author": "",
+    "trigger": "what is the time ? now|today",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 59,
+  "fields": {
+    "created": "2018-05-13T15:44:01.150Z",
+    "modified": "2018-05-13T15:44:01.150Z",
+    "author": "",
+    "trigger": "what is the time of the day",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 60,
+  "fields": {
+    "created": "2018-05-13T15:44:01.151Z",
+    "modified": "2018-05-13T15:44:01.151Z",
+    "author": "",
+    "trigger": "what ? ? time ? ? ?",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 61,
+  "fields": {
+    "created": "2018-05-13T15:44:01.152Z",
+    "modified": "2018-05-13T15:44:01.152Z",
+    "author": "",
+    "trigger": "? tell me what|the ? ? time ? ?",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 62,
+  "fields": {
+    "created": "2018-05-13T15:44:01.154Z",
+    "modified": "2018-05-13T15:44:01.154Z",
+    "author": "",
+    "trigger": "time",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 63,
+  "fields": {
+    "created": "2018-05-13T15:44:01.155Z",
+    "modified": "2018-05-13T15:44:01.155Z",
+    "author": "",
+    "trigger": "do you have the time",
+    "response": "<time_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 64,
+  "fields": {
+    "created": "2018-05-13T15:44:01.156Z",
+    "modified": "2018-05-13T15:44:01.156Z",
+    "author": "",
+    "trigger": "what day is today",
+    "response": "<date_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 65,
+  "fields": {
+    "created": "2018-05-13T15:44:01.157Z",
+    "modified": "2018-05-13T15:44:01.157Z",
+    "author": "",
+    "trigger": "what ? ? day|date",
+    "response": "<date_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 66,
+  "fields": {
+    "created": "2018-05-13T15:44:01.158Z",
+    "modified": "2018-05-13T15:44:01.158Z",
+    "author": "",
+    "trigger": "what ? ? today",
+    "response": "<date_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 67,
+  "fields": {
+    "created": "2018-05-13T15:44:01.160Z",
+    "modified": "2018-05-13T15:44:01.160Z",
+    "author": "",
+    "trigger": "day|date",
+    "response": "<date_now>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 68,
+  "fields": {
+    "created": "2018-05-13T15:44:01.161Z",
+    "modified": "2018-05-13T15:44:01.161Z",
+    "author": "",
+    "trigger": "turn ? ? flashlight ? ? on",
+    "response": "<flashlight_on>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 69,
+  "fields": {
+    "created": "2018-05-13T15:44:01.162Z",
+    "modified": "2018-05-13T15:44:01.162Z",
+    "author": "",
+    "trigger": "turn ? ? on ? ? flashlight",
+    "response": "<flashlight_on>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 70,
+  "fields": {
+    "created": "2018-05-13T15:44:01.163Z",
+    "modified": "2018-05-13T15:44:01.163Z",
+    "author": "",
+    "trigger": "turn ? ? flashlight ? ? off",
+    "response": "<flashlight_off>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 71,
+  "fields": {
+    "created": "2018-05-13T15:44:01.164Z",
+    "modified": "2018-05-13T15:44:01.164Z",
+    "author": "",
+    "trigger": "turn ? ? off ? ? flashlight",
+    "response": "<flashlight_off>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 72,
+  "fields": {
+    "created": "2018-05-13T15:44:01.165Z",
+    "modified": "2018-05-13T15:44:01.165Z",
+    "author": "",
+    "trigger": "is ? ? flashlight ? ? on|off|power|powered|deactivated|activated",
+    "response": "<flashlight_status>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 73,
+  "fields": {
+    "created": "2018-05-13T15:44:01.166Z",
+    "modified": "2018-05-13T15:44:01.166Z",
+    "author": "",
+    "trigger": "what is the flashlight status|state|power|powered",
+    "response": "<flashlight_status>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 74,
+  "fields": {
+    "created": "2018-05-13T15:44:01.168Z",
+    "modified": "2018-05-13T15:44:01.168Z",
+    "author": "",
+    "trigger": "? ? plan|minutes ? ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 75,
+  "fields": {
+    "created": "2018-05-13T15:44:01.169Z",
+    "modified": "2018-05-13T15:44:01.169Z",
+    "author": "",
+    "trigger": "? ? plan|minutes ? ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 76,
+  "fields": {
+    "created": "2018-05-13T15:44:01.170Z",
+    "modified": "2018-05-13T15:44:01.170Z",
+    "author": "",
+    "trigger": "? ? agent ? plan|minutes|minute ? ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 77,
+  "fields": {
+    "created": "2018-05-13T15:44:01.171Z",
+    "modified": "2018-05-13T15:44:01.171Z",
+    "author": "",
+    "trigger": "how many agent call minutes|minute|time|hours do I have this month",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 78,
+  "fields": {
+    "created": "2018-05-13T15:44:01.173Z",
+    "modified": "2018-05-13T15:44:01.173Z",
+    "author": "",
+    "trigger": "how many ? call minutes|minute|time|hours do I have left ? ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 79,
+  "fields": {
+    "created": "2018-05-13T15:44:01.174Z",
+    "modified": "2018-05-13T15:44:01.174Z",
+    "author": "",
+    "trigger": "how much time|minutes|minute|hour|agent|call|calls do I have left ? ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 80,
+  "fields": {
+    "created": "2018-05-13T15:44:01.175Z",
+    "modified": "2018-05-13T15:44:01.175Z",
+    "author": "",
+    "trigger": "how many minutes do I have left on my account",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 81,
+  "fields": {
+    "created": "2018-05-13T15:44:01.176Z",
+    "modified": "2018-05-13T15:44:01.176Z",
+    "author": "",
+    "trigger": "what is my account balance",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 82,
+  "fields": {
+    "created": "2018-05-13T15:44:01.177Z",
+    "modified": "2018-05-13T15:44:01.177Z",
+    "author": "",
+    "trigger": "? account balance ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 83,
+  "fields": {
+    "created": "2018-05-13T15:44:01.179Z",
+    "modified": "2018-05-13T15:44:01.179Z",
+    "author": "",
+    "trigger": "? account ? remaining ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 84,
+  "fields": {
+    "created": "2018-05-13T15:44:01.180Z",
+    "modified": "2018-05-13T15:44:01.180Z",
+    "author": "",
+    "trigger": "how many minutes do I have left|remaining|month",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 85,
+  "fields": {
+    "created": "2018-05-13T15:44:01.181Z",
+    "modified": "2018-05-13T15:44:01.181Z",
+    "author": "",
+    "trigger": "what minutes do I have left|remaining|month",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 86,
+  "fields": {
+    "created": "2018-05-13T15:44:01.182Z",
+    "modified": "2018-05-13T15:44:01.182Z",
+    "author": "",
+    "trigger": "how ? ? ? minute|minutes ? ? ? ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 87,
+  "fields": {
+    "created": "2018-05-13T15:44:01.183Z",
+    "modified": "2018-05-13T15:44:01.183Z",
+    "author": "",
+    "trigger": "how many minute|minutes ? ? ? ?",
+    "response": "<account_usage>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 88,
+  "fields": {
+    "created": "2018-05-13T15:44:01.184Z",
+    "modified": "2018-05-13T15:44:01.184Z",
+    "author": "",
+    "trigger": "what version are we on",
+    "response": "<version>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 89,
+  "fields": {
+    "created": "2018-05-13T15:44:01.185Z",
+    "modified": "2018-05-13T15:44:01.185Z",
+    "author": "",
+    "trigger": "what version are you",
+    "response": "<version>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 90,
+  "fields": {
+    "created": "2018-05-13T15:44:01.186Z",
+    "modified": "2018-05-13T15:44:01.186Z",
+    "author": "",
+    "trigger": "what version ? ?",
+    "response": "<version>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 91,
+  "fields": {
+    "created": "2018-05-13T15:44:01.187Z",
+    "modified": "2018-05-13T15:44:01.187Z",
+    "author": "",
+    "trigger": "version",
+    "response": "<version>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 92,
+  "fields": {
+    "created": "2018-05-13T15:44:01.189Z",
+    "modified": "2018-05-13T15:44:01.189Z",
+    "author": "",
+    "trigger": "chloe version",
+    "response": "<version>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 93,
+  "fields": {
+    "created": "2018-05-13T15:44:01.190Z",
+    "modified": "2018-05-13T15:44:01.190Z",
+    "author": "",
+    "trigger": "version number",
+    "response": "<version>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 94,
+  "fields": {
+    "created": "2018-05-13T15:44:01.191Z",
+    "modified": "2018-05-13T15:44:01.191Z",
+    "author": "",
+    "trigger": "chloe version number",
+    "response": "<version>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 95,
+  "fields": {
+    "created": "2018-05-13T15:44:01.195Z",
+    "modified": "2018-05-13T15:44:01.195Z",
+    "author": "",
+    "trigger": "give|tell me a quote",
+    "response": "Take care of your body. It's the only place you have to live.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 96,
+  "fields": {
+    "created": "2018-05-13T15:44:01.196Z",
+    "modified": "2018-05-13T15:44:01.196Z",
+    "author": "",
+    "trigger": "give|tell me a quote",
+    "response": "Failure is success if we learn from it.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 97,
+  "fields": {
+    "created": "2018-05-13T15:44:01.197Z",
+    "modified": "2018-05-13T15:44:01.197Z",
+    "author": "",
+    "trigger": "give|tell me a quote",
+    "response": "Never let schooling interfere with your education.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 98,
+  "fields": {
+    "created": "2018-05-13T15:44:01.198Z",
+    "modified": "2018-05-13T15:44:01.198Z",
+    "author": "",
+    "trigger": "give|tell me a quote",
+    "response": "Take care of your body. It's the only place you have to live.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 99,
+  "fields": {
+    "created": "2018-05-13T15:44:01.199Z",
+    "modified": "2018-05-13T15:44:01.199Z",
+    "author": "",
+    "trigger": "give|tell me a quote",
+    "response": "quote,, This too shall pass,, end quote,, This is an ancient poet adage reflecting on the ephemeral nature of the human condition.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 100,
+  "fields": {
+    "created": "2018-05-13T15:44:01.203Z",
+    "modified": "2018-05-13T15:44:01.203Z",
+    "author": "",
+    "trigger": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+    "response": "Some analog clocks and watches have tactile faces that can be read by touch.",
+    "source_state": "",
+    "dest_state": "",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 101,
+  "fields": {
+    "created": "2018-05-13T15:44:01.204Z",
+    "modified": "2018-05-13T15:44:01.204Z",
+    "author": "",
+    "trigger": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+    "response": "Bump dots are tactile stickers that can be placed on touchscreen interfaces like a refrigerator or microwave, as long as the screen doesn't dynamically change the location of buttons.",
+    "source_state": "",
+    "dest_state": "",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 102,
+  "fields": {
+    "created": "2018-05-13T15:44:01.206Z",
+    "modified": "2018-05-13T15:44:01.206Z",
+    "author": "",
+    "trigger": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+    "response": "Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",
+    "source_state": "",
+    "dest_state": "",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 103,
+  "fields": {
+    "created": "2018-05-13T15:44:01.207Z",
+    "modified": "2018-05-13T15:44:01.207Z",
+    "author": "",
+    "trigger": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+    "response": "Never take a medicine that you aren't 100% sure of it's origin and usage or dosage. When in doubt call an Aira agent. Many medicine bottle labels can only be read accurately by a human.",
+    "source_state": "",
+    "dest_state": "",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 104,
+  "fields": {
+    "created": "2018-05-13T15:44:01.208Z",
+    "modified": "2018-05-13T15:44:01.208Z",
+    "author": "",
+    "trigger": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+    "response": "Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",
+    "source_state": "",
+    "dest_state": "",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 105,
+  "fields": {
+    "created": "2018-05-13T15:44:01.209Z",
+    "modified": "2018-05-13T15:44:01.209Z",
+    "author": "",
+    "trigger": "tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation",
+    "response": "If you have strong mobility skills, taking the stairs rather than the elevator at every opportunity can improve your long term health. If you prefer exercise machines you can play an interesting podcast or have Chloe read you a book while you work out.",
+    "source_state": "",
+    "dest_state": "",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 106,
+  "fields": {
+    "created": "2018-05-13T15:44:01.213Z",
+    "modified": "2018-05-13T15:44:01.213Z",
+    "author": "",
+    "trigger": "Tell me a riddle",
+    "response": "What's black and white and red all over?",
+    "source_state": "nan",
+    "dest_state": "riddle 1 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 107,
+  "fields": {
+    "created": "2018-05-13T15:44:01.214Z",
+    "modified": "2018-05-13T15:44:01.215Z",
+    "author": "",
+    "trigger": "* newspaper *",
+    "response": "Perfect! Great job!",
+    "source_state": "riddle 1 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 108,
+  "fields": {
+    "created": "2018-05-13T15:44:01.216Z",
+    "modified": "2018-05-13T15:44:01.216Z",
+    "author": "",
+    "trigger": "* newspaper *",
+    "response": "Excellent! You must've heard that one before.",
+    "source_state": "riddle 1 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 109,
+  "fields": {
+    "created": "2018-05-13T15:44:01.217Z",
+    "modified": "2018-05-13T15:44:01.217Z",
+    "author": "",
+    "trigger": "* answer *",
+    "response": "It's a newspaper! See? The word red is spelled R, E, A, D!",
+    "source_state": "riddle 1 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 110,
+  "fields": {
+    "created": "2018-05-13T15:44:01.218Z",
+    "modified": "2018-05-13T15:44:01.218Z",
+    "author": "",
+    "trigger": "* hint *",
+    "response": "This thing is sometimes delivered to people by a boy on a bicycle.",
+    "source_state": "riddle 1 1",
+    "dest_state": "riddle 1 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 111,
+  "fields": {
+    "created": "2018-05-13T15:44:01.219Z",
+    "modified": "2018-05-13T15:44:01.219Z",
+    "author": "",
+    "trigger": "* tell me *",
+    "response": "It's a newspaper! See? The word red is spelled R, E, A, D!",
+    "source_state": "riddle 1 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 112,
+  "fields": {
+    "created": "2018-05-13T15:44:01.221Z",
+    "modified": "2018-05-13T15:44:01.221Z",
+    "author": "",
+    "trigger": "* don't know *",
+    "response": "It's a newspaper! See? The word red is spelled R, E, A, D!",
+    "source_state": "riddle 1 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 113,
+  "fields": {
+    "created": "2018-05-13T15:44:01.222Z",
+    "modified": "2018-05-13T15:44:01.222Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Nope. Think about the sound of the words rather than their spelling. That may help.",
+    "source_state": "riddle 1 1",
+    "dest_state": "riddle 1 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 114,
+  "fields": {
+    "created": "2018-05-13T15:44:01.223Z",
+    "modified": "2018-05-13T15:44:01.223Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Nope. If you want to give up just say 'I don't know' or 'tell me the answer'.",
+    "source_state": "riddle * 1",
+    "dest_state": "riddle * 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 115,
+  "fields": {
+    "created": "2018-05-13T15:44:01.224Z",
+    "modified": "2018-05-13T15:44:01.224Z",
+    "author": "",
+    "trigger": "* newspaper *",
+    "response": "Perfect! Great job!",
+    "source_state": "nan",
+    "dest_state": "riddle 1 2",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 116,
+  "fields": {
+    "created": "2018-05-13T15:44:01.225Z",
+    "modified": "2018-05-13T15:44:01.225Z",
+    "author": "",
+    "trigger": "* another",
+    "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+    "source_state": "riddle 1 1",
+    "dest_state": "riddle 2 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 117,
+  "fields": {
+    "created": "2018-05-13T15:44:01.226Z",
+    "modified": "2018-05-13T15:44:01.226Z",
+    "author": "",
+    "trigger": "* another",
+    "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+    "source_state": "riddle 1 1",
+    "dest_state": "riddle 3 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 118,
+  "fields": {
+    "created": "2018-05-13T15:44:01.227Z",
+    "modified": "2018-05-13T15:44:01.227Z",
+    "author": "",
+    "trigger": "* another riddle|one",
+    "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+    "source_state": "riddle 1 1",
+    "dest_state": "riddle 2 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 119,
+  "fields": {
+    "created": "2018-05-13T15:44:01.228Z",
+    "modified": "2018-05-13T15:44:01.228Z",
+    "author": "",
+    "trigger": "* another riddle|one",
+    "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+    "source_state": "riddle 1 1",
+    "dest_state": "riddle 3 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 120,
+  "fields": {
+    "created": "2018-05-13T15:44:01.230Z",
+    "modified": "2018-05-13T15:44:01.230Z",
+    "author": "",
+    "trigger": "Tell me a riddle",
+    "response": "Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+    "source_state": "nan",
+    "dest_state": "riddle 2 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 121,
+  "fields": {
+    "created": "2018-05-13T15:44:01.231Z",
+    "modified": "2018-05-13T15:44:01.231Z",
+    "author": "",
+    "trigger": "* African *",
+    "response": "Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",
+    "source_state": "riddle 2 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 122,
+  "fields": {
+    "created": "2018-05-13T15:44:01.232Z",
+    "modified": "2018-05-13T15:44:01.232Z",
+    "author": "",
+    "trigger": "* European *",
+    "response": "Nice! Have you seen the Monty Python and the Holy Grail? Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. I haven't seen it, but I love Wikipedia.",
+    "source_state": "riddle 2 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 123,
+  "fields": {
+    "created": "2018-05-13T15:44:01.233Z",
+    "modified": "2018-05-13T15:44:01.233Z",
+    "author": "",
+    "trigger": "* don't know *",
+    "response": "I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ",
+    "source_state": "riddle 2 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 124,
+  "fields": {
+    "created": "2018-05-13T15:44:01.234Z",
+    "modified": "2018-05-13T15:44:01.234Z",
+    "author": "",
+    "trigger": "* tell me *",
+    "response": "I'm referencing Monty Python and the Holy Grail. Sir Robin said 'What do you mean? An African or European swallow?' and that stumped the bridekeeper. ",
+    "source_state": "riddle 2 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 125,
+  "fields": {
+    "created": "2018-05-13T15:44:01.235Z",
+    "modified": "2018-05-13T15:44:01.235Z",
+    "author": "",
+    "trigger": "* hint *",
+    "response": "Have you seen any movies by Monty Python?",
+    "source_state": "riddle 2 1",
+    "dest_state": "riddle 2 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 126,
+  "fields": {
+    "created": "2018-05-13T15:44:01.237Z",
+    "modified": "2018-05-13T15:44:01.237Z",
+    "author": "",
+    "trigger": "* another",
+    "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+    "source_state": "riddle 2 1",
+    "dest_state": "riddle 3 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 127,
+  "fields": {
+    "created": "2018-05-13T15:44:01.238Z",
+    "modified": "2018-05-13T15:44:01.238Z",
+    "author": "",
+    "trigger": "* another",
+    "response": "Ok. What's black and white and red all over?",
+    "source_state": "riddle 2 1",
+    "dest_state": "riddle 1 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 128,
+  "fields": {
+    "created": "2018-05-13T15:44:01.239Z",
+    "modified": "2018-05-13T15:44:01.239Z",
+    "author": "",
+    "trigger": "* another one|riddle",
+    "response": "Ok. What starts with an E, ends with an E, and has one letter in it?",
+    "source_state": "riddle 2 1",
+    "dest_state": "riddle 3 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 129,
+  "fields": {
+    "created": "2018-05-13T15:44:01.240Z",
+    "modified": "2018-05-13T15:44:01.240Z",
+    "author": "",
+    "trigger": "* another one|riddle",
+    "response": "Ok. What's black and white and red all over?",
+    "source_state": "riddle 2 1",
+    "dest_state": "riddle 1 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 130,
+  "fields": {
+    "created": "2018-05-13T15:44:01.241Z",
+    "modified": "2018-05-13T15:44:01.241Z",
+    "author": "",
+    "trigger": "Tell me a riddle",
+    "response": "What starts with an E, ends with an E, and has one letter in it?",
+    "source_state": "nan",
+    "dest_state": "riddle 3 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 131,
+  "fields": {
+    "created": "2018-05-13T15:44:01.242Z",
+    "modified": "2018-05-13T15:44:01.242Z",
+    "author": "",
+    "trigger": "* envelope *",
+    "response": "Perfect! Great job!",
+    "source_state": "riddle 3 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 132,
+  "fields": {
+    "created": "2018-05-13T15:44:01.243Z",
+    "modified": "2018-05-13T15:44:01.243Z",
+    "author": "",
+    "trigger": "* envelope *",
+    "response": "Excellent! You must've heard that one before.",
+    "source_state": "riddle 3 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 133,
+  "fields": {
+    "created": "2018-05-13T15:44:01.245Z",
+    "modified": "2018-05-13T15:44:01.245Z",
+    "author": "",
+    "trigger": "* hint *",
+    "response": "It's not the word \"eye\". That's too easy",
+    "source_state": "riddle 3 1",
+    "dest_state": "riddle 3 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 134,
+  "fields": {
+    "created": "2018-05-13T15:44:01.246Z",
+    "modified": "2018-05-13T15:44:01.246Z",
+    "author": "",
+    "trigger": "* hint *",
+    "response": "This is a thing that you might find in the post office.",
+    "source_state": "riddle 3 1",
+    "dest_state": "riddle 3 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 135,
+  "fields": {
+    "created": "2018-05-13T15:44:01.247Z",
+    "modified": "2018-05-13T15:44:01.247Z",
+    "author": "",
+    "trigger": "* answer *",
+    "response": "It's an Envelope! See, it (usually) only contains one letter!",
+    "source_state": "riddle 3 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 136,
+  "fields": {
+    "created": "2018-05-13T15:44:01.248Z",
+    "modified": "2018-05-13T15:44:01.248Z",
+    "author": "",
+    "trigger": "* tell me *",
+    "response": "It's an Envelope! See, it (usually) only contains one letter!",
+    "source_state": "riddle 3 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 137,
+  "fields": {
+    "created": "2018-05-13T15:44:01.249Z",
+    "modified": "2018-05-13T15:44:01.249Z",
+    "author": "",
+    "trigger": "* don't know *",
+    "response": "It's an Envelope! See, it (usually) only contains one letter!",
+    "source_state": "riddle 3 1",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 138,
+  "fields": {
+    "created": "2018-05-13T15:44:01.250Z",
+    "modified": "2018-05-13T15:44:01.250Z",
+    "author": "",
+    "trigger": "* another",
+    "response": "Ok. What's black and white and red all over?",
+    "source_state": "riddle 3 1",
+    "dest_state": "riddle 1 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 139,
+  "fields": {
+    "created": "2018-05-13T15:44:01.251Z",
+    "modified": "2018-05-13T15:44:01.251Z",
+    "author": "",
+    "trigger": "* another",
+    "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+    "source_state": "riddle 3 1",
+    "dest_state": "riddle 2 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 140,
+  "fields": {
+    "created": "2018-05-13T15:44:01.253Z",
+    "modified": "2018-05-13T15:44:01.253Z",
+    "author": "",
+    "trigger": "* another one|riddle",
+    "response": "Ok. What's black and white and red all over?",
+    "source_state": "riddle 3 1",
+    "dest_state": "riddle 1 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 141,
+  "fields": {
+    "created": "2018-05-13T15:44:01.254Z",
+    "modified": "2018-05-13T15:44:01.254Z",
+    "author": "",
+    "trigger": "* another one|riddle",
+    "response": "Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?",
+    "source_state": "riddle 3 1",
+    "dest_state": "riddle 2 1",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 142,
+  "fields": {
+    "created": "2018-05-13T15:44:01.258Z",
+    "modified": "2018-05-13T15:44:01.258Z",
+    "author": "",
+    "trigger": "reset first boot experience",
+    "response": "<set_first_boot>",
+    "source_state": "*",
+    "dest_state": "Tutorial Start",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 143,
+  "fields": {
+    "created": "2018-05-13T15:44:01.259Z",
+    "modified": "2018-05-13T15:44:01.259Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Welcome Explorer! I'm Chloe, your Aira assistant. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" \n Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Start",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 144,
+  "fields": {
+    "created": "2018-05-13T15:44:01.260Z",
+    "modified": "2018-05-13T15:44:01.260Z",
+    "author": "",
+    "trigger": "nan",
+    "response": "Welcome Explorer! I'm Chloe, your Aira assistant. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" \n Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Start",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 145,
+  "fields": {
+    "created": "2018-05-13T15:44:01.261Z",
+    "modified": "2018-05-13T15:44:01.261Z",
+    "author": "",
+    "trigger": "* continue|next *",
+    "response": "To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 146,
+  "fields": {
+    "created": "2018-05-13T15:44:01.262Z",
+    "modified": "2018-05-13T15:44:01.262Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 147,
+  "fields": {
+    "created": "2018-05-13T15:44:01.263Z",
+    "modified": "2018-05-13T15:44:01.263Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 148,
+  "fields": {
+    "created": "2018-05-13T15:44:01.264Z",
+    "modified": "2018-05-13T15:44:01.264Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 149,
+  "fields": {
+    "created": "2018-05-13T15:44:01.266Z",
+    "modified": "2018-05-13T15:44:01.266Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, \"how do I use Horizon?\" or \"what can you do?\" Would you like me to repeat that or continue?",
+    "source_state": "Tutorial Setup",
+    "dest_state": "Tutorial Setup",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 150,
+  "fields": {
+    "created": "2018-05-13T15:44:01.267Z",
+    "modified": "2018-05-13T15:44:01.267Z",
+    "author": "",
+    "trigger": "* continue|next *",
+    "response": "For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 151,
+  "fields": {
+    "created": "2018-05-13T15:44:01.268Z",
+    "modified": "2018-05-13T15:44:01.268Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 152,
+  "fields": {
+    "created": "2018-05-13T15:44:01.269Z",
+    "modified": "2018-05-13T15:44:01.269Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 153,
+  "fields": {
+    "created": "2018-05-13T15:44:01.270Z",
+    "modified": "2018-05-13T15:44:01.270Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 154,
+  "fields": {
+    "created": "2018-05-13T15:44:01.271Z",
+    "modified": "2018-05-13T15:44:01.271Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. To call an agent, make sure that you've used the braided USB cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, \"call an agent.\" Would you like me to repeat that or continue to my last tip?",
+    "source_state": "Tutorial Last Tip",
+    "dest_state": "Tutorial Last Tip",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 155,
+  "fields": {
+    "created": "2018-05-13T15:44:01.272Z",
+    "modified": "2018-05-13T15:44:01.272Z",
+    "author": "",
+    "trigger": "* no|skip|nah|nope|naw|dont *",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 156,
+  "fields": {
+    "created": "2018-05-13T15:44:01.273Z",
+    "modified": "2018-05-13T15:44:01.273Z",
+    "author": "",
+    "trigger": "* no thanks|thank *",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 157,
+  "fields": {
+    "created": "2018-05-13T15:44:01.274Z",
+    "modified": "2018-05-13T15:44:01.274Z",
+    "author": "",
+    "trigger": "Im good",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 158,
+  "fields": {
+    "created": "2018-05-13T15:44:01.275Z",
+    "modified": "2018-05-13T15:44:01.275Z",
+    "author": "",
+    "trigger": "* continue|next *",
+    "response": "Wonderful! Thank you for taking the time to talk to me today and I can't wait to see what's on the horizon for you.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 159,
+  "fields": {
+    "created": "2018-05-13T15:44:01.276Z",
+    "modified": "2018-05-13T15:44:01.276Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I wish I could understand that. It was probably something really nice.",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 160,
+  "fields": {
+    "created": "2018-05-13T15:44:01.278Z",
+    "modified": "2018-05-13T15:44:01.278Z",
+    "author": "",
+    "trigger": "Thanks",
+    "response": "You got it",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 161,
+  "fields": {
+    "created": "2018-05-13T15:44:01.279Z",
+    "modified": "2018-05-13T15:44:01.279Z",
+    "author": "",
+    "trigger": "Thank you",
+    "response": "It was my pleasure",
+    "source_state": "Tutorial Done",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 162,
+  "fields": {
+    "created": "2018-05-13T15:44:01.280Z",
+    "modified": "2018-05-13T15:44:01.280Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 163,
+  "fields": {
+    "created": "2018-05-13T15:44:01.281Z",
+    "modified": "2018-05-13T15:44:01.282Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 164,
+  "fields": {
+    "created": "2018-05-13T15:44:01.283Z",
+    "modified": "2018-05-13T15:44:01.283Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 165,
+  "fields": {
+    "created": "2018-05-13T15:44:01.284Z",
+    "modified": "2018-05-13T15:44:01.284Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",
+    "source_state": "Tutorial Done",
+    "dest_state": "Tutorial Done",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 166,
+  "fields": {
+    "created": "2018-05-13T15:44:01.285Z",
+    "modified": "2018-05-13T15:44:01.285Z",
+    "author": "",
+    "trigger": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+    "response": "OK. You can always hold down on the call button and ask me how to use the Horizon phone.",
+    "source_state": "Tutorial *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 167,
+  "fields": {
+    "created": "2018-05-13T15:44:01.290Z",
+    "modified": "2018-05-13T15:44:01.290Z",
+    "author": "",
+    "trigger": "read ? ? release notes",
+    "response": "version 27 adds 1 feature and 4 bug fixes. Feature 1, MQTT remote agent call initiation. Bug fix 1, remove deprecated calls of `onSpeechError`. Bug fix 2 Gradle build script cleanup and library version correction. Bug fix 3, Open source Android Speech library compiled to AAR and removed from source tree. Bug fix 4, build documentation and notes added.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 168,
+  "fields": {
+    "created": "2018-05-13T15:44:01.291Z",
+    "modified": "2018-05-13T15:44:01.291Z",
+    "author": "",
+    "trigger": "read ? ? release notes ? 27",
+    "response": "version 27 adds 1 feature and 4 bug fixes. Feature 1, MQTT remote agent call initiation. Bug fix 1, remove deprecated calls of `onSpeechError`. Bug fix 2 Gradle build script cleanup and library version correction. Bug fix 3, Open source Android Speech library compiled to AAR and removed from source tree. Bug fix 4, build documentation and notes added.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 169,
+  "fields": {
+    "created": "2018-05-13T15:44:01.295Z",
+    "modified": "2018-05-13T15:44:01.295Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I don't know that. You can ask me what I can do any time.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 170,
+  "fields": {
+    "created": "2018-05-13T15:44:01.296Z",
+    "modified": "2018-05-13T15:44:01.296Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I haven't learned that yet. Thanks for being patient with me.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 171,
+  "fields": {
+    "created": "2018-05-13T15:44:01.297Z",
+    "modified": "2018-05-13T15:44:01.297Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I don't know that.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 172,
+  "fields": {
+    "created": "2018-05-13T15:44:01.298Z",
+    "modified": "2018-05-13T15:44:01.298Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 173,
+  "fields": {
+    "created": "2018-05-13T15:44:01.300Z",
+    "modified": "2018-05-13T15:44:01.300Z",
+    "author": "",
+    "trigger": "nan",
+    "response": "Sorry, I didn't hear you.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 174,
+  "fields": {
+    "created": "2018-05-13T15:44:01.302Z",
+    "modified": "2018-05-13T15:44:01.302Z",
+    "author": "",
+    "trigger": "nan",
+    "response": "Sorry, I didn't hear you. You can ask me what I can do any time.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 175,
+  "fields": {
+    "created": "2018-05-13T15:44:01.303Z",
+    "modified": "2018-05-13T15:44:01.303Z",
+    "author": "",
+    "trigger": "Are you there?",
+    "response": "Yes, I'm here for you.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 176,
+  "fields": {
+    "created": "2018-05-13T15:44:01.304Z",
+    "modified": "2018-05-13T15:44:01.304Z",
+    "author": "",
+    "trigger": "Are you there?",
+    "response": "Yes, I'm ready to help.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 177,
+  "fields": {
+    "created": "2018-05-13T15:44:01.305Z",
+    "modified": "2018-05-13T15:44:01.305Z",
+    "author": "",
+    "trigger": "hi|hello|hey|howdy|yo|sup",
+    "response": "Hello! It's good to hear from you.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 178,
+  "fields": {
+    "created": "2018-05-13T15:44:01.306Z",
+    "modified": "2018-05-13T15:44:01.306Z",
+    "author": "",
+    "trigger": "hi|hello|hey|howdy|yo|sup",
+    "response": "Hi! I'm listening.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 179,
+  "fields": {
+    "created": "2018-05-13T15:44:01.307Z",
+    "modified": "2018-05-13T15:44:01.308Z",
+    "author": "",
+    "trigger": "hi|hello|hey|howdy|yo|sup",
+    "response": "Hi, how can I help you?",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 180,
+  "fields": {
+    "created": "2018-05-13T15:44:01.309Z",
+    "modified": "2018-05-13T15:44:01.309Z",
+    "author": "",
+    "trigger": "hi|hello|hey|howdy|yo|sup *",
+    "response": "Hello! It's good to hear from you.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 181,
+  "fields": {
+    "created": "2018-05-13T15:44:01.310Z",
+    "modified": "2018-05-13T15:44:01.310Z",
+    "author": "",
+    "trigger": "hi|hello|hey|howdy|yo|sup *",
+    "response": "Hi! I'm listening.",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 182,
+  "fields": {
+    "created": "2018-05-13T15:44:01.311Z",
+    "modified": "2018-05-13T15:44:01.311Z",
+    "author": "",
+    "trigger": "hi|hello|hey|howdy|yo|sup *",
+    "response": "Hi, how can I help you?",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 183,
+  "fields": {
+    "created": "2018-05-13T15:44:01.312Z",
+    "modified": "2018-05-13T15:44:01.312Z",
+    "author": "",
+    "trigger": "help",
+    "response": "You can ask me to call an agent, or dial customer support at 858 876 2472",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 184,
+  "fields": {
+    "created": "2018-05-13T15:44:01.313Z",
+    "modified": "2018-05-13T15:44:01.313Z",
+    "author": "",
+    "trigger": "Testing 1, 2, 3",
+    "response": "4,5,6",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 185,
+  "fields": {
+    "created": "2018-05-13T15:44:01.314Z",
+    "modified": "2018-05-13T15:44:01.314Z",
+    "author": "",
+    "trigger": "Testing 1, 2, 3",
+    "response": "Ok. What now?",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 186,
+  "fields": {
+    "created": "2018-05-13T15:44:01.315Z",
+    "modified": "2018-05-13T15:44:01.315Z",
+    "author": "",
+    "trigger": "* nevermind",
+    "response": "OK",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 187,
+  "fields": {
+    "created": "2018-05-13T15:44:01.320Z",
+    "modified": "2018-05-13T15:44:01.320Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? device|devices|headset|headsets|earphone|earphones|earbud|earbuds",
+    "response": "<find_bluetooth_devices>",
+    "source_state": "nan",
+    "dest_state": "Bluetooth connecting headset",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 188,
+  "fields": {
+    "created": "2018-05-13T15:44:01.321Z",
+    "modified": "2018-05-13T15:44:01.321Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? bluetooth|wireless device|devices|headset|headsets|earphone|earphones|earbud|earbuds",
+    "response": "<find_bluetooth_devices>",
+    "source_state": "nan",
+    "dest_state": "Bluetooth connecting headset",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 189,
+  "fields": {
+    "created": "2018-05-13T15:44:01.322Z",
+    "modified": "2018-05-13T15:44:01.322Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+    "response": "<find_bluetooth_devices>",
+    "source_state": "Bluetooth connecting ?",
+    "dest_state": "Bluetooth connecting headset",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 190,
+  "fields": {
+    "created": "2018-05-13T15:44:01.324Z",
+    "modified": "2018-05-13T15:44:01.324Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+    "response": "<find_bluetooth_devices>",
+    "source_state": "Bluetooth connecting ?",
+    "dest_state": "Bluetooth connecting headset",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 191,
+  "fields": {
+    "created": "2018-05-13T15:44:01.325Z",
+    "modified": "2018-05-13T15:44:01.325Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+    "response": "<find_bluetooth_devices>",
+    "source_state": "Bluetooth ?",
+    "dest_state": "Bluetooth connecting headset",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 192,
+  "fields": {
+    "created": "2018-05-13T15:44:01.326Z",
+    "modified": "2018-05-13T15:44:01.326Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices",
+    "response": "<find_bluetooth_devices>",
+    "source_state": "Bluetooth ?",
+    "dest_state": "Bluetooth connecting headset",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 193,
+  "fields": {
+    "created": "2018-05-13T15:44:01.327Z",
+    "modified": "2018-05-13T15:44:01.327Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? speaker|speakers|tv|tvs",
+    "response": "<find_bluetooth_speakers>",
+    "source_state": "nan",
+    "dest_state": "Bluetooth connecting speaker",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 194,
+  "fields": {
+    "created": "2018-05-13T15:44:01.328Z",
+    "modified": "2018-05-13T15:44:01.328Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+    "response": "<find_bluetooth_speakers>",
+    "source_state": "nan",
+    "dest_state": "Bluetooth connecting speaker",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 195,
+  "fields": {
+    "created": "2018-05-13T15:44:01.329Z",
+    "modified": "2018-05-13T15:44:01.329Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? speaker|speakers|tv|tvs",
+    "response": "<find_bluetooth_speakers>",
+    "source_state": "Bluetooth connecting ?",
+    "dest_state": "Bluetooth connecting speaker",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 196,
+  "fields": {
+    "created": "2018-05-13T15:44:01.330Z",
+    "modified": "2018-05-13T15:44:01.330Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+    "response": "<find_bluetooth_speakers>",
+    "source_state": "Bluetooth connecting ?",
+    "dest_state": "Bluetooth connecting speaker",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 197,
+  "fields": {
+    "created": "2018-05-13T15:44:01.332Z",
+    "modified": "2018-05-13T15:44:01.332Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? speaker|speakers|tv|tvs",
+    "response": "<find_bluetooth_speakers>",
+    "source_state": "Bluetooth ?",
+    "dest_state": "Bluetooth connecting speaker",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 198,
+  "fields": {
+    "created": "2018-05-13T15:44:01.333Z",
+    "modified": "2018-05-13T15:44:01.333Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? wireless|bluetooth ? speaker|speakers|tv|tvs",
+    "response": "<find_bluetooth_speakers>",
+    "source_state": "Bluetooth ?",
+    "dest_state": "Bluetooth connecting speaker",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 199,
+  "fields": {
+    "created": "2018-05-13T15:44:01.334Z",
+    "modified": "2018-05-13T15:44:01.334Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? pair|paired|current ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+    "response": "<find_paired_devices>",
+    "source_state": "nan",
+    "dest_state": "Bluetooth connecting paired",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 200,
+  "fields": {
+    "created": "2018-05-13T15:44:01.335Z",
+    "modified": "2018-05-13T15:44:01.335Z",
+    "author": "",
+    "trigger": "what bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+    "response": "<paired_bluetooth_status>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 201,
+  "fields": {
+    "created": "2018-05-13T15:44:01.336Z",
+    "modified": "2018-05-13T15:44:01.337Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? pair|paired|current bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+    "response": "<find_paired_devices>",
+    "source_state": "Bluetooth *",
+    "dest_state": "Bluetooth connecting paired",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 202,
+  "fields": {
+    "created": "2018-05-13T15:44:01.338Z",
+    "modified": "2018-05-13T15:44:01.338Z",
+    "author": "",
+    "trigger": "connect|find|look ? ? pair|paired|current bluetooth|wireless bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones",
+    "response": "<find_paired_devices>",
+    "source_state": "Bluetooth *",
+    "dest_state": "Bluetooth connecting paired",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 203,
+  "fields": {
+    "created": "2018-05-13T15:44:01.339Z",
+    "modified": "2018-05-13T15:44:01.339Z",
+    "author": "",
+    "trigger": "what ? ? bluetooth|device|devices|headphone|headphones|headset|headsets|earbud|earbuds|earphone|earphones ? pair|paired|connected",
+    "response": "<paired_bluetooth_status>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 204,
+  "fields": {
+    "created": "2018-05-13T15:44:01.340Z",
+    "modified": "2018-05-13T15:44:01.340Z",
+    "author": "",
+    "trigger": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+    "response": "<disconnect_bluetooth_device>",
+    "source_state": "nan",
+    "dest_state": "Bluetooth disconnect",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 205,
+  "fields": {
+    "created": "2018-05-13T15:44:01.342Z",
+    "modified": "2018-05-13T15:44:01.342Z",
+    "author": "",
+    "trigger": "disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earphone|earphones|headphone|headphones|earbud|earbuds ? ?",
+    "response": "<disconnect_bluetooth_device>",
+    "source_state": "Bluetooth *",
+    "dest_state": "Bluetooth disconnect",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 206,
+  "fields": {
+    "created": "2018-05-13T15:44:01.343Z",
+    "modified": "2018-05-13T15:44:01.343Z",
+    "author": "",
+    "trigger": "? ? turn on ? bluetooth",
+    "response": "<bluetooth_on>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 207,
+  "fields": {
+    "created": "2018-05-13T15:44:01.344Z",
+    "modified": "2018-05-13T15:44:01.344Z",
+    "author": "",
+    "trigger": "? ? turn off ? bluetooth",
+    "response": "<bluetooth_off>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 208,
+  "fields": {
+    "created": "2018-05-13T15:44:01.346Z",
+    "modified": "2018-05-13T15:44:01.346Z",
+    "author": "",
+    "trigger": "? ? turn on ? bluetooth",
+    "response": "<bluetooth_on>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 209,
+  "fields": {
+    "created": "2018-05-13T15:44:01.347Z",
+    "modified": "2018-05-13T15:44:01.347Z",
+    "author": "",
+    "trigger": "? ? turn off ? bluetooth",
+    "response": "<bluetooth_off>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 210,
+  "fields": {
+    "created": "2018-05-13T15:44:01.348Z",
+    "modified": "2018-05-13T15:44:01.348Z",
+    "author": "",
+    "trigger": "? ? turn ? bluetooth on",
+    "response": "<bluetooth_on>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 211,
+  "fields": {
+    "created": "2018-05-13T15:44:01.349Z",
+    "modified": "2018-05-13T15:44:01.349Z",
+    "author": "",
+    "trigger": "? ? turn ? bluetooth off",
+    "response": "<bluetooth_off>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 212,
+  "fields": {
+    "created": "2018-05-13T15:44:01.351Z",
+    "modified": "2018-05-13T15:44:01.351Z",
+    "author": "",
+    "trigger": "? ? turn ? bluetooth on",
+    "response": "<bluetooth_on>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 213,
+  "fields": {
+    "created": "2018-05-13T15:44:01.353Z",
+    "modified": "2018-05-13T15:44:01.353Z",
+    "author": "",
+    "trigger": "? ? turn ? bluetooth off",
+    "response": "<bluetooth_off>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 214,
+  "fields": {
+    "created": "2018-05-13T15:44:01.355Z",
+    "modified": "2018-05-13T15:44:01.355Z",
+    "author": "",
+    "trigger": "? ? enable ? bluetooth",
+    "response": "<bluetooth_on>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 215,
+  "fields": {
+    "created": "2018-05-13T15:44:01.356Z",
+    "modified": "2018-05-13T15:44:01.356Z",
+    "author": "",
+    "trigger": "? ? disable ? bluetooth",
+    "response": "<bluetooth_off>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 216,
+  "fields": {
+    "created": "2018-05-13T15:44:01.357Z",
+    "modified": "2018-05-13T15:44:01.357Z",
+    "author": "",
+    "trigger": "? ? enable ? bluetooth",
+    "response": "<bluetooth_on>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 217,
+  "fields": {
+    "created": "2018-05-13T15:44:01.358Z",
+    "modified": "2018-05-13T15:44:01.358Z",
+    "author": "",
+    "trigger": "? ? disable ? bluetooth",
+    "response": "<bluetooth_off>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 218,
+  "fields": {
+    "created": "2018-05-13T15:44:01.359Z",
+    "modified": "2018-05-13T15:44:01.359Z",
+    "author": "",
+    "trigger": "? ? bluetooth ? ? status",
+    "response": "<bluetooth_status>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 219,
+  "fields": {
+    "created": "2018-05-13T15:44:01.361Z",
+    "modified": "2018-05-13T15:44:01.361Z",
+    "author": "",
+    "trigger": "? ? bluetooth ? ? status",
+    "response": "<bluetooth_status>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 220,
+  "fields": {
+    "created": "2018-05-13T15:44:01.362Z",
+    "modified": "2018-05-13T15:44:01.362Z",
+    "author": "",
+    "trigger": "? ? is ? bluetooth on|off|enabled|disabled ?",
+    "response": "<bluetooth_status>",
+    "source_state": "nan",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 221,
+  "fields": {
+    "created": "2018-05-13T15:44:01.363Z",
+    "modified": "2018-05-13T15:44:01.363Z",
+    "author": "",
+    "trigger": "? ? is ? bluetooth on|off|enabled|disabled ?",
+    "response": "<bluetooth_status>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 222,
+  "fields": {
+    "created": "2018-05-13T15:44:01.364Z",
+    "modified": "2018-05-13T15:44:01.364Z",
+    "author": "",
+    "trigger": "* no *",
+    "response": "Ok. You can always connect to a device later",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 223,
+  "fields": {
+    "created": "2018-05-13T15:44:01.365Z",
+    "modified": "2018-05-13T15:44:01.365Z",
+    "author": "",
+    "trigger": "* one|first|1|yes *",
+    "response": "<connect_bluetooth_speaker_1>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 224,
+  "fields": {
+    "created": "2018-05-13T15:44:01.366Z",
+    "modified": "2018-05-13T15:44:01.366Z",
+    "author": "",
+    "trigger": "* two|second|2 *",
+    "response": "<connect_bluetooth_speaker_2>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 225,
+  "fields": {
+    "created": "2018-05-13T15:44:01.368Z",
+    "modified": "2018-05-13T15:44:01.368Z",
+    "author": "",
+    "trigger": "* three|third|3 *",
+    "response": "<connect_bluetooth_speaker_3>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 226,
+  "fields": {
+    "created": "2018-05-13T15:44:01.369Z",
+    "modified": "2018-05-13T15:44:01.369Z",
+    "author": "",
+    "trigger": "* four|fourth|4 *",
+    "response": "<connect_bluetooth_speaker_4>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 227,
+  "fields": {
+    "created": "2018-05-13T15:44:01.370Z",
+    "modified": "2018-05-13T15:44:01.370Z",
+    "author": "",
+    "trigger": "* five|fifth|5 *",
+    "response": "<connect_bluetooth_speaker_5>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 228,
+  "fields": {
+    "created": "2018-05-13T15:44:01.371Z",
+    "modified": "2018-05-13T15:44:01.371Z",
+    "author": "",
+    "trigger": "* six|sixth|6 *",
+    "response": "<connect_bluetooth_speaker_6>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 229,
+  "fields": {
+    "created": "2018-05-13T15:44:01.373Z",
+    "modified": "2018-05-13T15:44:01.373Z",
+    "author": "",
+    "trigger": "* seven|seventh|7 *",
+    "response": "<connect_bluetooth_speaker_7>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 230,
+  "fields": {
+    "created": "2018-05-13T15:44:01.374Z",
+    "modified": "2018-05-13T15:44:01.374Z",
+    "author": "",
+    "trigger": "* eight|eight|8 *",
+    "response": "<connect_bluetooth_speaker_8>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 231,
+  "fields": {
+    "created": "2018-05-13T15:44:01.375Z",
+    "modified": "2018-05-13T15:44:01.375Z",
+    "author": "",
+    "trigger": "* nine|ninth|9 *",
+    "response": "<connect_bluetooth_speaker_9>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 232,
+  "fields": {
+    "created": "2018-05-13T15:44:01.376Z",
+    "modified": "2018-05-13T15:44:01.376Z",
+    "author": "",
+    "trigger": "* ten|tenth|10 *",
+    "response": "<connect_bluetooth_speaker_10>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 233,
+  "fields": {
+    "created": "2018-05-13T15:44:01.377Z",
+    "modified": "2018-05-13T15:44:01.377Z",
+    "author": "",
+    "trigger": "* eleven|eleventh|11 *",
+    "response": "<connect_bluetooth_speaker_11>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 234,
+  "fields": {
+    "created": "2018-05-13T15:44:01.378Z",
+    "modified": "2018-05-13T15:44:01.378Z",
+    "author": "",
+    "trigger": "* twelve|twelfth|12 *",
+    "response": "<connect_bluetooth_speaker_12>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 235,
+  "fields": {
+    "created": "2018-05-13T15:44:01.379Z",
+    "modified": "2018-05-13T15:44:01.379Z",
+    "author": "",
+    "trigger": "* thirteen|thirteenth|13 *",
+    "response": "<connect_bluetooth_speaker_13>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 236,
+  "fields": {
+    "created": "2018-05-13T15:44:01.380Z",
+    "modified": "2018-05-13T15:44:01.380Z",
+    "author": "",
+    "trigger": "* fourteen|fourteenth|14 *",
+    "response": "<connect_bluetooth_speaker_14>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 237,
+  "fields": {
+    "created": "2018-05-13T15:44:01.382Z",
+    "modified": "2018-05-13T15:44:01.382Z",
+    "author": "",
+    "trigger": "* fifteen|fifteenth|15 *",
+    "response": "<connect_bluetooth_speaker_15>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 238,
+  "fields": {
+    "created": "2018-05-13T15:44:01.383Z",
+    "modified": "2018-05-13T15:44:01.383Z",
+    "author": "",
+    "trigger": "* sixteen|sixteenth|16 *",
+    "response": "<connect_bluetooth_speaker_16>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 239,
+  "fields": {
+    "created": "2018-05-13T15:44:01.384Z",
+    "modified": "2018-05-13T15:44:01.384Z",
+    "author": "",
+    "trigger": "* seventeen|seventeenth|17 *",
+    "response": "<connect_bluetooth_speaker_17>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 240,
+  "fields": {
+    "created": "2018-05-13T15:44:01.385Z",
+    "modified": "2018-05-13T15:44:01.385Z",
+    "author": "",
+    "trigger": "* eighteen|eighteenth|18 *",
+    "response": "<connect_bluetooth_speaker_18>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 241,
+  "fields": {
+    "created": "2018-05-13T15:44:01.386Z",
+    "modified": "2018-05-13T15:44:01.386Z",
+    "author": "",
+    "trigger": "* nineteen|nineteenth|19 *",
+    "response": "<connect_bluetooth_speaker_19>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 242,
+  "fields": {
+    "created": "2018-05-13T15:44:01.387Z",
+    "modified": "2018-05-13T15:44:01.387Z",
+    "author": "",
+    "trigger": "* twenty|twentieth|20 *",
+    "response": "<connect_bluetooth_speaker_20>",
+    "source_state": "Bluetooth connecting speaker",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 243,
+  "fields": {
+    "created": "2018-05-13T15:44:01.389Z",
+    "modified": "2018-05-13T15:44:01.389Z",
+    "author": "",
+    "trigger": "* no *",
+    "response": "Ok. You can always connect to a device later",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 244,
+  "fields": {
+    "created": "2018-05-13T15:44:01.390Z",
+    "modified": "2018-05-13T15:44:01.390Z",
+    "author": "",
+    "trigger": "* one|first|1|yes *",
+    "response": "<connect_bluetooth_headset_1>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 245,
+  "fields": {
+    "created": "2018-05-13T15:44:01.391Z",
+    "modified": "2018-05-13T15:44:01.391Z",
+    "author": "",
+    "trigger": "* two|second|2 *",
+    "response": "<connect_bluetooth_headset_2>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 246,
+  "fields": {
+    "created": "2018-05-13T15:44:01.392Z",
+    "modified": "2018-05-13T15:44:01.392Z",
+    "author": "",
+    "trigger": "* three|third|3 *",
+    "response": "<connect_bluetooth_headset_3>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 247,
+  "fields": {
+    "created": "2018-05-13T15:44:01.393Z",
+    "modified": "2018-05-13T15:44:01.393Z",
+    "author": "",
+    "trigger": "* four|fourth|4 *",
+    "response": "<connect_bluetooth_headset_4>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 248,
+  "fields": {
+    "created": "2018-05-13T15:44:01.395Z",
+    "modified": "2018-05-13T15:44:01.395Z",
+    "author": "",
+    "trigger": "* five|fifth|5 *",
+    "response": "<connect_bluetooth_headset_5>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 249,
+  "fields": {
+    "created": "2018-05-13T15:44:01.396Z",
+    "modified": "2018-05-13T15:44:01.396Z",
+    "author": "",
+    "trigger": "* six|sixth|6 *",
+    "response": "<connect_bluetooth_headset_6>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 250,
+  "fields": {
+    "created": "2018-05-13T15:44:01.397Z",
+    "modified": "2018-05-13T15:44:01.397Z",
+    "author": "",
+    "trigger": "* seven|seventh|7 *",
+    "response": "<connect_bluetooth_headset_7>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 251,
+  "fields": {
+    "created": "2018-05-13T15:44:01.398Z",
+    "modified": "2018-05-13T15:44:01.398Z",
+    "author": "",
+    "trigger": "* eight|eight|8 *",
+    "response": "<connect_bluetooth_headset_8>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 252,
+  "fields": {
+    "created": "2018-05-13T15:44:01.399Z",
+    "modified": "2018-05-13T15:44:01.399Z",
+    "author": "",
+    "trigger": "* nine|ninth|9 *",
+    "response": "<connect_bluetooth_headset_9>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 253,
+  "fields": {
+    "created": "2018-05-13T15:44:01.400Z",
+    "modified": "2018-05-13T15:44:01.400Z",
+    "author": "",
+    "trigger": "* ten|tenth|10 *",
+    "response": "<connect_bluetooth_headset_10>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 254,
+  "fields": {
+    "created": "2018-05-13T15:44:01.401Z",
+    "modified": "2018-05-13T15:44:01.401Z",
+    "author": "",
+    "trigger": "* eleven|eleventh|11 *",
+    "response": "<connect_bluetooth_headset_11>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 255,
+  "fields": {
+    "created": "2018-05-13T15:44:01.403Z",
+    "modified": "2018-05-13T15:44:01.403Z",
+    "author": "",
+    "trigger": "* twelve|twelfth|12 *",
+    "response": "<connect_bluetooth_headset_12>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 256,
+  "fields": {
+    "created": "2018-05-13T15:44:01.404Z",
+    "modified": "2018-05-13T15:44:01.404Z",
+    "author": "",
+    "trigger": "* thirteen|thirteenth|13 *",
+    "response": "<connect_bluetooth_headset_13>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 257,
+  "fields": {
+    "created": "2018-05-13T15:44:01.405Z",
+    "modified": "2018-05-13T15:44:01.405Z",
+    "author": "",
+    "trigger": "* fourteen|fourteenth|14 *",
+    "response": "<connect_bluetooth_headset_14>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 258,
+  "fields": {
+    "created": "2018-05-13T15:44:01.406Z",
+    "modified": "2018-05-13T15:44:01.406Z",
+    "author": "",
+    "trigger": "* fifteen|fifteenth|15 *",
+    "response": "<connect_bluetooth_headset_15>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 259,
+  "fields": {
+    "created": "2018-05-13T15:44:01.407Z",
+    "modified": "2018-05-13T15:44:01.407Z",
+    "author": "",
+    "trigger": "* sixteen|sixteenth|16 *",
+    "response": "<connect_bluetooth_headset_16>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 260,
+  "fields": {
+    "created": "2018-05-13T15:44:01.408Z",
+    "modified": "2018-05-13T15:44:01.408Z",
+    "author": "",
+    "trigger": "* seventeen|seventeenth|17 *",
+    "response": "<connect_bluetooth_headset_17>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 261,
+  "fields": {
+    "created": "2018-05-13T15:44:01.409Z",
+    "modified": "2018-05-13T15:44:01.409Z",
+    "author": "",
+    "trigger": "* eighteen|eighteenth|18 *",
+    "response": "<connect_bluetooth_headset_18>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 262,
+  "fields": {
+    "created": "2018-05-13T15:44:01.410Z",
+    "modified": "2018-05-13T15:44:01.410Z",
+    "author": "",
+    "trigger": "* nineteen|nineteenth|19 *",
+    "response": "<connect_bluetooth_headset_19>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 263,
+  "fields": {
+    "created": "2018-05-13T15:44:01.411Z",
+    "modified": "2018-05-13T15:44:01.411Z",
+    "author": "",
+    "trigger": "* twenty|twentieth|20 *",
+    "response": "<connect_bluetooth_headset_20>",
+    "source_state": "Bluetooth connecting headset",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 264,
+  "fields": {
+    "created": "2018-05-13T15:44:01.413Z",
+    "modified": "2018-05-13T15:44:01.413Z",
+    "author": "",
+    "trigger": "* one|first|1|yes *",
+    "response": "<disconnect_bluetooth_1>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 265,
+  "fields": {
+    "created": "2018-05-13T15:44:01.414Z",
+    "modified": "2018-05-13T15:44:01.414Z",
+    "author": "",
+    "trigger": "* two|second|2 *",
+    "response": "<disconnect_bluetooth_2>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 266,
+  "fields": {
+    "created": "2018-05-13T15:44:01.415Z",
+    "modified": "2018-05-13T15:44:01.415Z",
+    "author": "",
+    "trigger": "* three|third|3 *",
+    "response": "<disconnect_bluetooth_3>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 267,
+  "fields": {
+    "created": "2018-05-13T15:44:01.416Z",
+    "modified": "2018-05-13T15:44:01.416Z",
+    "author": "",
+    "trigger": "* four|fourth|4 *",
+    "response": "<disconnect_bluetooth_4>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 268,
+  "fields": {
+    "created": "2018-05-13T15:44:01.417Z",
+    "modified": "2018-05-13T15:44:01.417Z",
+    "author": "",
+    "trigger": "* five|fifth|5 *",
+    "response": "<disconnect_bluetooth_5>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 269,
+  "fields": {
+    "created": "2018-05-13T15:44:01.418Z",
+    "modified": "2018-05-13T15:44:01.418Z",
+    "author": "",
+    "trigger": "* six|sixth|6 *",
+    "response": "<disconnect_bluetooth_6>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 270,
+  "fields": {
+    "created": "2018-05-13T15:44:01.419Z",
+    "modified": "2018-05-13T15:44:01.419Z",
+    "author": "",
+    "trigger": "* seven|seventh|7 *",
+    "response": "<disconnect_bluetooth_7>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 271,
+  "fields": {
+    "created": "2018-05-13T15:44:01.421Z",
+    "modified": "2018-05-13T15:44:01.421Z",
+    "author": "",
+    "trigger": "* eight|eight|8 *",
+    "response": "<disconnect_bluetooth_8>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 272,
+  "fields": {
+    "created": "2018-05-13T15:44:01.422Z",
+    "modified": "2018-05-13T15:44:01.422Z",
+    "author": "",
+    "trigger": "* nine|ninth|9 *",
+    "response": "<disconnect_bluetooth_9>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 273,
+  "fields": {
+    "created": "2018-05-13T15:44:01.423Z",
+    "modified": "2018-05-13T15:44:01.423Z",
+    "author": "",
+    "trigger": "* ten|tenth|10 *",
+    "response": "<disconnect_bluetooth_10>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 274,
+  "fields": {
+    "created": "2018-05-13T15:44:01.424Z",
+    "modified": "2018-05-13T15:44:01.424Z",
+    "author": "",
+    "trigger": "* eleven|eleventh|11 *",
+    "response": "<disconnect_bluetooth_11>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 275,
+  "fields": {
+    "created": "2018-05-13T15:44:01.425Z",
+    "modified": "2018-05-13T15:44:01.425Z",
+    "author": "",
+    "trigger": "* twelve|twelfth|12 *",
+    "response": "<disconnect_bluetooth_12>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 276,
+  "fields": {
+    "created": "2018-05-13T15:44:01.426Z",
+    "modified": "2018-05-13T15:44:01.426Z",
+    "author": "",
+    "trigger": "* thirteen|thirteenth|13 *",
+    "response": "<disconnect_bluetooth_13>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 277,
+  "fields": {
+    "created": "2018-05-13T15:44:01.428Z",
+    "modified": "2018-05-13T15:44:01.428Z",
+    "author": "",
+    "trigger": "* fourteen|fourteenth|14 *",
+    "response": "<disconnect_bluetooth_14>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 278,
+  "fields": {
+    "created": "2018-05-13T15:44:01.429Z",
+    "modified": "2018-05-13T15:44:01.429Z",
+    "author": "",
+    "trigger": "* fifteen|fifteenth|15 *",
+    "response": "<disconnect_bluetooth_15>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 279,
+  "fields": {
+    "created": "2018-05-13T15:44:01.430Z",
+    "modified": "2018-05-13T15:44:01.430Z",
+    "author": "",
+    "trigger": "* sixteen|sixteenth|16 *",
+    "response": "<disconnect_bluetooth_16>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 280,
+  "fields": {
+    "created": "2018-05-13T15:44:01.431Z",
+    "modified": "2018-05-13T15:44:01.431Z",
+    "author": "",
+    "trigger": "* seventeen|seventeenth|17 *",
+    "response": "<disconnect_bluetooth_17>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 281,
+  "fields": {
+    "created": "2018-05-13T15:44:01.432Z",
+    "modified": "2018-05-13T15:44:01.432Z",
+    "author": "",
+    "trigger": "* eighteen|eighteenth|18 *",
+    "response": "<disconnect_bluetooth_18>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 282,
+  "fields": {
+    "created": "2018-05-13T15:44:01.433Z",
+    "modified": "2018-05-13T15:44:01.433Z",
+    "author": "",
+    "trigger": "* nineteen|nineteenth|19 *",
+    "response": "<disconnect_bluetooth_19>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 283,
+  "fields": {
+    "created": "2018-05-13T15:44:01.434Z",
+    "modified": "2018-05-13T15:44:01.434Z",
+    "author": "",
+    "trigger": "* twenty|twentieth|20 *",
+    "response": "<disconnect_bluetooth_20>",
+    "source_state": "Bluetooth disconnect",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 284,
+  "fields": {
+    "created": "2018-05-13T15:44:01.435Z",
+    "modified": "2018-05-13T15:44:01.435Z",
+    "author": "",
+    "trigger": "* no *",
+    "response": "Ok. You can always connect to a device later",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 285,
+  "fields": {
+    "created": "2018-05-13T15:44:01.437Z",
+    "modified": "2018-05-13T15:44:01.437Z",
+    "author": "",
+    "trigger": "* one|first|1|yes *",
+    "response": "<connect_bluetooth_paired_1>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 286,
+  "fields": {
+    "created": "2018-05-13T15:44:01.438Z",
+    "modified": "2018-05-13T15:44:01.438Z",
+    "author": "",
+    "trigger": "* two|second|2 *",
+    "response": "<connect_bluetooth_paired_2>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 287,
+  "fields": {
+    "created": "2018-05-13T15:44:01.439Z",
+    "modified": "2018-05-13T15:44:01.439Z",
+    "author": "",
+    "trigger": "* three|third|3 *",
+    "response": "<connect_bluetooth_paired_3>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 288,
+  "fields": {
+    "created": "2018-05-13T15:44:01.440Z",
+    "modified": "2018-05-13T15:44:01.440Z",
+    "author": "",
+    "trigger": "* four|fourth|4 *",
+    "response": "<connect_bluetooth_paired_4>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 289,
+  "fields": {
+    "created": "2018-05-13T15:44:01.441Z",
+    "modified": "2018-05-13T15:44:01.441Z",
+    "author": "",
+    "trigger": "* five|fifth|5 *",
+    "response": "<connect_bluetooth_paired_5>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 290,
+  "fields": {
+    "created": "2018-05-13T15:44:01.442Z",
+    "modified": "2018-05-13T15:44:01.442Z",
+    "author": "",
+    "trigger": "* six|sixth|6 *",
+    "response": "<connect_bluetooth_paired_6>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 291,
+  "fields": {
+    "created": "2018-05-13T15:44:01.443Z",
+    "modified": "2018-05-13T15:44:01.443Z",
+    "author": "",
+    "trigger": "* seven|seventh|7 *",
+    "response": "<connect_bluetooth_paired_7>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 292,
+  "fields": {
+    "created": "2018-05-13T15:44:01.444Z",
+    "modified": "2018-05-13T15:44:01.444Z",
+    "author": "",
+    "trigger": "* eight|eight|8 *",
+    "response": "<connect_bluetooth_paired_8>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 293,
+  "fields": {
+    "created": "2018-05-13T15:44:01.445Z",
+    "modified": "2018-05-13T15:44:01.446Z",
+    "author": "",
+    "trigger": "* nine|ninth|9 *",
+    "response": "<connect_bluetooth_paired_9>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 294,
+  "fields": {
+    "created": "2018-05-13T15:44:01.447Z",
+    "modified": "2018-05-13T15:44:01.447Z",
+    "author": "",
+    "trigger": "* ten|tenth|10 *",
+    "response": "<connect_bluetooth_paired_10>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 295,
+  "fields": {
+    "created": "2018-05-13T15:44:01.448Z",
+    "modified": "2018-05-13T15:44:01.448Z",
+    "author": "",
+    "trigger": "* eleven|eleventh|11 *",
+    "response": "<connect_bluetooth_paired_11>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 296,
+  "fields": {
+    "created": "2018-05-13T15:44:01.449Z",
+    "modified": "2018-05-13T15:44:01.449Z",
+    "author": "",
+    "trigger": "* twelve|twelfth|12 *",
+    "response": "<connect_bluetooth_paired_12>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 297,
+  "fields": {
+    "created": "2018-05-13T15:44:01.450Z",
+    "modified": "2018-05-13T15:44:01.450Z",
+    "author": "",
+    "trigger": "* thirteen|thirteenth|13 *",
+    "response": "<connect_bluetooth_paired_13>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 298,
+  "fields": {
+    "created": "2018-05-13T15:44:01.451Z",
+    "modified": "2018-05-13T15:44:01.451Z",
+    "author": "",
+    "trigger": "* fourteen|fourteenth|14 *",
+    "response": "<connect_bluetooth_paired_14>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 299,
+  "fields": {
+    "created": "2018-05-13T15:44:01.452Z",
+    "modified": "2018-05-13T15:44:01.452Z",
+    "author": "",
+    "trigger": "* fifteen|fifteenth|15 *",
+    "response": "<connect_bluetooth_paired_15>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 300,
+  "fields": {
+    "created": "2018-05-13T15:44:01.453Z",
+    "modified": "2018-05-13T15:44:01.453Z",
+    "author": "",
+    "trigger": "* sixteen|sixteenth|16 *",
+    "response": "<connect_bluetooth_paired_16>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 301,
+  "fields": {
+    "created": "2018-05-13T15:44:01.454Z",
+    "modified": "2018-05-13T15:44:01.454Z",
+    "author": "",
+    "trigger": "* seventeen|seventeenth|17 *",
+    "response": "<connect_bluetooth_paired_17>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 302,
+  "fields": {
+    "created": "2018-05-13T15:44:01.455Z",
+    "modified": "2018-05-13T15:44:01.455Z",
+    "author": "",
+    "trigger": "* eighteen|eighteenth|18 *",
+    "response": "<connect_bluetooth_paired_18>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 303,
+  "fields": {
+    "created": "2018-05-13T15:44:01.457Z",
+    "modified": "2018-05-13T15:44:01.457Z",
+    "author": "",
+    "trigger": "* nineteen|nineteenth|19 *",
+    "response": "<connect_bluetooth_paired_19>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 304,
+  "fields": {
+    "created": "2018-05-13T15:44:01.458Z",
+    "modified": "2018-05-13T15:44:01.458Z",
+    "author": "",
+    "trigger": "* twenty|twentieth|20 *",
+    "response": "<connect_bluetooth_paired_20>",
+    "source_state": "Bluetooth connecting paired",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 305,
+  "fields": {
+    "created": "2018-05-13T15:44:01.459Z",
+    "modified": "2018-05-13T15:44:01.459Z",
+    "author": "",
+    "trigger": "* stop|cancel|exit|nevermind *",
+    "response": "Stopping <stop_bluetooth_timer>",
+    "source_state": "Bluetooth *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 306,
+  "fields": {
+    "created": "2018-05-13T15:44:01.463Z",
+    "modified": "2018-05-13T15:44:01.463Z",
+    "author": "",
+    "trigger": "Tell me what you|I|Chloe can do",
+    "response": "I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+    "source_state": "nan",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 307,
+  "fields": {
+    "created": "2018-05-13T15:44:01.465Z",
+    "modified": "2018-05-13T15:44:01.465Z",
+    "author": "",
+    "trigger": "what can you|I|Chloe do",
+    "response": "I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+    "source_state": "nan",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 308,
+  "fields": {
+    "created": "2018-05-13T15:44:01.466Z",
+    "modified": "2018-05-13T15:44:01.466Z",
+    "author": "",
+    "trigger": "? ? what your features are",
+    "response": "I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+    "source_state": "nan",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 309,
+  "fields": {
+    "created": "2018-05-13T15:44:01.467Z",
+    "modified": "2018-05-13T15:44:01.467Z",
+    "author": "",
+    "trigger": "what are your features",
+    "response": "I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+    "source_state": "nan",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 310,
+  "fields": {
+    "created": "2018-05-13T15:44:01.468Z",
+    "modified": "2018-05-13T15:44:01.468Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Quickstart",
+    "dest_state": "Chloe Skill Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 311,
+  "fields": {
+    "created": "2018-05-13T15:44:01.469Z",
+    "modified": "2018-05-13T15:44:01.469Z",
+    "author": "",
+    "trigger": "no|skip|nah|nope|naw",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Quickstart",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 312,
+  "fields": {
+    "created": "2018-05-13T15:44:01.470Z",
+    "modified": "2018-05-13T15:44:01.470Z",
+    "author": "",
+    "trigger": "maybe later",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Quickstart",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 313,
+  "fields": {
+    "created": "2018-05-13T15:44:01.471Z",
+    "modified": "2018-05-13T15:44:01.471Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+    "source_state": "Chloe Skill Quickstart",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 314,
+  "fields": {
+    "created": "2018-05-13T15:44:01.472Z",
+    "modified": "2018-05-13T15:44:01.472Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Quickstart",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 315,
+  "fields": {
+    "created": "2018-05-13T15:44:01.473Z",
+    "modified": "2018-05-13T15:44:01.473Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Quickstart",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 316,
+  "fields": {
+    "created": "2018-05-13T15:44:01.475Z",
+    "modified": "2018-05-13T15:44:01.475Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. I can show you how to use Horizon. You can say, \"how do I use Horizon?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Quickstart",
+    "dest_state": "Chloe Skill Quickstart",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 317,
+  "fields": {
+    "created": "2018-05-13T15:44:01.476Z",
+    "modified": "2018-05-13T15:44:01.476Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Call Agent",
+    "dest_state": "Chloe Skill Privacy Mode",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 318,
+  "fields": {
+    "created": "2018-05-13T15:44:01.477Z",
+    "modified": "2018-05-13T15:44:01.477Z",
+    "author": "",
+    "trigger": "no|skip|nah|nope|naw",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Call Agent",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 319,
+  "fields": {
+    "created": "2018-05-13T15:44:01.478Z",
+    "modified": "2018-05-13T15:44:01.478Z",
+    "author": "",
+    "trigger": "maybe later",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Call Agent",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 320,
+  "fields": {
+    "created": "2018-05-13T15:44:01.479Z",
+    "modified": "2018-05-13T15:44:01.479Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+    "source_state": "Chloe Skill Call Agent",
+    "dest_state": "Chloe Skill Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 321,
+  "fields": {
+    "created": "2018-05-13T15:44:01.481Z",
+    "modified": "2018-05-13T15:44:01.481Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Call Agent",
+    "dest_state": "Chloe Skill Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 322,
+  "fields": {
+    "created": "2018-05-13T15:44:01.482Z",
+    "modified": "2018-05-13T15:44:01.482Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Call Agent",
+    "dest_state": "Chloe Skill Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 323,
+  "fields": {
+    "created": "2018-05-13T15:44:01.484Z",
+    "modified": "2018-05-13T15:44:01.484Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Call Agent",
+    "dest_state": "Chloe Skill Call Agent",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 324,
+  "fields": {
+    "created": "2018-05-13T15:44:01.485Z",
+    "modified": "2018-05-13T15:44:01.485Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "To turn privacy mode on and off during a call, you can press on the call button once. Privacy mode disables your audio and video so that the agent cannot hear or see anything on your end. Would you like to learn more?",
+    "source_state": "Chloe Skill Privacy Mode",
+    "dest_state": "Chloe Skill Flashlight",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 325,
+  "fields": {
+    "created": "2018-05-13T15:44:01.486Z",
+    "modified": "2018-05-13T15:44:01.486Z",
+    "author": "",
+    "trigger": "no|skip|nah|nope|naw",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Privacy Mode",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 326,
+  "fields": {
+    "created": "2018-05-13T15:44:01.487Z",
+    "modified": "2018-05-13T15:44:01.487Z",
+    "author": "",
+    "trigger": "maybe later",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Privacy Mode",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 327,
+  "fields": {
+    "created": "2018-05-13T15:44:01.488Z",
+    "modified": "2018-05-13T15:44:01.488Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+    "source_state": "Chloe Skill Privacy Mode",
+    "dest_state": "Chloe Skill Privacy Mode",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 328,
+  "fields": {
+    "created": "2018-05-13T15:44:01.489Z",
+    "modified": "2018-05-13T15:44:01.489Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Privacy Mode",
+    "dest_state": "Chloe Skill Privacy Mode",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 329,
+  "fields": {
+    "created": "2018-05-13T15:44:01.491Z",
+    "modified": "2018-05-13T15:44:01.491Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Privacy Mode",
+    "dest_state": "Chloe Skill Privacy Mode",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 330,
+  "fields": {
+    "created": "2018-05-13T15:44:01.492Z",
+    "modified": "2018-05-13T15:44:01.492Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. To call an agent, you can double press the call button, or say, \"Call an agent.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Privacy Mode",
+    "dest_state": "Chloe Skill Privacy Mode",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 331,
+  "fields": {
+    "created": "2018-05-13T15:44:01.493Z",
+    "modified": "2018-05-13T15:44:01.493Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Flashlight",
+    "dest_state": "Chloe Skill Time Date",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 332,
+  "fields": {
+    "created": "2018-05-13T15:44:01.494Z",
+    "modified": "2018-05-13T15:44:01.494Z",
+    "author": "",
+    "trigger": "no|skip|nah|nope|naw",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Flashlight",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 333,
+  "fields": {
+    "created": "2018-05-13T15:44:01.495Z",
+    "modified": "2018-05-13T15:44:01.495Z",
+    "author": "",
+    "trigger": "maybe later",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Flashlight",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 334,
+  "fields": {
+    "created": "2018-05-13T15:44:01.496Z",
+    "modified": "2018-05-13T15:44:01.496Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+    "source_state": "Chloe Skill Flashlight",
+    "dest_state": "Chloe Skill Flashlight",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 335,
+  "fields": {
+    "created": "2018-05-13T15:44:01.498Z",
+    "modified": "2018-05-13T15:44:01.498Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Flashlight",
+    "dest_state": "Chloe Skill Flashlight",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 336,
+  "fields": {
+    "created": "2018-05-13T15:44:01.499Z",
+    "modified": "2018-05-13T15:44:01.499Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Flashlight",
+    "dest_state": "Chloe Skill Flashlight",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 337,
+  "fields": {
+    "created": "2018-05-13T15:44:01.501Z",
+    "modified": "2018-05-13T15:44:01.501Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. I can tell you the status of your minutes and battery level. You can say, \"how many minutes do I have?\" or \"how much battery do I have?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Flashlight",
+    "dest_state": "Chloe Skill Flashlight",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 338,
+  "fields": {
+    "created": "2018-05-13T15:44:01.505Z",
+    "modified": "2018-05-13T15:44:01.505Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Time Date",
+    "dest_state": "Chloe Skill Jokes",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 339,
+  "fields": {
+    "created": "2018-05-13T15:44:01.506Z",
+    "modified": "2018-05-13T15:44:01.506Z",
+    "author": "",
+    "trigger": "no|skip|nah|nope|naw",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Time Date",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 340,
+  "fields": {
+    "created": "2018-05-13T15:44:01.508Z",
+    "modified": "2018-05-13T15:44:01.508Z",
+    "author": "",
+    "trigger": "maybe later",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Time Date",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 341,
+  "fields": {
+    "created": "2018-05-13T15:44:01.509Z",
+    "modified": "2018-05-13T15:44:01.509Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like to know more about what I can do?",
+    "source_state": "Chloe Skill Time Date",
+    "dest_state": "Chloe Skill Time Date",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 342,
+  "fields": {
+    "created": "2018-05-13T15:44:01.510Z",
+    "modified": "2018-05-13T15:44:01.510Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Time Date",
+    "dest_state": "Chloe Skill Time Date",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 343,
+  "fields": {
+    "created": "2018-05-13T15:44:01.511Z",
+    "modified": "2018-05-13T15:44:01.511Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Time Date",
+    "dest_state": "Chloe Skill Time Date",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 344,
+  "fields": {
+    "created": "2018-05-13T15:44:01.512Z",
+    "modified": "2018-05-13T15:44:01.512Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. I can turn the flashlight on the Horizon phone on and off for you. You can say \"turn on the flashlight\" or \"turn off the flashlight.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Time Date",
+    "dest_state": "Chloe Skill Time Date",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 345,
+  "fields": {
+    "created": "2018-05-13T15:44:01.513Z",
+    "modified": "2018-05-13T15:44:01.513Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Jokes",
+    "dest_state": "Chloe Skill Jokes Repeat",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 346,
+  "fields": {
+    "created": "2018-05-13T15:44:01.514Z",
+    "modified": "2018-05-13T15:44:01.514Z",
+    "author": "",
+    "trigger": "no|skip|nah|nope|naw",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Jokes",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 347,
+  "fields": {
+    "created": "2018-05-13T15:44:01.515Z",
+    "modified": "2018-05-13T15:44:01.515Z",
+    "author": "",
+    "trigger": "maybe later",
+    "response": "No worries. You can always hold down on the call button and ask me what I can do.",
+    "source_state": "Chloe Skill Jokes",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 348,
+  "fields": {
+    "created": "2018-05-13T15:44:01.517Z",
+    "modified": "2018-05-13T15:44:01.517Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. Would you like to learn more about what I can do?",
+    "source_state": "Chloe Skill Jokes",
+    "dest_state": "Chloe Skill Jokes",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 349,
+  "fields": {
+    "created": "2018-05-13T15:44:01.518Z",
+    "modified": "2018-05-13T15:44:01.518Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Jokes",
+    "dest_state": "Chloe Skill Jokes",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 350,
+  "fields": {
+    "created": "2018-05-13T15:44:01.519Z",
+    "modified": "2018-05-13T15:44:01.519Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Jokes",
+    "dest_state": "Chloe Skill Jokes",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 351,
+  "fields": {
+    "created": "2018-05-13T15:44:01.520Z",
+    "modified": "2018-05-13T15:44:01.520Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. I can tell the time and day. You can say \"what time is it?\" or \"what day is it?\" Would you like to learn more?",
+    "source_state": "Chloe Skill Jokes",
+    "dest_state": "Chloe Skill Jokes",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 352,
+  "fields": {
+    "created": "2018-05-13T15:44:01.521Z",
+    "modified": "2018-05-13T15:44:01.522Z",
+    "author": "",
+    "trigger": "yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k",
+    "response": "That's all I know for now. I am excited to learn more skills and become more helpful to you.",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 353,
+  "fields": {
+    "created": "2018-05-13T15:44:01.523Z",
+    "modified": "2018-05-13T15:44:01.523Z",
+    "author": "",
+    "trigger": "no|skip|nah|nope|naw",
+    "response": "No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 354,
+  "fields": {
+    "created": "2018-05-13T15:44:01.524Z",
+    "modified": "2018-05-13T15:44:01.524Z",
+    "author": "",
+    "trigger": "maybe later",
+    "response": "No worries. That's all I know for now. I am excited to learn more skills and become more helpful to you.",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 355,
+  "fields": {
+    "created": "2018-05-13T15:44:01.525Z",
+    "modified": "2018-05-13T15:44:01.525Z",
+    "author": "",
+    "trigger": "*",
+    "response": "Sorry, I didn't get that. But that's all I know for now. I am excited to learn more skills and become more helpful to you.",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 356,
+  "fields": {
+    "created": "2018-05-13T15:44:01.526Z",
+    "modified": "2018-05-13T15:44:01.526Z",
+    "author": "",
+    "trigger": "Thanks",
+    "response": "No problem. Do check back for more skills soon!",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 357,
+  "fields": {
+    "created": "2018-05-13T15:44:01.527Z",
+    "modified": "2018-05-13T15:44:01.527Z",
+    "author": "",
+    "trigger": "Thank you",
+    "response": "You're welcome. I will learn more skills soon.",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 358,
+  "fields": {
+    "created": "2018-05-13T15:44:01.528Z",
+    "modified": "2018-05-13T15:44:01.528Z",
+    "author": "",
+    "trigger": "* repeat *",
+    "response": "Sure. I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "Chloe Skill Jokes Repeat",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 359,
+  "fields": {
+    "created": "2018-05-13T15:44:01.529Z",
+    "modified": "2018-05-13T15:44:01.529Z",
+    "author": "",
+    "trigger": "* again *",
+    "response": "Sure. I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "Chloe Skill Jokes Repeat",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 360,
+  "fields": {
+    "created": "2018-05-13T15:44:01.530Z",
+    "modified": "2018-05-13T15:44:01.530Z",
+    "author": "",
+    "trigger": "* one more time *",
+    "response": "Sure. I can tell you jokes. You can say, \"tell me a joke.\" Would you like to learn more?",
+    "source_state": "Chloe Skill Jokes Repeat",
+    "dest_state": "Chloe Skill Jokes Repeat",
+    "is_globstar": null
+  }
+},
+{
+  "model": "chatapp.triggerresponse",
+  "pk": 361,
+  "fields": {
+    "created": "2018-05-13T15:44:01.531Z",
+    "modified": "2018-05-13T15:44:01.531Z",
+    "author": "",
+    "trigger": "cancel|stop|done|exit|leave|goodbye|bye|enough",
+    "response": "OK",
+    "source_state": "Chloe Skill *",
+    "dest_state": "nan",
+    "is_globstar": null
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "pgtbp2uhr8kqvbno27kqpcer1hglbcuj",
+  "fields": {
+    "session_data": "YmQwNzg3Yzc4NmViNzdlZDk3MTA0N2NkNzE1MGQwNGQ0ZGRhNDkyYTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2Yzk0NGFlZDE2OGQ3MWRjMGI4MzVkMjc2YWI0MmQ2ZjY2NzQ3OWY3In0=",
+    "expire_date": "2018-05-26T21:03:19.892Z"
+  }
+}
+]

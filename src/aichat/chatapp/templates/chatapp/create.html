@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html class="dialog">
+<head>
+	<meta charset="utf-8">
+	<title>Create new sequences</title>
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif|Droid+Serif:b|Droid+Serif:i|Lato|Lato:b|Lato:i">
+	<link rel="stylesheet" type="text/css" href="{% static 'chatapp/force.css' %}" />
+	
+	
+</head>
+<body>
+
+	<h1>Create new sequence</h1>
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<form action="{% url 'chatapp:save' %}" method="post">
+		{% csrf_token %}
+  		Source	   : <input type="text" name="Source" value=""><br>
+  		Destination: <input type="text" name="Dest" value=""><br>
+  		Trigger	   : <input type="text" name="Trigger" value=""><br>
+  		Response   : <input type="text" name="Response" value=""><br>
+  		<input type="submit" value="Submit">
+		</form>
+
+</body>
+</html>

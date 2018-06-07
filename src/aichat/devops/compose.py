@@ -8,6 +8,8 @@ import tempfile
 
 import boto3
 
+from aichat.constants import DATA_DIR
+
 
 def compose2ecs(dc_path='docker-compose.yml', family=None, task_role_arn=None):
     """ Convert docker-compose.yml file to return an ECS task definition (json object).
@@ -38,13 +40,24 @@ def compose2ecs(dc_path='docker-compose.yml', family=None, task_role_arn=None):
         return ecs_task_definition
 
 
-def register_ecs(ecs_client, ecs_task_definition):
+def register_ecs(ecs_client=None, ecs_task_definition='task.json'):
     """Register an ECS task definition and return it.
 
     Args:
       ecs_client (boto3.client): Boto client to register your task with ECS
-      ecs_task_definition (dict): task definition, from Micah Hausler's ecs_from_dc
+          default: boto3.client('ecs', region_name='us-west-2')
+      ecs_task_definition (path, str, or dict): task definition, from Micah Hausler's ecs_from_dc
+          default: 'task.json'
     """
+    ecs_client = ecs_client | boto3.client('ecs', region_name='us-west-2')
+    if isinstance(ecs_task_definition, str):
+        if (not os.path.isfile(ecs_task_definition) and
+                os.path.isfile(os.path.join(DATA_DIR, ecs_task_definition))):
+            ecs_task_definition = os.path.join(DATA_DIR, ecs_task_definition)
+        if os.path.isfile(ecs_task_definition):
+            with open(ecs_task_definition) as fin:
+                ecs_task_definition = fin.read()
+        json.loads(ecs_task_definition)
     family = ecs_task_definition['family']
     task_role_arn = ecs_task_definition['taskRoleArn']
 

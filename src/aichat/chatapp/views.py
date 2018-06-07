@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponse # noqa
 from django.urls import reverse
 # from django.views import generic
-from .models import TriggerResponse
+from .models import TriggerResponse, get_network
 # from . import load
 
 
@@ -28,3 +28,9 @@ def save_new_sequence(request):
                                    trigger=selected_trig, response=selected_resp)
         new_trig.save()
         return HttpResponseRedirect(reverse('chatapp:index'))
+
+
+def network_rest(request):
+    # call serialize network function
+    js = get_network()
+    return JsonResponse(js, content_type='application/json', safe=False)  # noqa

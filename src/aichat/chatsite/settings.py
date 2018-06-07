@@ -14,6 +14,23 @@ import os
 import random
 import string
 
+try:
+    from .secret_settings import SECRET_KEY  # noqa
+except ImportError:
+    SECRET_KEY = None
+
+try:
+    from .secret_settings import DATABASES_DEFAULT  # noqa
+except ImportError:
+    DATABASES_DEFAULT = None
+
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, 'chatapp', 'data')
+CSV_DEFAULT_PATH = os.path.join(DATA_DIR, 'chloe.csv')
+CSV_COLUMNS = ('trigger', 'response', 'source_state', 'dest_state')
+
 
 def random_str(n=50):
     chars = ''.join(
@@ -22,17 +39,7 @@ def random_str(n=50):
     return ''.join([random.SystemRandom().choice(chars) for i in range(n)])
 
 
-try:
-    from .secret_settings import SECRET_KEY  # noqa
-except ImportError:
-    SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', random_str(50))
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_DIR = os.path.join(BASE_DIR, 'chatapp', 'data')
-CSV_DEFAULT_PATH = os.path.join(DATA_DIR, 'chloe.csv')
-CSV_COLUMNS = ('trigger', 'response', 'source_state', 'dest_state')
-
+SECRET_KEY = SECRET_KEY or os.environ.get('DJANGO_SECRET_KEY', random_str(50))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -89,11 +96,18 @@ WSGI_APPLICATION = 'aichat.chatsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
+if DATABASES_DEFAULT:
+    print('Using AWS RDS Database server...')
+else:
+    DATABASES_DEFAULT = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+    print('Using Local sqlite file at {}'.format(DATABASES_DEFAULT['NAME']))
+
+
+DATABASES = {
+    'default': DATABASES_DEFAULT
 }
 
 

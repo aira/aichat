@@ -37,7 +37,7 @@ def load_df(path=DATA_DIR):
 DF = load_df()
 
 
-def nodes_to_list(path=DATA_DIR):
+def nodes_to_list(path=DATA_DIR, DF=DF):
     """ returns list of all fixed non pattern nodes names
 
     >>> sorted([sorted(list(d.items())) for d in nodes_to_list()])
@@ -112,7 +112,15 @@ def node_filter(pattern, names=nodes_to_list()):
 
 
 def is_globstar(node_name):
-    return True if '*' in node_name or '?' in node_name or '|' in node_name else False
+    if '*' in node_name or '?' in node_name or '|' in node_name:
+        return True
+    else:
+        False
+
+
+def get_nodes(path=DATA_DIR, DF=DF):
+    node_list = sorted(set(list(set(DF.dest_state.fillna('root'))) + list(set(DF.source_state.fillna('root')))))
+    return [node for node in node_list if '*' not in node or '?' not in node]
 
 
 def links_to_list2(path=DATA_DIR, value=1):
@@ -155,44 +163,23 @@ def links_to_list2(path=DATA_DIR, value=1):
 def gen_links(path=DATA_DIR, value=1, df=DF):
     """ returns a d3 graph datastructure
 
-    >>> df = pd.DataFrame([['', '', 1, 2]], columns=('trigger', 'response', 'source_state', 'dest_state'))
+    >>> import pandas as pd
+    >>> df = pd.DataFrame([['', '', 'start', 'finish']], columns=('trigger', 'response', 'source_state', 'dest_state'))
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    {
-      "directed": true,
-      "multigraph": false,
-      "name": "Dialog",
-      "nodes": [
-        {
-          "name": "1",
-          "id": "node0"
-        },
-        {
-          "name": "2",
-          "id": "node1"
-        }
-      ],
-      "links": [
-        {
-          "source": 0,
-          "target": 1,
-          "command": "",
-          "response": "",
-          "value": 1
-        }
-      ]
-    }
+    [{'source': 1, 'target': 0, 'command': '', 'response': '', 'value': 1}]
     """
     links = []
-    node_names = nodes_to_list()
+    node_names = get_nodes(DF=df)
     for source_index, source_name in enumerate(df.source_state.values):
-        if not is_globstar(source_name):
+        if not is_globstar(str(source_name)):
             current_dest_name = df.dest_state[source_index]
-            if not is_globstar(current_dest_name):
+            if not is_globstar(str(current_dest_name)):
                 links.append({'source': node_names.index(source_name),
                               'target': node_names.index(current_dest_name),
                               'command': df.trigger[source_index],
                               'response': df.response[source_index],
                               'value': value})
+    return links
 
 
 def create_json(path=DATA_DIR):

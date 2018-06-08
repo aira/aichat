@@ -120,7 +120,7 @@ def is_globstar(node_name):
 
 def get_nodes(path=DATA_DIR, DF=DF):
     node_list = sorted(set(list(set(DF.dest_state.fillna('root'))) + list(set(DF.source_state.fillna('root')))))
-    return [node for node in node_list if '*' not in node or '?' not in node]
+    return [node for node in node_list if '*' not in node and '?' not in node and '|' not in node]
 
 
 def links_to_list2(path=DATA_DIR, value=1):
@@ -163,10 +163,19 @@ def links_to_list2(path=DATA_DIR, value=1):
 def gen_links(path=DATA_DIR, value=1, df=DF):
     """ returns a d3 graph datastructure
 
-    >>> import pandas as pd
-    >>> df = pd.DataFrame([['', '', 'start', 'finish']], columns=('trigger', 'response', 'source_state', 'dest_state'))
+    >>> df = pd.DataFrame([['', '', '1', '2']], columns=('trigger', 'response', 'source_state', 'dest_state'))
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    [{'source': 1, 'target': 0, 'command': '', 'response': '', 'value': 1}]
+    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1}]
+
+
+    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '3', '4'],
+        ['', '', '4', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state'))
+    >>> gen_links(path=DATA_DIR, value=1, df=df)
+    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
+     {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
+     {'source': 3, 'target': 0, 'command': '', 'response': '', 'value': 1},
+     {'source': 3, 'target': 1, 'command': '', 'response': '', 'value': 1}]
     """
     links = []
     node_names = get_nodes(DF=df)
@@ -179,6 +188,16 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
                               'command': df.trigger[source_index],
                               'response': df.response[source_index],
                               'value': value})
+            else:
+                dest_pattern = pattern.expand_globstar(current_dest_name)
+                for node_index, node_name in enumerate(node_names):
+                    if regex.match(dest_pattern, node_name):
+                        links.append({'source': node_names.index(source_name),
+                                      'target': node_names.index(node_name),
+                                      'command': df.trigger[source_index],
+                                      'response': df.response[source_index],
+                                      'value': value})
+
     return links
 
 

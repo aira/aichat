@@ -184,6 +184,15 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
      {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
      {'source': 0, 'target': 4, 'command': '', 'response': '', 'value': 1},
      {'source': 1, 'target': 4, 'command': '', 'response': '', 'value': 1}]
+
+    # Case4 sourcepatt and destpatt
+    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '3', '4'], ['', '', '2|3', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
+    >>> gen_links(path=DATA_DIR, value=1, df=df)
+    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
+     {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
+     {'source': 1, 'target': 1, 'command': '', 'response': '', 'value': 1},
+     {'source': 2, 'target': 1, 'command': '', 'response': '', 'value': 1}]
     """
     links = []
     node_names = get_nodes(DF=df)
@@ -206,7 +215,7 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
                                       'response': df.response[source_index],
                                       'value': value})
         else:
-            if not is_globstar(current_dest_name):
+            if not is_globstar(df.dest_state[source_index]):
                 current_dest_name = df.dest_state[source_index]
                 source_pattern = pattern.expand_globstar(source_name)
                 for source_index, source_name in enumerate(df.source_state.values):
@@ -216,6 +225,19 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
                                       'command': df.trigger[source_index],
                                       'response': df.response[source_index],
                                       'value': value})
+            else:
+                source_pattern = pattern.expand_globstar(source_name)
+                current_dest_name = df.dest_state[source_index]
+                dest_pattern = pattern.expand_globstar(current_dest_name)
+                for source_index, current_source_name in enumerate(df.source_state.values):
+                    if regex.match(source_pattern, current_source_name) and not is_globstar(current_source_name):
+                        for dest_index, dest_name in enumerate(df.dest_state.values):
+                            if regex.match(dest_pattern, dest_name) and not is_globstar(dest_name):
+                                links.append({'source': node_names.index(current_source_name),
+                                              'target': node_names.index(dest_name),
+                                              'command': df.trigger[source_index],
+                                              'response': df.response[source_index],
+                                              'value': value})
     return links
 
 

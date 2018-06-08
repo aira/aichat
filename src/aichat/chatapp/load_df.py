@@ -193,6 +193,10 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
      {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
      {'source': 1, 'target': 1, 'command': '', 'response': '', 'value': 1},
      {'source': 2, 'target': 1, 'command': '', 'response': '', 'value': 1}]
+
+    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '4', '5'], ['', '', '6', '7'], ['', '', '1|2', '7'], ['', '', '8', '2|3'], ['', '', '4|9', '9'], ['', '', '4|6', '3|5']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
+    >>> gen_links(path=DATA_DIR, value=1, df=df)
+
     """
     links = []
     node_names = get_nodes(DF=df)

@@ -196,6 +196,20 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
 
     >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '4', '5'], ['', '', '6', '7'], ['', '', '1|2', '7'], ['', '', '8', '2|3'], ['', '', '4|9', '9'], ['', '', '4|6', '3|5']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
     >>> gen_links(path=DATA_DIR, value=1, df=df)
+    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
+     {'source': 3, 'target': 4, 'command': '', 'response': '', 'value': 1},
+     {'source': 5, 'target': 6, 'command': '', 'response': '', 'value': 1},
+     {'source': 0, 'target': 6, 'command': '', 'response': '', 'value': 1},
+     {'source': 1, 'target': 6, 'command': '', 'response': '', 'value': 1},
+     {'source': 7, 'target': 1, 'command': '', 'response': '', 'value': 1},
+     {'source': 7, 'target': 2, 'command': '', 'response': '', 'value': 1},
+     {'source': 3, 'target': 8, 'command': '', 'response': '', 'value': 1},
+     {'source': 3, 'target': 2, 'command': '', 'response': '', 'value': 1},
+     {'source': 3, 'target': 4, 'command': '', 'response': '', 'value': 1},
+     {'source': 5, 'target': 2, 'command': '', 'response': '', 'value': 1},
+     {'source': 5, 'target': 4, 'command': '', 'response': '', 'value': 1}]
+
 
     """
     links = []

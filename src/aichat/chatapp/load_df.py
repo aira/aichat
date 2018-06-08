@@ -163,19 +163,27 @@ def links_to_list2(path=DATA_DIR, value=1):
 def gen_links(path=DATA_DIR, value=1, df=DF):
     """ returns a d3 graph datastructure
 
-    >>> df = pd.DataFrame([['', '', '1', '2']], columns=('trigger', 'response', 'source_state', 'dest_state'))
+    # Case1 nopatt
+    >>> df = pd.DataFrame([['1 goto 2', 'okay', '1', '2']], columns=('trigger', 'response', 'source_state', 'dest_state'))
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1}]
+    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay', 'value': 1}]
 
-
-    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '3', '4'],
-        ['', '', '4', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state'))
+    # Case3 destpatt
+    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '3', '4'], ['', '', '4', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
     >>> gen_links(path=DATA_DIR, value=1, df=df)
     [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
      {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
      {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
-     {'source': 3, 'target': 0, 'command': '', 'response': '', 'value': 1},
      {'source': 3, 'target': 1, 'command': '', 'response': '', 'value': 1}]
+
+    # Case2 sourcepatt
+    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '3', '4'], ['', '', '1|2', '5']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
+    >>> gen_links(path=DATA_DIR, value=1, df=df)
+    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
+     {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
+     {'source': 0, 'target': 4, 'command': '', 'response': '', 'value': 1},
+     {'source': 1, 'target': 4, 'command': '', 'response': '', 'value': 1}]
     """
     links = []
     node_names = get_nodes(DF=df)
@@ -190,14 +198,24 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
                               'value': value})
             else:
                 dest_pattern = pattern.expand_globstar(current_dest_name)
-                for node_index, node_name in enumerate(node_names):
-                    if regex.match(dest_pattern, node_name):
+                for dest_index, dest_name in enumerate(df.dest_state.values):
+                    if regex.match(dest_pattern, dest_name) and not is_globstar(dest_name):
                         links.append({'source': node_names.index(source_name),
-                                      'target': node_names.index(node_name),
+                                      'target': node_names.index(dest_name),
                                       'command': df.trigger[source_index],
                                       'response': df.response[source_index],
                                       'value': value})
-
+        else:
+            if not is_globstar(current_dest_name):
+                current_dest_name = df.dest_state[source_index]
+                source_pattern = pattern.expand_globstar(source_name)
+                for source_index, source_name in enumerate(df.source_state.values):
+                    if regex.match(source_pattern, source_name) and not is_globstar(source_name):
+                        links.append({'source': node_names.index(source_name),
+                                      'target': node_names.index(current_dest_name),
+                                      'command': df.trigger[source_index],
+                                      'response': df.response[source_index],
+                                      'value': value})
     return links
 
 

@@ -42,7 +42,7 @@
 
 	<script>
 	var graph;
-	d3.json("{% static 'chatapp/dialog.json' %}", function(error, json) {
+	d3.json("{% url 'chatapp:network' %}", function(error, json) {
 	    if (error) return console.warn(error);
 	    graph = json;
 	    draw_force_directed_graph(graph, 1000, 600, "div.d3graph",

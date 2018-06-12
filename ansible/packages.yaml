@@ -1,0 +1,27 @@
+---
+- hosts: all
+  gather_facts: no
+  become: yes
+  become_method: sudo
+  tasks:
+    - name: install python
+      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    - name: Running apt update
+      apt: update_cache=yes
+    # - name: Remove older versions
+    #   apt: name=nginx* state=absent
+    - name: Installing required packages
+      apt: name={{item}} state=present
+      with_items:
+       - fail2ban
+       - postgresql
+       - postgresql-client
+       - git
+       - python-pip
+       - rdiff-backup
+       - libpq-dev
+       - python-psycopg2
+       - uwsgi
+       - uwsgi-plugin-python
+       - nginx
+#       - boto

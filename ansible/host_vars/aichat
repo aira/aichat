@@ -1,0 +1,15 @@
+---
+repo_name: djansible
+home_dir: /home/ubuntu
+hostname: "{{ lookup('env', 'DJANSIBLE_HOSTNAME') }}"
+dbhost: "{{ lookup('env', 'DJANSIBLE_DBHOST') }}"
+dbuser: "{{ lookup('env', 'DJANSIBLE_DBUSER') }}"
+dbname: "{{ lookup('env', 'DJANSIBLE_DBNAME') }}"
+dbpassword: "{{ lookup('env', 'DJANSIBLE_DBPASSWORD') }}"
+user1_djangoadmin_username: "{{ lookup('env', 'DJANSIBLE_DJANGOADMIN_USERNAME') }}"
+user1_djangoadmin_password: "{{ lookup('env', 'DJANSIBLE_DJANGOADMIN_PASSWORD') }}"
+repo_url: https://github.com/aira
+repo_dir: "{{ home_dir }}/{{ repo_name }}"
+django_project: "{{ repo_name }}"
+django_dir: "{{ repo_dir }}/{{ django_project }}"
+static_dir: "{{ home_dir }}/static"

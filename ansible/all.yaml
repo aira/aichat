@@ -1,0 +1,6 @@
+---
+- include: bootstrap.yaml
+- include: system.yaml
+- include: packages.yaml
+- include: deploy.yaml
+- include: config_files.yaml

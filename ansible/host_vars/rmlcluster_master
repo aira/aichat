@@ -1,0 +1,13 @@
+---
+hostname: "{{ lookup('password', 'DJANSIBLE_HOSTNAME') }}"
+dbhost: "{{ lookup('password', 'DJANSIBLE_DBHOST') }}"
+dbpassword: "{{ lookup('password', 'DJANSIBLE_DBPASSWORD') }}"
+repo_url: ssh://git@github.com/aira
+repo: djansible
+home_dir: /home/ubuntu
+repo_dir: "{{ home_dir }}/{{ project_name }}"
+django_dir: "{{ repo_dir }}/django"
+static_dir: "{{ home_dir }}/static"
+django_project: "{{ project_name }}"
+dbname: "{{ project_name }}"
+dbuser: "{{ project_name }}"

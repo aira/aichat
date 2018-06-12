@@ -8,3 +8,31 @@
       slurp: src=/home/ubuntu/.ssh/id_rsa.pub
       register: public_key
     - debug: msg="{{ public_key['content'] | b64decode }}"
+
+- hosts: all
+  become: yes
+  become_user: ubuntu
+  gather_facts: no
+  tasks:
+    - debug: msg="say something"
+    - name: Install pyenv
+      git: repo=https://github.com/pyenv/pyenv.git dest={{ home }}/.pyenv accept_hostkey=yes
+      become: yes
+      become_user: ubuntu
+
+    - name: Read SSH public key
+      slurp: src=/home/ubuntu/.ssh/id_rsa.pub
+      register: public_key
+  - name: 
+    git:
+      repo=https://github.com/pyenv/pyenv.git
+      dest={{ home }}/.pyenv
+      accept_hostkey=yes  - name: enable pyenv and install python
+    shell: "{{ home }}/.pyenv/bin/pyenv init - && {{ home }}/.pyenv/bin/pyenv install 3.6 chdir={{ home }}"
+    environment:
+      pyenv_root: "{{ home }}/.pyenv"
+      path: "{{ pyenv_root }}/bin:$PATH"
+    become: yes
+    become_user: ubuntu
+    # - name: Manually create the initial virtualenv
+    #   command: virtualenv /user/home/venvs/myenv -p python3.6 creates="/user/home/venvs/myenv"

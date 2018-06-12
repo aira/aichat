@@ -7,24 +7,11 @@
 <html class="dialog">
 <head>
 	<meta charset="utf-8">
-	<title>Force-Directed Dialog Engine Graph</title>
+	<title>Chloe Skills</title>
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif|Droid+Serif:b|Droid+Serif:i|Lato|Lato:b|Lato:i">
 	<!-- <link rel="stylesheet" type="text/css" href="force.css"> -->
 	<link rel="stylesheet" type="text/css" href="{% static 'chatapp/force.css' %}" />
-
-	<style type="text/css">
-	    circle.node {
-	      cursor: pointer;
-	      stroke: #000;
-	      stroke-width: .5px;
-	    }
-
-	    line.link {
-	      fill: none;
-	      stroke: #9ecae1;
-	      stroke-width: 1.5px;
-	    }
-	</style>
+	<link rel="stylesheet" type="text/css" href="{% static 'chatapp/style.css' %}" />
 	<!-- <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script> -->
 	<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
@@ -33,12 +20,23 @@
 </head>
 <body>
 
-	<h1>Force-Directed Dialog Engine Graph</h1>
+	<h1>Chloe Skills</h1>
 
-	<div class="d3graph"></div>
+	<h2><a href="{% url 'chatapp:create'%}">Create New Skill</a></h2>
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-	<p>This visualization uses <a href="//d3js.org/">d3.js</a> by <a href="//bost.ocks.org/">Mike Bostock</a>.
-	<p> <a href="{% url 'chatapp:create'%}">Create new Sequence</a></p>
+	<form action="{% url 'chatapp:save' %}" method="post">
+		{% csrf_token %}
+  		Source	   : <input type="text" name="Source" value="root" rows=1 cols=64><br>
+  		Destination: <input type="text" name="Dest" value="" rows=1 cols=64><br>
+  		Trigger	   : <input type="textarea" name="Trigger" value="" rows=6 cols=128><br>
+  		Response   : <input type="textarea" name="Response" value="" rows=6 cols=128><br>
+  		<input type="submit" value="Submit">
+	</form>
+
+	<center><h2>Chloe's "Brain"</h2></center>
+
+	<div class="d3graph" id="chloedialoggraph" alt="Force-directed graph of the states and state transitions for each dialog element (command action pair) that Chloe understands."></div>
 
 	<script>
 	var graph;

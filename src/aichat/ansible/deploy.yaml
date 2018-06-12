@@ -5,10 +5,11 @@
   gather_facts: no
 
   tasks:
-  - name: pull branch master
+  - name: pull branch {{ version }}
     git:
       repo={{ repo_url }}/{{ repo_name }}.git
       dest={{ repo_dir }}
+      version={{ version }}
       accept_hostkey=yes
 
 - hosts: all

@@ -1,0 +1,15 @@
+---
+- name: Copy configuration files
+  hosts: all
+  gather_facts: no
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: nginx config file
+      template: src=config/nginx.conf dest=/etc/nginx/sites-enabled/{{ django_project }}
+      register: nginx_config
+    - name: nginx restart
+      service: name=nginx state=restarted
+      when: nginx_config.changed
+

@@ -1,6 +1,6 @@
-pugnlp
-nltk
-spacy
+# pugnlp
+# nltk
+# spacy
 scipy>=1.0.0,<1.1.0
 numpy>=1.14.0,<1.15.0
 

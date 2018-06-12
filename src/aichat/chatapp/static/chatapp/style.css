@@ -1,0 +1,20 @@
+circle.node {
+  cursor: pointer;
+  stroke: #000;
+  stroke-width: .5px;
+}
+
+line.link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 2.5px;
+}
+
+.form textarea {
+    width: 400px;
+    height: 60px;
+}
+
+.form input[type="text"] {
+    width: 400px;
+}

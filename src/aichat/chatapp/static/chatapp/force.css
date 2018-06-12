@@ -51,4 +51,26 @@ line.link {
   stroke: #9ecae1;
   stroke-width: 1.5px;
 }
+.button{
+  background-color: #e2e2e2;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 7px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+.button:hover{
+ background-color: #dbdbdb;
+}
+
+
+input[type=text] {
+    border: solid #ebebeb 1px;
+    border-radius: 4px;
+    height: 18px;
+    width: 250px;
+}
 

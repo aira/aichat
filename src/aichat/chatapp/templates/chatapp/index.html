@@ -25,8 +25,8 @@
 	      stroke-width: 1.5px;
 	    }
 	</style>
-	<!-- <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script> -->
-	<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 	<script type="text/javascript" src="{% static 'chatapp/d3.v3.js' %} "></script>
 	<script type="text/javascript" src="{% static 'chatapp/graphutil.js' %}"></script>
@@ -38,7 +38,7 @@
 	<div class="d3graph"></div>
 
 	<p>This visualization uses <a href="//d3js.org/">d3.js</a> by <a href="//bost.ocks.org/">Mike Bostock</a>.
-	<p> <a href="{% url 'chatapp:create'%}">Create new Sequence</a></p>
+	<p> <a href="{% url 'chatapp:create'%}" class = "button">Create Response</a></p>
 
 	<script>
 	var graph;

@@ -73,4 +73,10 @@ input[type=text] {
     height: 18px;
     width: 250px;
 }
+input[type=textarea] {
+    border: solid #ebebeb 1px;
+    border-radius: 4px;
+    height: 18px;
+    width: 250px;
+}
 

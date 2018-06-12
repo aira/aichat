@@ -44,6 +44,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'aichat.chatapp.apps.ChatAppConfig',
+    'dal',
+    'dal_select2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

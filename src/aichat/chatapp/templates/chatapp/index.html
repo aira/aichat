@@ -22,7 +22,7 @@
 
 	<h1>Chloe Skills</h1>
 
-	<h2><a href="{% url 'chatapp:create'%}">Create New Skill</a></h2>
+	<h2><a class= "button" href="{% url 'chatapp:create'%}">Create New Skill</a></h2>
 	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 	<form action="{% url 'chatapp:save' %}" method="post">
@@ -31,7 +31,7 @@
   		Destination: <input type="text" name="Dest" value="" rows=1 cols=64><br>
   		Trigger	   : <input type="textarea" name="Trigger" value="" rows=6 cols=128><br>
   		Response   : <input type="textarea" name="Response" value="" rows=6 cols=128><br>
-  		<input type="submit" value="Submit">
+  		<input class="button" type="submit" value="Submit">
 	</form>
 
 	<center><h2>Chloe's "Brain"</h2></center>

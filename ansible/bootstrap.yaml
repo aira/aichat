@@ -1,8 +1,0 @@
----
-- hosts: all
-  gather_facts: no
-  become: yes
-  become_method: sudo
-  tasks:
-    - name: install python
-      raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)

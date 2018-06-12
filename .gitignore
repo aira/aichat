@@ -49,6 +49,7 @@ src/aichat/data/
 *.sqlite
 
 # secrets
+secret*
 local_settings.py
 **/*secret*
 **/secrets.yml

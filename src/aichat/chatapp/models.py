@@ -80,46 +80,6 @@ class node_autocomplete(autocomplete.Select2QuerySetView):
 
 
 def get_network(qs=None, value=1):
-    # if qs is None:
-    #     js = {
-    #         "directed": True,
-    #         "multigraph": False,
-    #         "name": "Dialog",
-    #         "nodes": [],
-    #         "links": []
-    #     }
-    #     nodes = []
-    #     links = []
-    #     for obj in TriggerResponse.objects.all():
-    #         nodes.append(obj.dest_state)
-    #     nodes = list(set(nodes))
-
-    #     node_index = 0
-    #     for node in nodes:
-    #         js["nodes"].append({'name': node, 'id': 'node' + str(node_index)})
-    #         node_index = node_index + 1
-
-    #     for i, obj in enumerate(TriggerResponse.objects.all()):
-    #         source_pattern = obj.source_state
-    #         patt = pattern.expand_globstar(source_pattern)
-    #         for j, name in enumerate(nodes):
-    #             if ('{' in patt or '[' in patt) and regex.match(patt, name):
-    #                 print(str(j) + source_pattern + ',' + name)
-    #                 links.append({'source': nodes.index(name),
-    #                               'target': nodes.index(obj.dest_state),
-    #                               'command': obj.trigger,
-    #                               'response': obj.response,
-    #                               'value': value})
-    #             elif source_pattern == name:
-    #                 print("nonpattern:" + str(j) + source_pattern + ',' + name)
-    #                 links.append({'source': nodes.index(name),
-    #                               'target': nodes.index(obj.dest_state),
-    #                               'command': obj.trigger,
-    #                               'response': obj.response,
-    #                               'value': value})
-
-    #     js["links"] = links
-
     if qs is None:
         # query database for nodes and edges
         js = {
@@ -157,18 +117,20 @@ def get_network(qs=None, value=1):
                             links.append({'source': node_names.index(source_obj.source_state),
                                           'target': node_names.index(current_dest_name),
                                           'command': source_obj.trigger,
-                                          'response': dest_node.response,
+                                          'response': source_obj.response,
                                           'value': value})
             else:
                 if not is_globstar(source_obj.dest_state):
                     current_dest_name = source_obj.dest_state
+                    current_trig = source_obj.trigger
+                    current_resp = source_obj.response
                     source_pattern = pattern.expand_globstar(source_obj.source_state)
                     for source_obj_index, source_obj in enumerate(TriggerResponse.objects.all()):
                         if regex.match(source_pattern, source_obj.source_state) and not is_globstar(source_obj.source_state):
                             links.append({'source': node_names.index(source_obj.source_state),
                                           'target': node_names.index(current_dest_name),
-                                          'command': source_obj.trigger,
-                                          'response': source_obj.response,
+                                          'command': current_trig,
+                                          'response': current_resp,
                                           'value': value})
                 else:
                     source_pattern = pattern.expand_globstar(source_obj.source_state)

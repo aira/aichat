@@ -1,8 +1,10 @@
 trigger,response,source_state,dest_state
+call ? Aira|agent ? ? ?,<call_agent>,,Call Agent
 call * Aira|agent *,<call_agent>,,Call Agent
 call ? agent,<call_agent>,,Call Agent
 cancel|stop,<cancel_call>,Call Agent,
 *,"<cancel_call> Sorry, I didn't get that.",Call Agent,
+reset first boot experience,<set_first_boot>,*,Tutorial Start
 *,"Welcome Explorer! I'm Chloe, your Aira AI assistant. I have three tips to share with you to help you get started. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Start,Tutorial Setup
 ,"Welcome Explorer! I'm Chloe, your Aira AI assistant. I have three tips to share with you to help you get started. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" Would you like me to repeat that or continue?",Tutorial Start,Tutorial Setup
 * continue|next *,"To call an agent, make sure that you've used the braided tether cord to connect the Horizon glasses to the Horizon phone. Then, you can either double press on the call button to call an agent, or hold down on the call button and say, ""call an agent."" Would you like me to repeat that or continue to my last tip?",Tutorial Setup,Tutorial Last Tip
@@ -27,6 +29,7 @@ yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"Sure. For more details about Horizon, 
 * again *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
 * one more time *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
 cancel|stop|done|exit|leave|goodbye|bye|enough|stop,OK. You can always hold down on the call button and ask me how to use the Horizon phone.,Tutorial *,
+give|tell me a joke,"I own the world's worst thesaurus. Not only is it awful, it's awful.",,
 give|tell me a joke,"Hypochondriacs always take things, literally.",,
 give|tell me a joke,"I was going to tell a time traveling joke, but you didn't like it.",,
 give|tell me a joke,"If your parachute doesn't deploy, you have the rest of your life to fix it.",,
@@ -34,6 +37,7 @@ give|tell me a joke,I just invented a new word: plagiarism.,,
 give|tell me a joke,"Rest in peace, boiling water. You will be mist.",,
 give|tell me a joke,I wonder if the guy who came up with the term 'One Hit Wonder' came up with any other phrases.,,
 give|tell me a joke,"With the rise of self-driving vehicles, it’s only a matter of time before we get a country song where a guy’s truck leaves him too.",,
+are you there,"Yes, I'm here for you.",,
 stop,<stop>,,
 ? read document ? high quality ? ?,<ms_ocr>,,
 ? read ? ? continuous ? ?,<continuous_ocr>,,
@@ -100,15 +104,19 @@ start looking,<abby_start_continuous_ocr>,,
 stop looking,<abby_stop_continuous_ocr>,,
 shut down ?,<shutdown_device>,,
 power off ?,<shutdown_device>,,
+give|tell me a quote,Take care of your body. It's the only place you have to live.,,
 give|tell me a quote,Failure is success if we learn from it.,,
 give|tell me a quote,Never let schooling interfere with your education.,,
 give|tell me a quote,Take care of your body. It's the only place you have to live.,,
 give|tell me a quote,"quote,, This too shall pass,, end quote,, This is an ancient poet adage reflecting on the ephemeral nature of the human condition.",,
+remind me {{note}},OK. I'll remind you {{note}},,
+tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,Some analog clocks and watches have tactile faces that can be read by touch.,,
 tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"Bump dots are tactile stickers that can be placed on touchscreen interfaces like a refrigerator or microwave, as long as the screen doesn't dynamically change the location of buttons.",,
 tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",,
 tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,Never take a medicine that you aren't 100% sure of it's origin and usage or dosage. When in doubt call an Aira agent. Many medicine bottle labels can only be read accurately by a human.,,
 tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"Your pharmacist can place braille labels on any medication, or if you prefer you can give the pharmacist bump dots to put on your medicine bottles according to your own labeling system.",,
 tell me a life|bvi|low-vision|blind|health hack|tip|idea|motivation,"If you have strong mobility skills, taking the stairs rather than the elevator at every opportunity can improve your long term health. If you prefer exercise machines you can play an interesting podcast or have Chloe read you a book while you work out.",,
+what|how is my|this|a|the ? wifi|data|network|connectivity|internet,{{active_network_status}},,
 what|how is my|this|a|the ? wife i,{{active_network_status}},,
 what|how is my|this|a|the ? wi fi,{{active_network_status}},,
 what's my|this|a|the ? wifi|data|network|connectivity|internet,{{active_network_status}},,
@@ -130,6 +138,7 @@ what cellular network ? am|is ? connected ?,{{active_network_status}},,
 what cellular network ? am|is ? using,{{active_network_status}},,
 what cellular network do ? have,{{active_network_status}},,
 test signal strength,{{active_network_status}},,
+Tell me a riddle,What's black and white and red all over?,,riddle 1 1
 * newspaper *,Perfect! Great job!,riddle 1 1,
 * newspaper *,Excellent! You must've heard that one before.,riddle 1 1,
 * answer *,"It's a newspaper! See? The word red is spelled R, E, A, D!",riddle 1 1,
@@ -165,6 +174,7 @@ Tell me a riddle,"What starts with an E, ends with an E, and has one letter in i
 * another,Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?,riddle 3 1,riddle 2 1
 * another one|riddle,Ok. What's black and white and red all over?,riddle 3 1,riddle 1 1
 * another one|riddle,Ok. Sure. Here you go. What... is the air-speed velocity of an unladen swallow?,riddle 3 1,riddle 2 1
+reset first boot experience,<set_first_boot>,*,Tutorial Start
 *,"Welcome Explorer! I'm Chloe, your Aira assistant. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" 
  Would you like me to repeat that or continue?",Tutorial Start,Tutorial Setup
 ,"Welcome Explorer! I'm Chloe, your Aira assistant. The screen on the phone you're holding is disabled to create a voice first experience. To talk to me, you can hold down on the call button located below the screen, and say things like, ""how do I use Horizon?"" or ""what can you do?"" 
@@ -191,6 +201,7 @@ yes|yup|yep|yea|yeah|mhm|sure|okay|kay|k,"Sure. For more details about Horizon, 
 * again *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
 * one more time *,"Sure. For more details about Horizon, please read the Quick Start Guide in your welcome email, it includes tips such as turning on privacy mode during a call by pressing on the call button once. Would you like me to repeat that?",Tutorial Done,Tutorial Done
 cancel|stop|done|exit|leave|goodbye|bye|enough,OK. You can always hold down on the call button and ask me how to use the Horizon phone.,Tutorial *,
+what's new,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
 what is new,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
 what's new in this release|update,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
 what is new in this release|update,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
@@ -204,6 +215,7 @@ read ? ? release notes ? 38,Speaker mode and bluetooth improvements.,,
 read ? ? release notes ? 39,"Improved robustness of the app, automatic restarting on unexpected errors.",,
 read ? ? release notes ? 40,"Added Samsung KNOX support, text recognition with the phone's camera. Chloe now supports proximity-based reading.",,
 read ? ? release notes ? 41,Chloe now supports enabling or disabling Wi-Fi on the fly.,,
+*,"Sorry, I don't know that. You can ask me what I can do any time.",,
 *,"Sorry, I haven't learned that yet. Thanks for being patient with me.",,
 *,"Sorry, I don't know that.",,
 *,"Sorry, I didn't get that.",,
@@ -221,12 +233,14 @@ help,"You can ask me to call an agent, or dial customer support at 858 876 2472"
 "Testing 1, 2, 3","4,5,6",,
 "Testing 1, 2, 3",Ok. What now?,,
 * nevermind,OK,,
+battery level,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
 what|how is my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
 what's my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
 how's my|the|this battery ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
 how much battery do I have ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
 how much battery ? ?,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
 check my|the|this battery ? ,"Battery {{#with battery}}{{numberFormat level ""integer""}} percent. {{#if charging}} Charging on {{chargeType}} {{/if}}{{/with}}",,
+connect|find|look ? ? device|devices|headset|headsets|earphone|earphones|earbud|earbuds,<find_bluetooth_devices>,,Bluetooth connecting headset
 connect|find|look ? ? bluetooth|wireless device|devices|headset|headsets|earphone|earphones|earbud|earbuds,<find_bluetooth_devices>,,Bluetooth connecting headset
 connect|find|look ? ? headset|headsets|earphone|earphones|earbud|earbuds|device|devices,<find_bluetooth_devices>,Bluetooth connecting ?,Bluetooth connecting headset
 connect|find|look ? ? bluetooth|wireless headset|headsets|earphone|earphones|earbud|earbuds|device|devices,<find_bluetooth_devices>,Bluetooth connecting ?,Bluetooth connecting headset
@@ -345,6 +359,7 @@ disconnect ? ? ? device|devices|speaker|speakers|tv|tvs|bluetooth|headset|earpho
 * nineteen|nineteenth|19 *,<connect_bluetooth_paired_19>,Bluetooth connecting paired,
 * twenty|twentieth|20 *,<connect_bluetooth_paired_20>,Bluetooth connecting paired,
 * stop|cancel|exit|nevermind *,Stopping <stop_bluetooth_timer>,Bluetooth *,
+Tell me what you|I|Chloe can do,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
 what can you|I|Chloe do,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
 ? ? what your features are,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
 what are your features,"I can show you how to use Horizon. You can say, ""how do I use Horizon?"" Would you like to learn more?",,Chloe Skill Quickstart
@@ -400,6 +415,7 @@ Thank you,You're welcome. I will learn more skills soon.,Chloe Skill Jokes Repea
 * again *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
 * one more time *,"Sure. I can tell you jokes. You can say, ""tell me a joke."" Would you like to learn more?",Chloe Skill Jokes Repeat,Chloe Skill Jokes Repeat
 cancel|stop|done|exit|leave|goodbye|bye|enough,OK,Chloe Skill *,
+turn on ? wifi|wireless ?,<wifi_on>,,
 turn on ? wife i ?,<wifi_on>,,
 turn on ? wi fi ?,<wifi_on>,,
 enable ? wifi|wireless ?,<wifi_on>,,

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, JsonResponse, HttpResponse # noqa
+from django.http import HttpResponseRedirect, JsonResponse, HttpResponse  # noqa
 from django.urls import reverse
 # from django.views import generic
 from .models import TriggerResponse, get_network

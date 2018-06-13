@@ -73,7 +73,7 @@ class edge(models.Model):
 
 class node_autocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
-        nodes = get_nodes()
+        nodes = TriggerResponse.objects.all()
         if self.q:
             nodes = nodes.filter(name__istartswith=self.q)
         return nodes
@@ -141,7 +141,7 @@ def get_network(qs=None, value=1):
                 {'name': node, 'id': 'node' + str(node_index)})
             node_index = node_index + 1
 
-        for source_obj_index, source_obj in enumerate(TriggerResponse.objects.all()):
+        for source_obj in TriggerResponse.objects.all():
             if not is_globstar(str(source_obj.source_state)):
                 current_dest_name = source_obj.dest_state
                 if not is_globstar(str(current_dest_name)):
@@ -152,12 +152,12 @@ def get_network(qs=None, value=1):
                                   'value': value})
                 else:
                     dest_pattern = pattern.expand_globstar(current_dest_name)
-                    for dest_obj_index, dest_obj in enumerate(TriggerResponse.objects.all()):
-                        if regex.match(dest_pattern, dest_obj.dest_state) and not is_globstar(dest_obj.dest_state):
+                    for dest_node in node_names:
+                        if regex.match(dest_pattern, dest_node):
                             links.append({'source': node_names.index(source_obj.source_state),
-                                          'target': node_names.index(dest_obj.dest_state),
+                                          'target': node_names.index(current_dest_name),
                                           'command': source_obj.trigger,
-                                          'response': dest_obj.response,
+                                          'response': dest_node.response,
                                           'value': value})
             else:
                 if not is_globstar(source_obj.dest_state):

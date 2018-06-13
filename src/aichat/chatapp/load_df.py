@@ -19,14 +19,14 @@ def load_df(path=DATA_DIR):
     CSV_COLUMNS = ('trigger', 'response', 'source_state', 'dest_state')
     df = pd.DataFrame(columns=CSV_COLUMNS)
     if os.path.isfile(path):
-        dfadd = pd.read_csv(path)
+        dfadd = pd.read_csv(path, header=None)
         dfadd.columns = CSV_COLUMNS[:len(dfadd.columns)]
         df = df.append(dfadd)
     else:
         for root, dirs, files in os.walk(path):
             for file in files:
                 if file.endswith(".csv"):
-                    dfadd = pd.read_csv(path + '/' + file)
+                    dfadd = pd.read_csv(path + '/' + file, header=None)
                     dfadd.columns = CSV_COLUMNS[:len(dfadd.columns)]
                     df = df.append(dfadd)
 
@@ -108,51 +108,53 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
     """ returns links for the d3 structure
 
     # Case1 nopatt
-    >>> df = pd.DataFrame([['1 goto 2', 'okay', '1', '2']], columns=('trigger', 'response', 'source_state', 'dest_state'))
+    >>> df = pd.DataFrame([['1 goto 2', 'okay12', '1', '2']], columns=('trigger', 'response', 'source_state', 'dest_state'))
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay', 'value': 1}]
+    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay12', 'value': 1}]
 
     # Case3 destpatt
-    >>> df = pd.DataFrame([['1 goto 2', 'okay', '1', '2'], ['2 goto 3', 'okay', '2', '3'], ['3 goto 4', 'okay', '3', '4'], ['4 goto 1 or 2', 'okay', '4', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
+    >>> df = pd.DataFrame([['1 goto 2', 'okay12', '1', '2'], ['2 goto 3', 'okay23', '2', '3'], ['3 goto 4', 'okay34', '3', '4'], ['4 goto 1 or 2', 'okay412', '4', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay', 'value': 1},
-     {'source': 1, 'target': 2, 'command': '2 goto 3', 'response': 'okay', 'value': 1},
-     {'source': 2, 'target': 3, 'command': '3 goto 4', 'response': 'okay', 'value': 1},
-     {'source': 3, 'target': 1, 'command': '4 goto 1 or 2', 'response': 'okay', 'value': 1}]
+    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay12', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '2 goto 3', 'response': 'okay23', 'value': 1},
+     {'source': 2, 'target': 3, 'command': '3 goto 4', 'response': 'okay34', 'value': 1},
+     {'source': 3, 'target': 1, 'command': '4 goto 1 or 2', 'response': 'okay412', 'value': 1}]
 
     # Case2 sourcepatt
-    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '3', '4'], ['', '', '1|2', '5']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
+    >>> df = pd.DataFrame([['1 goto 2', 'okay12', '1', '2'], ['2 goto 3', 'okay23', '2', '3'], ['3 goto 4', 'okay34', '3', '4'], ['goto 5', 'going to 5', '1|2', '5']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
-     {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
-     {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
-     {'source': 0, 'target': 4, 'command': '', 'response': '', 'value': 1},
-     {'source': 1, 'target': 4, 'command': '', 'response': '', 'value': 1}]
+    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay12', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '2 goto 3', 'response': 'okay23', 'value': 1},
+     {'source': 2, 'target': 3, 'command': '3 goto 4', 'response': 'okay34', 'value': 1},
+     {'source': 0, 'target': 4, 'command': 'goto 5', 'response': 'going to 5', 'value': 1},
+     {'source': 1, 'target': 4, 'command': 'goto 5', 'response': 'going to 5', 'value': 1}]
 
     # Case4 sourcepatt and destpatt
-    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '3', '4'], ['', '', '2|3', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
+    >>> df = pd.DataFrame([['1 goto 2', 'okay12', '1', '2'], ['2 goto 3', 'okay23', '2', '3'], ['3 goto 4', 'okay34', '3', '4'], ['2 or 3 goto 1 or 2', 'okay2312', '2|3', '1|2']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
-     {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
-     {'source': 2, 'target': 3, 'command': '', 'response': '', 'value': 1},
-     {'source': 1, 'target': 1, 'command': '', 'response': '', 'value': 1},
-     {'source': 2, 'target': 1, 'command': '', 'response': '', 'value': 1}]
+    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay12', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '2 goto 3', 'response': 'okay23', 'value': 1},
+     {'source': 2, 'target': 3, 'command': '3 goto 4', 'response': 'okay34', 'value': 1},
+     {'source': 1, 'target': 0, 'command': '2 or 3 goto 1 or 2', 'response': 'okay2312', 'value': 1},
+     {'source': 1, 'target': 1, 'command': '2 or 3 goto 1 or 2', 'response': 'okay2312', 'value': 1},
+     {'source': 2, 'target': 0, 'command': '2 or 3 goto 1 or 2', 'response': 'okay2312', 'value': 1},
+     {'source': 2, 'target': 1, 'command': '2 or 3 goto 1 or 2', 'response': 'okay2312', 'value': 1}]
 
-    >>> df = pd.DataFrame([['', '', '1', '2'], ['', '', '2', '3'], ['', '', '4', '5'], ['', '', '6', '7'], ['', '', '1|2', '7'], ['', '', '8', '2|3'], ['', '', '4|9', '9'], ['', '', '4|6', '3|5']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
+    >>> df = pd.DataFrame([['1 goto 2', 'okay12', '1', '2'], ['2 goto 3', 'okay23', '2', '3'], ['4 goto 5', 'okay45', '4', '5'], ['6 goto 7', 'okay67', '6', '7'], ['goto 7', 'going to 7', '1|2', '7'], ['8 goto 2 or 3', 'okay823', '8', '2|3'], ['goto 9', 'going to 9', '4|9', '9'], ['4 or 6 goto 3 or 5', 'okay4635', '4|6', '3|5']], columns=('trigger', 'response', 'source_state', 'dest_state')) # noqa
     >>> gen_links(path=DATA_DIR, value=1, df=df)
-    [{'source': 0, 'target': 1, 'command': '', 'response': '', 'value': 1},
-     {'source': 1, 'target': 2, 'command': '', 'response': '', 'value': 1},
-     {'source': 3, 'target': 4, 'command': '', 'response': '', 'value': 1},
-     {'source': 5, 'target': 6, 'command': '', 'response': '', 'value': 1},
-     {'source': 0, 'target': 6, 'command': '', 'response': '', 'value': 1},
-     {'source': 1, 'target': 6, 'command': '', 'response': '', 'value': 1},
-     {'source': 7, 'target': 1, 'command': '', 'response': '', 'value': 1},
-     {'source': 7, 'target': 2, 'command': '', 'response': '', 'value': 1},
-     {'source': 3, 'target': 8, 'command': '', 'response': '', 'value': 1},
-     {'source': 3, 'target': 2, 'command': '', 'response': '', 'value': 1},
-     {'source': 3, 'target': 4, 'command': '', 'response': '', 'value': 1},
-     {'source': 5, 'target': 2, 'command': '', 'response': '', 'value': 1},
-     {'source': 5, 'target': 4, 'command': '', 'response': '', 'value': 1}]
+    [{'source': 0, 'target': 1, 'command': '1 goto 2', 'response': 'okay12', 'value': 1},
+     {'source': 1, 'target': 2, 'command': '2 goto 3', 'response': 'okay23', 'value': 1},
+     {'source': 3, 'target': 4, 'command': '4 goto 5', 'response': 'okay45', 'value': 1},
+     {'source': 5, 'target': 6, 'command': '6 goto 7', 'response': 'okay67', 'value': 1},
+     {'source': 0, 'target': 6, 'command': 'goto 7', 'response': 'going to 7', 'value': 1},
+     {'source': 1, 'target': 6, 'command': 'goto 7', 'response': 'going to 7', 'value': 1},
+     {'source': 7, 'target': 1, 'command': '8 goto 2 or 3', 'response': 'okay823', 'value': 1},
+     {'source': 7, 'target': 2, 'command': '8 goto 2 or 3', 'response': 'okay823', 'value': 1},
+     {'source': 3, 'target': 8, 'command': 'goto 9', 'response': 'going to 9', 'value': 1},
+     {'source': 3, 'target': 2, 'command': '4 or 6 goto 3 or 5', 'response': 'okay4635', 'value': 1},
+     {'source': 3, 'target': 4, 'command': '4 or 6 goto 3 or 5', 'response': 'okay4635', 'value': 1},
+     {'source': 5, 'target': 2, 'command': '4 or 6 goto 3 or 5', 'response': 'okay4635', 'value': 1},
+     {'source': 5, 'target': 4, 'command': '4 or 6 goto 3 or 5', 'response': 'okay4635', 'value': 1}]
 
 
     """
@@ -174,18 +176,20 @@ def gen_links(path=DATA_DIR, value=1, df=DF):
                         links.append({'source': node_names.index(source_name),
                                       'target': node_names.index(dest_name),
                                       'command': df.trigger[source_index],
-                                      'response': df.response[dest_index],
+                                      'response': df.response[source_index],
                                       'value': value})
         else:
             if not is_globstar(df.dest_state[source_index]):
                 current_dest_name = df.dest_state[source_index]
+                current_trig = df.trigger[source_index]
+                current_resp = df.response[source_index]
                 source_pattern = pattern.expand_globstar(source_name)
                 for source_index, source_name in enumerate(df.source_state.values):
                     if regex.match(source_pattern, source_name) and not is_globstar(source_name):
                         links.append({'source': node_names.index(source_name),
                                       'target': node_names.index(current_dest_name),
-                                      'command': df.trigger[source_index],
-                                      'response': df.response[source_index],
+                                      'command': current_trig,
+                                      'response': current_resp,
                                       'value': value})
             else:
                 source_pattern = pattern.expand_globstar(source_name)

@@ -8,6 +8,7 @@ line.link {
   fill: none;
   stroke: #9ecae1;
   stroke-width: 2.5px;
+  cursor: pointer;
 }
 
 .form textarea {
@@ -17,4 +18,11 @@ line.link {
 
 .form input[type="text"] {
     width: 400px;
+}
+
+.graph{
+	border: solid #e2e2e2 2px;
+
+
+
 }

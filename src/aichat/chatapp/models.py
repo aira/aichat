@@ -80,7 +80,8 @@ class edge(models.Model):
 class node_autocomplete(autocomplete.Select2ListView):
     def get_list(self):
         nodes = get_nodes()
-        nodes = [node for node in nodes if node.startswith(self.q)]
+        nodes = [node for node in nodes if bool(regex.match(self.q, node, regex.I))]
+        # nodes = [node for node in nodes if node.startswith(self.q)]
         return nodes
 
 

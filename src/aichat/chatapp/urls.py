@@ -8,5 +8,5 @@ urlpatterns = [
     path('create/', views.create, name='create'),
     path('create/save/', views.save_new_sequence, name='save'),
     path('network.json', views.network_rest, name='network'),
-    path(r'^node-autocomplete/$', node_autocomplete.as_view(), name='node_autocomplete')
+    path('node_autocomplete', node_autocomplete.as_view(), name='node_autocomplete')
 ]

@@ -73,10 +73,10 @@ class edge(models.Model):
 
 class node_autocomplete(autocomplete.Select2QuerySetView):
     def get_queryset(self):
-        nodes = TriggerResponse.objects.all()
+        objects = TriggerResponse.objects.all()
         if self.q:
-            nodes = nodes.filter(name__istartswith=self.q)
-        return nodes
+            objects = objects.filter(trigger__startswith=self.q)
+        return objects
 
 
 def get_network(qs=None, value=1):

@@ -1,5 +1,6 @@
 from django.db import models
 from django.db.models import CharField, TextField, NullBooleanField, DateTimeField, IntegerField
+from django import forms
 from aichat import pattern
 import regex
 from dal import autocomplete
@@ -41,14 +42,28 @@ class AuthoredModel(TimestampedModel):
 
 
 class TriggerResponse(AuthoredModel):
-    trigger = CharField(max_length=200)
-    response = TextField()
     source_state = CharField(max_length=200)
     dest_state = CharField(max_length=200)
+    trigger = CharField(max_length=200)
+    response = TextField()
+
     is_globstar = NullBooleanField(choices=CHOICES_IS_GLOBSTAR, max_length=3, null=True, blank=True, default=None)
 
     def __str__(self):
         return self.source_state + ' to ' + self.dest_state
+
+
+class TriggerResponseForm(forms.ModelForm):
+    source_state = autocomplete.Select2ListCreateChoiceField(
+        label='Source', choice_list=get_nodes, widget=autocomplete.ListSelect2(url='chatapp:node_autocomplete'))
+    dest_state = autocomplete.Select2ListCreateChoiceField(
+        label='Destination', choice_list=get_nodes, widget=autocomplete.ListSelect2(url='chatapp:node_autocomplete'))
+    trigger = forms.CharField(label='Trigger', max_length=100)
+    response = forms.CharField(label='Response', max_length=100)
+
+    class Meta:
+        model = TriggerResponse
+        fields = ('__all__')
 
 
 class node(models.Model):
@@ -81,7 +96,6 @@ class node_autocomplete(autocomplete.Select2ListView):
     def get_list(self):
         nodes = get_nodes()
         nodes = [node for node in nodes if bool(regex.match(self.q, node, regex.I))]
-        # nodes = [node for node in nodes if node.startswith(self.q)]
         return nodes
 
 

@@ -68,9 +68,9 @@ line.link {
 
 
 input[type=text] {
-    border: solid #ebebeb 1px;
+    border: solid #919191 1px;
     border-radius: 4px;
-    height: 18px;
+    height: 23px;
     width: 250px;
 }
 input[type=textarea] {

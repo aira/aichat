@@ -16,30 +16,17 @@
 
         <form action="{% url 'chatapp:save' %}" method="post">
             {% csrf_token %}
-            Source	   : <input type="text" name="Source" value=""><br>
+            <!-- Source	   : <input type="text" name="Source" value=""><br>
             Destination: <input type="text" name="Dest" value=""><br>
             Trigger	   : <input type="text" name="Trigger" value=""><br>
-            Response   : <input type="text" name="Response" value=""><br>
+            Response   : <input type="text" name="Response" value=""><br> -->
+            {{trig_form.as_p}}
             <input type="submit" value="Submit" class="button">
         </form>
-
-        <div style="position:relative; width: 200px; height:25px; border:0; padding:5px; margin:5px;">
-
-            <select style="position:absolute;top:-12px; left:0px; width:200px; height:30px;line-height:20px; margin:12px; padding:0;"
-            onchange="document.getElementById('displayValue').value=this.options[this.selectedIndex].text; document.getElementById('idValue').value=this.options[this.selectedIndex].value;">
-                <option></option>
-                {% for node in TriggerResponse%}
-                    <option value='1'>node.trigger</option>
-                {% endfor %}
-                <option value="one">unio</option>
-                <option value="two">two</option>
-                <option value="three">three</option>
-            </select>
-
-            <input type="text" name="displayValue" id="displayValue" placeholder="node" onfocus="this.select()"
-            style="position:absolute;top:0px;left:0px;width:183px;width:180px\9;#width:180px;height:23px; height:21px\9;#height:18px;">
-            <input name="idValue" id="idValue" type="hidden">
-        </div>
+        <!-- Needed for form display and for it to work properly -->
+        <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script> 
+        {{ trig_form.media }}
+        <!-- end -->
 
         <p> <a href="{% url 'chatapp:index'%}" class = "button">Back</a></p>
     </body>

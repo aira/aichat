@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, JsonResponse, HttpResponse  # noqa
 from django.urls import reverse
 # from django.views import generic
-from .models import TriggerResponse, get_network
+from .models import TriggerResponse, get_network, TriggerResponseForm
 # from . import load
 
 
@@ -11,7 +11,8 @@ def index(request):
 
 
 def create(request):
-    return render(request, 'chatapp/create.html')
+    TrigForm = TriggerResponseForm()
+    return render(request, 'chatapp/create.html', {'trig_form': TrigForm})
 
 
 def save_new_sequence(request):

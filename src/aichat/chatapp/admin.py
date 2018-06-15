@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import TriggerResponse, node, edge
+from .models import TriggerResponse, Node, Edge, TriggerResponseFK
 
 
 class TriggerResponseAdmin(admin.ModelAdmin):
@@ -12,5 +12,6 @@ class edgeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(TriggerResponse, TriggerResponseAdmin)
-admin.site.register(edge, edgeAdmin)
-admin.site.register(node)
+admin.site.register(Edge, edgeAdmin)
+admin.site.register(Node)
+admin.site.register(TriggerResponseFK)

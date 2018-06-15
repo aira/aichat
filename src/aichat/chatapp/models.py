@@ -1,6 +1,5 @@
 from django.db import models
 from django.db.models import CharField, TextField, NullBooleanField, DateTimeField, IntegerField
-from django import forms
 from aichat import pattern
 import regex
 from dal import autocomplete
@@ -41,6 +40,33 @@ class AuthoredModel(TimestampedModel):
         abstract = True
 
 
+class Node(models.Model):
+    name = CharField(max_length=200, default='')
+    x_loc = IntegerField(default=0)
+    y_loc = IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
+
+
+class TriggerResponseFK(AuthoredModel):
+    source_state = CharField(max_length=200)
+    destin = models.ForeignKey(
+        Node,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name='related_test_models'
+    )
+    trigger = CharField(max_length=200)
+    response = TextField()
+
+    is_globstar = NullBooleanField(choices=CHOICES_IS_GLOBSTAR, max_length=3, null=True, blank=True, default=None)
+
+    def __str__(self):
+        return self.source_state + ' to ' + self.dest_state
+
+
 class TriggerResponse(AuthoredModel):
     source_state = CharField(max_length=200)
     dest_state = CharField(max_length=200)
@@ -53,46 +79,37 @@ class TriggerResponse(AuthoredModel):
         return self.source_state + ' to ' + self.dest_state
 
 
-class TriggerResponseForm(forms.ModelForm):
-    source_state = autocomplete.Select2ListCreateChoiceField(
-        label='Source', choice_list=get_nodes, widget=autocomplete.ListSelect2(url='chatapp:node_autocomplete'))
-    dest_state = autocomplete.Select2ListCreateChoiceField(
-        label='Destination', choice_list=get_nodes, widget=autocomplete.ListSelect2(url='chatapp:node_autocomplete'))
-    trigger = forms.CharField(label='Trigger', max_length=100)
-    response = forms.CharField(label='Response', max_length=100)
-
-    class Meta:
-        model = TriggerResponse
-        fields = ('__all__')
-
-
-class node(models.Model):
-    name = CharField(max_length=200, default='')
-    x_loc = IntegerField(default=0)
-    y_loc = IntegerField(default=0)
-
-    def __str__(self):
-        return self.name
-
-
-class edge(models.Model):
+class Edge(models.Model):
     trigger = CharField(max_length=200, default='')
     response = CharField(max_length=200, default='')
-    source = models.ForeignKey(node, on_delete=models.CASCADE, related_name='source', null=True)
-    dest = models.ForeignKey(node, on_delete=models.CASCADE, related_name='dest', null=True)
+    source = models.ForeignKey(Node, on_delete=models.CASCADE, related_name='source', null=True)
+    dest = models.ForeignKey(Node, on_delete=models.CASCADE, related_name='dest', null=True)
     is_globstar = NullBooleanField(choices=CHOICES_IS_GLOBSTAR, max_length=3, null=True, blank=True, default=None)
 
     def __str__(self):
         return self.trigger + ' to ' + self.response
 
 
-# class node_autocomplete(autocomplete.Select2QuerySetView):
-#     def get_queryset(self):
-#         objects = TriggerResponse.objects.all()
-#         if self.q:
-#             objects = objects.filter(source_state__istartswith=self.q)
-#         return objects
+class node_obj_autocomplete(autocomplete.Select2QuerySetView):
+    def create(self):
+        node = Node.objects.create(name='self.q')
+        return node.pk
+
+    def get_queryset(self):
+        # Don't forget to filter out results depending on the visitor !
+        # if not self.request.user.is_authenticated():
+        #     return Country.objects.none()
+
+        objects = Node.objects.all()
+        if self.q:
+            objects = objects.filter(name__istartswith=self.q)
+        return objects
+
+
 class node_autocomplete(autocomplete.Select2ListView):
+    def create(self, text):
+        return text
+
     def get_list(self):
         nodes = get_nodes()
         nodes = [node for node in nodes if bool(regex.match(self.q, node, regex.I))]

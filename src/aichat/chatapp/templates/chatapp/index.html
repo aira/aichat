@@ -26,18 +26,21 @@
 
 	<form action="{% url 'chatapp:save' %}" method="post">
 		{% csrf_token %}
-  		Source	   : <input type="text" name="Source" value="root" rows=1 cols=64><br>
+  		<!-- Source	   : <input type="text" name="Source" value="root" rows=1 cols=64><br>
   		Destination: <input type="text" name="Dest" value="" rows=1 cols=64><br>
   		Trigger	   : <input type="textarea" name="Trigger" value="" rows=6 cols=128><br>
-  		Response   : <input type="textarea" name="Response" value="" rows=6 cols=128><br>
+  		Response   : <input type="textarea" name="Response" value="" rows=6 cols=128><br> -->
+  		{{obj_form.as_p}}
   		<input class="button" type="submit" value="Submit">
 	</form>
+	<script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script> 
+        {{ obj_form.media }}
 
 	<center><h2>Chloe's "Brain"</h2></center>
 
 	<div class="d3graph" id="chloedialoggraph" alt="Force-directed graph of the states and state transitions for each dialog element (command action pair) that Chloe understands."></div>
 
-	<script>
+	<!-- <script>
 	var graph;
 	d3.json("{% url 'chatapp:network' %}", function(error, json) {
 	    if (error) return console.warn(error);
@@ -48,6 +51,6 @@
 	            // 1000,600 is default i like 1200,600
 	    ); 
 	});
-	</script>
+	</script> -->
 </body>
 </html>

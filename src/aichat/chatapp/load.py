@@ -1,6 +1,6 @@
 import os
 
-from pandas import read_csv
+import pandas as pd
 
 from aichat.chatsite.settings import CSV_DEFAULT_PATH, CSV_COLUMNS
 from .models import TriggerResponse
@@ -8,7 +8,11 @@ from .models import TriggerResponse
 
 def load(path=CSV_DEFAULT_PATH, allow_dupes=True):
     numrecords = TriggerResponse.objects.count()
-    df = read_csv(path, header=None)
+    df = pd.read_csv(path, header=None)
+    # columns = list(df.columns) + 'source dest'.split()
+    # for i in range(len(df.columns), 4):
+    #     df[columns[i]] = pd.np.nan
+
     df = df.fillna('root')  # new
     df.columns = CSV_COLUMNS[:len(df.columns)]
     create = TriggerResponse.objects.create if allow_dupes else TriggerResponse.objects.get_or_create

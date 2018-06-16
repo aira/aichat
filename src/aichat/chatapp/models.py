@@ -1,5 +1,8 @@
 from django.db import models
 from django.db.models import CharField, TextField, NullBooleanField, DateTimeField, IntegerField
+from django.conf import settings
+from django.core.validators import MinLengthValidator
+
 
 CHOICES_IS_GLOBSTAR = ((None, ''), (True, 'Yes'), (False, 'No'))
 
@@ -16,9 +19,27 @@ class TimestampedModel(models.Model):
 class AuthoredModel(TimestampedModel):
     """ Abstract base class with ``author`` field. """
     author = CharField(max_length=100)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
 
     class Meta:
         abstract = True
+
+
+class Profile(models.Model):
+    GENDER = (
+        ('M', 'Male'),
+        ('F', 'Female'),
+        ('O', 'Other'),
+    )
+
+    user = models.OneToOneField(settings.AUTH_USER_MODEL)
+    first_name = models.CharField(max_length=120, blank=False)
+    last_name = models.CharField(max_length=120, blank=False)
+    gender = models.CharField(max_length=1, choices=GENDER)
+    zip_code = models.CharField(max_length=5, validators=[MinLengthValidator(5)], blank=False)
+
+    def __unicode__(self):
+        return u'Profile of user: {0}'.format(self.user.email)
 
 
 class TriggerResponse(AuthoredModel):

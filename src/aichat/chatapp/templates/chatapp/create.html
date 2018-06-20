@@ -16,10 +16,6 @@
 
         <form action="{% url 'chatapp:save' %}" method="post">
             {% csrf_token %}
-            <!-- Source	   : <input type="text" name="Source" value=""><br>
-            Destination: <input type="text" name="Dest" value=""><br>
-            Trigger	   : <input type="text" name="Trigger" value=""><br>
-            Response   : <input type="text" name="Response" value=""><br> -->
             {{trig_form.as_p}}
             <input type="submit" value="Submit" class="button">
         </form>

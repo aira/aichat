@@ -49,24 +49,6 @@ class Node(models.Model):
         return self.name
 
 
-class TriggerResponseFK(AuthoredModel):
-    source_state = CharField(max_length=200)
-    destin = models.ForeignKey(
-        Node,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
-        related_name='related_test_models'
-    )
-    trigger = CharField(max_length=200)
-    response = TextField()
-
-    is_globstar = NullBooleanField(choices=CHOICES_IS_GLOBSTAR, max_length=3, null=True, blank=True, default=None)
-
-    def __str__(self):
-        return self.source_state + ' to ' + self.dest_state
-
-
 class TriggerResponse(AuthoredModel):
     source_state = CharField(max_length=200)
     dest_state = CharField(max_length=200)
@@ -91,9 +73,8 @@ class Edge(models.Model):
 
 
 class node_obj_autocomplete(autocomplete.Select2QuerySetView):
-    def create(self):
-        node = Node.objects.create(name='self.q')
-        return node.pk
+    def create(self, text):
+        return Node.objects.create(name=text).pk
 
     def get_queryset(self):
         # Don't forget to filter out results depending on the visitor !

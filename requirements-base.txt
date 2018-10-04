@@ -10,7 +10,7 @@ gunicorn
 # 2nd degree aichat[nlp] dependencies (nlpia, pugnlp, spacy)
 boto3==1.6.18
 # aichat[django]
-django>=2.0.2,<2.1.0
+django==2.1.2
 django-extensions>=2.0.7
 future
 fuzzywuzzy==0.16.0

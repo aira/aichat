@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 {% load static %}
 
-<html class="dialog">
-<head>
-	<meta charset="utf-8">
-	<title>Create new sequences</title>
-	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif|Droid+Serif:b|Droid+Serif:i|Lato|Lato:b|Lato:i">
-	<link rel="stylesheet" type="text/css" href="{% static 'chatapp/force.css' %}" />
-	
-	
-</head>
-<body>
+    <html class="dialog">
+        <head>
+        <meta charset="utf-8">
+        <title>Create Response</title>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif|Droid+Serif:b|Droid+Serif:i|Lato|Lato:b|Lato:i">
+        <link rel="stylesheet" type="text/css" href="{% static 'chatapp/force.css' %}" />
+    </head>
 
-	<h1>Create new sequence</h1>
-	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <body>
 
-	<form action="{% url 'chatapp:save' %}" method="post">
-		{% csrf_token %}
-  		Source	   : <input type="text" name="Source" value=""><br>
-  		Destination: <input type="text" name="Dest" value=""><br>
-  		Trigger	   : <input type="text" name="Trigger" value=""><br>
-  		Response   : <input type="text" name="Response" value=""><br>
-  		<input type="submit" value="Submit">
-		</form>
+        <h1>Create Response</h1>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-</body>
+        <form action="{% url 'chatapp:save' %}" method="post">
+            {% csrf_token %}
+            {{trig_form.as_p}}
+            <input type="submit" value="Submit" class="button">
+        </form>
+        <!-- Needed for form display and for it to work properly -->
+        <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script> 
+        {{ trig_form.media }}
+        <!-- end -->
+
+        <p> <a href="{% url 'chatapp:index'%}" class = "button">Back</a></p>
+    </body>
 </html>

@@ -9,11 +9,10 @@
 	<meta charset="utf-8">
 	<title>Chloe Skills</title>
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Serif|Droid+Serif:b|Droid+Serif:i|Lato|Lato:b|Lato:i">
-	<!-- <link rel="stylesheet" type="text/css" href="force.css"> -->
 	<link rel="stylesheet" type="text/css" href="{% static 'chatapp/force.css' %}" />
 	<link rel="stylesheet" type="text/css" href="{% static 'chatapp/style.css' %}" />
-	<!-- <script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script> -->
-	<!-- <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script> -->
+	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
 	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
 	<script type="text/javascript" src="{% static 'chatapp/d3.v3.js' %} "></script>
 	<script type="text/javascript" src="{% static 'chatapp/graphutil.js' %}"></script>
@@ -22,17 +21,18 @@
 
 	<h1>Chloe Skills</h1>
 
-	<h2><a href="{% url 'chatapp:create'%}">Create New Skill</a></h2>
-	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+	<h3>Create Response</h3>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-	<form action="{% url 'chatapp:save' %}" method="post">
-		{% csrf_token %}
-  		Source	   : <input type="text" name="Source" value="root" rows=1 cols=64><br>
-  		Destination: <input type="text" name="Dest" value="" rows=1 cols=64><br>
-  		Trigger	   : <input type="textarea" name="Trigger" value="" rows=6 cols=128><br>
-  		Response   : <input type="textarea" name="Response" value="" rows=6 cols=128><br>
-  		<input type="submit" value="Submit">
-	</form>
+        <form action="{% url 'chatapp:save' %}" method="post">
+            {% csrf_token %}
+            {{trig_form.as_p}}
+            <input type="submit" value="Submit" class="button">
+        </form>
+        <!-- Needed for form display and for autocomplete to work properly -->
+        <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script> 
+        {{ trig_form.media }}
+        <!-- end -->
 
 	<center><h2>Chloe's "Brain"</h2></center>
 
